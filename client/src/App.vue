@@ -6,8 +6,13 @@
         <router-link to="/profile" class="mr-3">Home</router-link>
         <button class="btn btn-danger">Logout</button>
       </div>
-      <div class="offset-9 col-3 mt-1">
-        <input type="text" class="form-control" placeholder="Search..." />
+      <div class="offset-9 col-3 mt-2">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search..." />
+          <div class="input-group-append">
+            <button class="btn btn-outline-success" type="button">Go</button>
+          </div>
+        </div>
       </div>
     </div>
     <router-view />
