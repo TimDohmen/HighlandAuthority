@@ -7,7 +7,7 @@ let _schema = new Schema({
   location: { type: String },
   class: { type: String },
   bio: { type: String },
-  picture: {},
+  picture: { type: String, default: 'robohash.org/d$?set=set4' },
   phone: { type: Number },
 }, { timestamps: true })
 
