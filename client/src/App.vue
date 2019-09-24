@@ -1,6 +1,16 @@
 <template>
   <div id="app">
-    <router-view/>
+    <div id="nav" class="row">
+      <div class="offset-8 col-4">
+        <router-link to="/login" class="mr-3">Info</router-link>
+        <router-link to="/profile" class="mr-3">Home</router-link>
+        <button class="btn btn-danger">Logout</button>
+      </div>
+      <div class="offset-9 col-3 mt-1">
+        <input type="text" class="form-control" placeholder="Search..." />
+      </div>
+    </div>
+    <router-view />
   </div>
 </template>
 
@@ -25,10 +35,10 @@ export default {
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: gray;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: black;
 }
 </style>
