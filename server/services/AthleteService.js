@@ -12,4 +12,8 @@ let _schema = new Schema({
 }, { timestamps: true })
 
 
-export default mongoose.model('Athlete', _schema)
+export default class AthleteService {
+  get repository() {
+    return mongoose.model('Athlete', _schema)
+  }
+}
