@@ -5,7 +5,7 @@ const ObjectId = Schema.Types.ObjectId
 
 let _schema = new Schema({
   userId: { type: ObjectId, ref: 'User', required: true },
-  eventName: { type: Enumerator, required: true },
+  eventName: { type: String, enum: ["Hammer Heavy", "Hammer Light", "W4D Heavy", "W4D Light", "Braemar", "Open Stone"], required: true },
   topAttempt: { type: Number },
   gamesId: { type: ObjectId, ref: "Game", required: true }
 }, { timestamps: true })
