@@ -24,7 +24,7 @@
     </Section>
     <!-- Drop down Section -->
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 text-left">
         <div class="accordion" id="accordionExample">
           <!-- Card History -->
           <Section class="card">
