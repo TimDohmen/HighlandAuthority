@@ -12,8 +12,13 @@ export default class AthleteController {
       .use(Authorize.authenticated)
       .post('', this.create)
       .put('/:id', this.edit)
-    // .delete('/id', this.delete)
+      // .delete('/id', this.delete)
+      .use(this.defaultRoute)
 
+
+  }
+  defaultRoute(req, res, next) {
+    next({ status: 404, message: 'No Such Route' })
   }
 
   async getAll(req, res, next) {
