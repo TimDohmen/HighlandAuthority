@@ -1,15 +1,18 @@
 import AthleteService from '../services/AthleteService'
 import express from 'express'
 import { Authorize } from '../middleware/authorize.js'
+// import UserService from '../services/UserService'
 
 let _as = new AthleteService().repository
+// let _us = new UserService().repository
 
 export default class AthleteController {
   constructor() {
     this.router = express.Router()
       .get('', this.getAll)
-      .get('/:id', this.getById)
+      // .get('/:id', this.getById)
       .use(Authorize.authenticated)
+      .get('/:userId', this.getAthleteByUserId)
       .post('', this.create)
       .put('/:id', this.edit)
       // .delete('/id', this.delete)
@@ -33,6 +36,14 @@ export default class AthleteController {
   async getById(req, res, next) {
     try {
       let data = await _as.findOne({ _id: req.params.id })
+      return res.send(data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  async getAthleteByUserId(req, res, next) {
+    try {
+      let data = await _as.find({ userId: req.params.userId }).populate('userId', 'name')
       return res.send(data)
     } catch (error) {
       console.error(error)
