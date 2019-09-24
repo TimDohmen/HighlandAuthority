@@ -4,6 +4,7 @@ let ObjectId = Schema.Types.ObjectId
 
 let _schema = new Schema({
   userId: { type: ObjectId, ref: 'User', required: true },
+  nickname: { type: String },
   location: { type: String },
   class: { type: String },
   bio: { type: String },
