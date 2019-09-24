@@ -36,9 +36,14 @@ server.use('/account', new AuthController().router)
 
 
 //YOUR ROUTES HERE!!!!!!
-import BoardController from './controllers/BoardController'
+import AthleteController from './controllers/AthleteController'
+import GameController from './controllers/GameController'
+import ScoreController from './controllers/ScoreController'
 
-server.use('/api/boards', new BoardController().router)
+
+server.use('/api/athletes', new AthleteController().router)
+server.use('/api/games', new GameController().router)
+server.use('/api/scores', new ScoreController().router)
 
 
 
