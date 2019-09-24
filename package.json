@@ -1,7 +1,7 @@
 {
-    "name": "kanban",
+    "name": "highlandauthority",
     "version": "1.0.0",
-    "description": "Kanban a tool for organizing projects",
+    "description": "HighlandAuthority, an app to help athletes track and keep up with scores",
     "main": "index.js",
     "scripts": {
         "debug": "node index.js",
