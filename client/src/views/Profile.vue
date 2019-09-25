@@ -1,15 +1,30 @@
 <template>
-  <div class="profile">
-    <div class="card">
-      <img :src="profile.picture" class="card-img-top" />
-      <div class="card-body">
-        <p
-          class="card-text"
-        >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <div class="profile container-fluid">
+    <!-- Profile Card -->
+    <div class="row">
+      <div class="card w-25 text-left">
+        <img :src="profile.picture" class="card-img-top border rounded m-auto" />
+        <div class="card-body">
+          <h3>{{user.name}}</h3>
+          <h6>Nickname: {{profile.nickname}}</h6>
+          <h6>Class: {{profile.class}}</h6>
+        </div>
       </div>
     </div>
-    {{user.name}}
-    <h1>{{profile.bio}}</h1>
+    <!-- End of Profile Card -->
+    <!-- Start of Bio/Location/Phone -->
+    <div class="row">
+      <div class="col-4">
+        <h4>Bio: {{profile.bio}}</h4>
+      </div>
+      <div class="col-4">
+        <h4>Location: {{profile.location}}</h4>
+      </div>
+      <div class="col-4">
+        <h4>Phone #: {{profile.phone}}</h4>
+      </div>
+    </div>
+    <!-- End of Bio/Location/Phone -->
   </div>
 </template>
 
@@ -36,3 +51,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+img {
+  height: 225px;
+  width: 225px;
+}
+</style>

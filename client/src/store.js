@@ -19,7 +19,8 @@ export default new Vuex.Store({
   state: {
     user: {},
     profiles: [],
-    activeProfile: {}
+    activeProfile: {},
+    scores: []
   },
   mutations: {
     setUser(state, user) {
@@ -34,6 +35,10 @@ export default new Vuex.Store({
     setMyProfile(state, payload) {
       state.activeProfile = payload
     },
+    setScores(state, scores) {
+      state.scores = scores
+    },
+
     resetState(state, user) {
       state.user = {}
     }
@@ -71,19 +76,27 @@ export default new Vuex.Store({
     //#endregion
 
 
-    //#region -- BOARDS --
-    getBoards({ commit, dispatch }) {
-      api.get('boards')
-        .then(res => {
-          commit('setBoards', res.data)
-        })
+    //#region -- SCORES --
+    async getScoresById({ commit, dispatch }, userId) {
+      try {
+        let res = await api.get(`scores/${userId}`)
+        commit('setScores', res.data)
+      } catch (error) {
+        console.error(error)
+      }
     },
-    addBoard({ commit, dispatch }, boardData) {
-      api.post('boards', boardData)
-        .then(serverBoard => {
-          dispatch('getBoards')
-        })
-    },
+
+    // getBoards({ commit, dispatch }) {
+    //   api.get('boards')
+    //     .then(res => {
+    //       commit('setBoards', res.data)
+    //     })
+    // },
+    // addBoard({ commit, dispatch }, boardData) {
+    //   api.post('boards', boardData)
+    //     .then(serverBoard => {
+    //       dispatch('getBoards')
+    //     })
     //#endregion
 
 
