@@ -27,6 +27,9 @@ export default new Vuex.Store({
     },
     setBoards(state, boards) {
       state.boards = boards
+    },
+    resetState(state, user) {
+      state.user = {}
     }
   },
   actions: {
@@ -92,10 +95,11 @@ export default new Vuex.Store({
       try {
 
       } catch (error) {
-        next(error)
+        console.error(error)
       }
     }
 
 
     //#endregion
-  })
+  }
+})
