@@ -127,6 +127,7 @@ export default {
   },
   methods: {
     //TODO Make in Store
+    //FIXME make this better
     editProfile() {
       this.$store.dispatch("editProfile", {
         userId: this.profile._id,
