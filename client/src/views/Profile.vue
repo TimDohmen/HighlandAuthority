@@ -9,7 +9,12 @@
           <h6>Nickname: {{profile.nickname}}</h6>
           <h6>Class: {{profile.class}}</h6>
         </div>
-        <button class="btn btn-outline-warning">Edit</button>
+        <button
+          class="btn btn-outline-warning"
+          data-toggle="modal"
+          data-target="#Edit-Profile-Modal"
+        >Edit</button>
+        <EditProfileModal />
       </div>
     </div>
     <!-- End of Profile Card -->
@@ -36,6 +41,7 @@
 
 <script>
 import PR from "../components/EventComp";
+import EditProfileModal from "../components/EditProfileModal";
 export default {
   name: "profile",
   mounted() {
@@ -56,7 +62,7 @@ export default {
       this.$store.dispatch("getMyProfile", this.user._id);
     }
   },
-  components: { PR }
+  components: { PR, EditProfileModal }
 };
 </script>
 
