@@ -33,7 +33,7 @@ export default class ScoreController {
 
   async getById(req, res, next) {
     try {
-      let data = await _scoreService.findOne({ _id: req.params.id, userId: req.session.uid })
+      let data = await _scoreService.findOne({ userId: req.params.id })
       return res.send(data)
     } catch (error) { next(error) }
   }
