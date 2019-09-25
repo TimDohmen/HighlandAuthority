@@ -31,6 +31,9 @@ export default new Vuex.Store({
     setProfiles(state, profiles) {
       state.profiles = profiles
     },
+    setMyProfile(state, payload) {
+      state.activeProfile = payload
+    },
     resetState(state, user) {
       state.user = {}
     }
@@ -99,6 +102,14 @@ export default new Vuex.Store({
         // let res = await api.get('athletes')
       } catch (error) {
         console.error(error)
+      }
+    },
+    async getMyProfile({ commit, dispatch }, userId) {
+      try {
+        let res = await api.get(`athletes/${userId}`)
+        commit('setMyProfile', res.data)
+      } catch (error) {
+
       }
     },
     async getAllProfiles({ commit, dispatch }) {

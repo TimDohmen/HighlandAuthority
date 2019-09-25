@@ -9,6 +9,7 @@ let _as = new AthleteService().repository
 export default class AthleteController {
   constructor() {
     this.router = express.Router()
+      .use('', this.myDebug)
       .get('', this.getAll)
       // .get('/:id', this.getById)
       .get('/:userId', this.getAthleteByUserId)
@@ -20,30 +21,34 @@ export default class AthleteController {
 
 
   }
+  myDebug(req, res, next) {
+    console.log('URL:', req.originalUrl, 'Type:', req.method, 'User:', req.session.uid)
+    next()
+  }
   defaultRoute(req, res, next) {
     next({ status: 404, message: 'No Such Route' })
   }
 
   async getAll(req, res, next) {
     try {
-      let data = await _as.find({})
+      let data = await _as.find({}).populate('userId', 'name')
       return res.send(data)
     } catch (error) {
       console.error(error)
     }
   }
 
-  async getById(req, res, next) {
-    try {
-      let data = await _as.findOne({ _id: req.params.id })
-      return res.send(data)
-    } catch (error) {
-      console.error(error)
-    }
-  }
+  // async getById(req, res, next) {
+  //   try {
+  //     let data = await _as.findOne({ _id: req.params.id }).populate('userId', 'name')
+  //     return res.send(data)
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
   async getAthleteByUserId(req, res, next) {
     try {
-      let data = await _as.find({ userId: req.params.userId }).populate('userId', 'name')
+      let data = await _as.findOne({ userId: req.params.userId }).populate('userId', 'name')
       return res.send(data)
     } catch (error) {
       console.error(error)
