@@ -17,7 +17,12 @@ export default {
     user() {
       return this.$store.state.user;
     }
+    // eventName(){
+    //   return this.$store.state.scores.eventName;
+    // }
   },
-  methods: {}
+  methods: {
+    findPR() {}
+  }
 };
 </script>
