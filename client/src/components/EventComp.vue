@@ -1,14 +1,19 @@
 <template>
-  <div class="event"></div>
+  <div class="PR">
+    <p>Stuff</p>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "event",
+  name: "PR",
   mounted() {
-    this.$store.dispatch("getScoresById", user._id); //FIXME Scores in store
+    debugger;
+    this.$store.dispatch("getScoresById", this.user._id); //FIXME Scores in store
   },
-  data() {},
+  data() {
+    return {};
+  },
   computed: {
     user() {
       return this.$store.state.user;

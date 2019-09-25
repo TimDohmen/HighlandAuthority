@@ -12,6 +12,10 @@
       </div>
     </div>
     <!-- End of Profile Card -->
+
+    <!-- Event/PR area -->
+    <PR />
+    <!-- End of Event/PR area -->
     <!-- Start of Bio/Location/Phone -->
     <div class="row">
       <div class="col-4">
@@ -29,6 +33,7 @@
 </template>
 
 <script>
+import PR from "../components/EventComp";
 export default {
   name: "profile",
   mounted() {
@@ -48,7 +53,8 @@ export default {
     getMyProfile() {
       this.$store.dispatch("getMyProfile", this.user._id);
     }
-  }
+  },
+  components: { PR }
 };
 </script>
 
