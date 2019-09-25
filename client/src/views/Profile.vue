@@ -6,18 +6,22 @@
 export default {
   name: "profile",
   mounted() {
-    this.$store.dispatch("getProfile")
+    this.$store.dispatch("getAllProfiles");
+    this.getMyProfile();
   },
   computed: {
     profile() {
-      return (
-        //FIXME This does not work on page reload because the boards array is empty in the store
-        this.$store.state.boards.find(b => b._id == this.boardId) || {
-          title: "Loading..."
-        }
-      );
+      return this.$store.state.activeProfile;
     }
   },
-  props: []
+  props: [],
+  methods: {
+    getMyProfile() {
+      this.$store.dispatch("getActiveProfile", {
+        profiles: this.$store.state.profiles,
+        userId: session.uid
+      });
+    }
+  }
 };
 </script>

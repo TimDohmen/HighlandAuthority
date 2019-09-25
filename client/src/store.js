@@ -18,15 +18,18 @@ let api = Axios.create({
 export default new Vuex.Store({
   state: {
     user: {},
-    boards: [],
-    activeBoard: {}
+    profiles: [],
+    activeProfile: {}
   },
   mutations: {
     setUser(state, user) {
       state.user = user
     },
-    setBoards(state, boards) {
-      state.boards = boards
+    setActiveProfile(state, activeProfile) {
+      state.activeProfile = activeProfile
+    },
+    setProfiles(state, profiles) {
+      state.profiles = profiles
     },
     resetState(state, user) {
       state.user = {}
@@ -84,21 +87,36 @@ export default new Vuex.Store({
     //#region -- EditProfileModal --
     async editProfile({ dispatch }, profile) {
       try {
-        let res = await api.post('/profile', profile)
+        let res = await api.post('profile', profile)
         dispatch('getProfile')
       } catch (error) {
         console.error(error)
 
       }
     },
-    async getProfile({ commit, dispatch }) {
+    async getProfile({ commit, dispatch }, userId) {
       try {
-
+        // let res = await api.get('athletes')
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async getAllProfiles({ commit, dispatch }) {
+      try {
+        let res = await api.get('athletes')
+        commit('setProfiles', res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async getActiveProfile({ commit, dispatch }, payload) {
+      try {
+        let res = payload.profiles.find(p => p.userId == payload.userId)
+        if (res) commit('setActiveProfile', res)
       } catch (error) {
         console.error(error)
       }
     }
-
 
     //#endregion
   }
