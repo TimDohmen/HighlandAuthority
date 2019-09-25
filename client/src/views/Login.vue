@@ -24,14 +24,15 @@
     </Section>
     <!-- Drop down Section -->
     <div class="row">
-      <div class="col-12">
+      <div class="col-md-3"></div>
+      <div class="col-12 col-md-6">
         <div class="accordion" id="accordionExample">
           <!-- Card History -->
-          <Section class="card">
+          <Section class="card mt-3 collapsed" data-toggle="collapse" data-target="#collapseZero" aria-expanded="false"
+            aria-controls="collapseZero">
             <div class="card-header" id="headingZero">
               <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseZero"
-                  aria-expanded="true" aria-controls="collapseZero">Games History</button>
+                <button class="btn btn-link" type="button">Games History</button>
               </h2>
             </div>
             <div id="collapseZero" class="collapse" aria-labelledby="headingZero" data-parent="#accordionExample">
@@ -54,11 +55,11 @@
             </div>
           </Section>
           <!-- Card Braemar -->
-          <Section class="card mt-3">
+          <Section class="card mt-3 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+            aria-controls="collapseOne">
             <div class="card-header" id="headingOne">
               <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                  aria-expanded="true" aria-controls="collapseOne">Braemar Stone</button>
+                <button class="btn btn-link" type="button">Braemar</button>
               </h2>
             </div>
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -70,11 +71,11 @@
             </div>
           </Section>
           <!-- Card Open Stone -->
-          <Section class="card mt-3">
+          <Section class="card mt-3 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+            aria-controls="collapseTwo">
             <div class="card-header" id="headingTwo">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
-                  aria-expanded="false" aria-controls="collapseTwo">Open Stone</button>
+                <button class="btn btn-link" type="button">Open Stone</button>
               </h2>
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
@@ -91,11 +92,11 @@
             </div>
           </Section>
           <!-- Card W4D -->
-          <Section class="card mt-3">
+          <Section class="card mt-3 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+            aria-controls="collapseThree">
             <div class="card-header" id="headingThree">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
-                  aria-expanded="false" aria-controls="collapseThree">Weight for Distance</button>
+                <button class="btn btn-link" type="button">Weight for Distance</button>
               </h2>
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -125,11 +126,11 @@
             </div>
           </Section>
           <!-- Card Hammer -->
-          <Section class="card mt-3">
+          <Section class="card mt-3 collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+            aria-controls="collapseFour">
             <div class="card-header" id="headingFour">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
-                  aria-expanded="false" aria-controls="collapseFour">Scottish Hammers</button>
+                <button class="btn btn-link" type="button">Scottish Hammer</button>
               </h2>
             </div>
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
@@ -150,11 +151,11 @@
             </div>
           </Section>
           <!-- Card WOB -->
-          <Section class="card mt-3">
+          <Section class="card mt-3 collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+            aria-controls="collapseFive">
             <div class="card-header" id="headingFive">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive"
-                  aria-expanded="false" aria-controls="collapseFive">Weight Over Bar</button>
+                <button class="btn btn-link" type="button">Weight Over Bar (WOB)</button>
               </h2>
             </div>
             <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
@@ -178,11 +179,11 @@
             </div>
           </Section>
           <!-- Card Caber -->
-          <Section class="card mt-3">
+          <Section class="card mt-3 collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+            aria-controls="collapseSix">
             <div class="card-header" id="headingSix">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix"
-                  aria-expanded="false" aria-controls="collapseSix">Caber</button>
+                <button class="btn btn-link" type="button">Caber</button>
               </h2>
             </div>
             <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
@@ -206,11 +207,11 @@
             </div>
           </Section>
           <!-- Card Sheaf -->
-          <Section class="card mt-3">
+          <Section class="card mt-3 collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false"
+            aria-controls="collapseSeven">
             <div class="card-header" id="headingSeven">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven"
-                  aria-expanded="false" aria-controls="collapseSeven">Sheaf Toss</button>
+                <button class="btn btn-link" type="button">Sheaf Toss</button>
               </h2>
             </div>
             <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
@@ -224,11 +225,11 @@
             </div>
           </Section>
           <!-- Bag Pipping -->
-          <Section class="card mt-3">
+          <Section class="card mt-3 collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false"
+            aria-controls="collapseEight">
             <div class="card-header" id="headingEight">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight"
-                  aria-expanded="false" aria-controls="collapseEight">Bagpiping Competition</button>
+                <button class="btn btn-link" type="button">Bagpiping Competition</button>
               </h2>
             </div>
             <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
@@ -286,11 +287,11 @@
             </div>
           </Section>
           <!-- Irish Dancing -->
-          <Section class="card mt-3">
+          <Section class="card mt-3 collapsed mb-3" data-toggle="collapse" data-target="#collapseNine"
+            aria-expanded="false" aria-controls="collapseNine">
             <div class="card-header" id="headingNine">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine"
-                  aria-expanded="false" aria-controls="collapseNine">Irish Dancing</button>
+                <button class="btn btn-link" type="button">Irish Dancing</button>
               </h2>
             </div>
             <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
@@ -333,6 +334,7 @@
             </div>
           </Section>
         </div>
+        <div class="col-md-3"></div>
       </div>
     </div>
   </div>
