@@ -27,6 +27,9 @@ export default new Vuex.Store({
     },
     setBoards(state, boards) {
       state.boards = boards
+    },
+    resetState(state, user) {
+      state.user = {}
     }
   },
   actions: {
@@ -35,7 +38,7 @@ export default new Vuex.Store({
       try {
         let user = await AuthService.Register(creds)
         commit('setUser', user)
-        router.push({ name: "boards" })
+        router.push({ name: "profile" })
       } catch (e) {
         console.warn(e.message)
       }
@@ -44,7 +47,7 @@ export default new Vuex.Store({
       try {
         let user = await AuthService.Login(creds)
         commit('setUser', user)
-        router.push({ name: "boards" })
+        router.push({ name: "profile" })
       } catch (e) {
         console.warn(e.message)
       }
@@ -87,8 +90,16 @@ export default new Vuex.Store({
         console.error(error)
 
       }
+    },
+    async getProfile({ commit, dispatch }) {
+      try {
 
-
-      //#endregion
+      } catch (error) {
+        console.error(error)
+      }
     }
-  })
+
+
+    //#endregion
+  }
+})
