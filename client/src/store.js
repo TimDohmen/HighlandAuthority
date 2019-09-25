@@ -74,14 +74,21 @@ export default new Vuex.Store({
         .then(serverBoard => {
           dispatch('getBoards')
         })
+    },
+    //#endregion
+
+
+    //#region -- EditProfileModal --
+    async editProfile({ dispatch }, profile) {
+      try {
+        let res = await api.post('/profile', profile)
+        dispatch('getProfile')
+      } catch (error) {
+        console.error(error)
+
+      }
+
+
+      //#endregion
     }
-    //#endregion
-
-
-    //#region -- LISTS --
-
-
-
-    //#endregion
-  }
-})
+  })
