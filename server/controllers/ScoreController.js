@@ -10,7 +10,7 @@ export default class ScoreController {
     this.router = express.Router()
       .use(Authorize.authenticated)
       .get('', this.getAll)
-      .get('/find', this.getByQuery)
+      .get('/:id/find', this.getByQuery)
       // .get('/:id', this.getByQuery)
 
       .post('', this.create)
@@ -35,7 +35,7 @@ export default class ScoreController {
 
   async getByQuery(req, res, next) {
     try {
-      let data = await _scoreService.findOne({ userId: req.params.id, eventName: req.query }).sort('-topAttempt')
+      let data = await _scoreService.findOne({ userId: req.params.id, eventName: req.query.eventName }).sort('-topAttempt')
       return res.send(data)
     } catch (error) { next(error) }
   }

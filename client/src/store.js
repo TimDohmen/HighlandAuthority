@@ -20,7 +20,8 @@ export default new Vuex.Store({
     user: {},
     profiles: [],
     activeProfile: {},
-    scores: []
+    scores: [],
+    hiScores: []
   },
   mutations: {
     setUser(state, user) {
@@ -37,6 +38,9 @@ export default new Vuex.Store({
     },
     setScores(state, scores) {
       state.scores = scores
+    },
+    setStoneScores(state, scores) {
+      state.hiScores.push(scores)
     },
 
     resetState(state, user) {
@@ -81,6 +85,17 @@ export default new Vuex.Store({
       try {
         let res = await api.get(`scores/${userId}`)
         commit('setScores', res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async getOpenStones({ commit, dispatch }, userId) {
+      try {
+        let query = "?eventName=Braemar"
+        debugger
+        let res = await api.get(`scores/${userId}/find` + query)
+        debugger
+        commit('setStoneScores', res.data)
       } catch (error) {
         console.error(error)
       }
@@ -140,7 +155,8 @@ export default new Vuex.Store({
       } catch (error) {
         console.error(error)
       }
-    }
+    },
+
 
     //#endregion
   }

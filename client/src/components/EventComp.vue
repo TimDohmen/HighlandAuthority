@@ -1,6 +1,6 @@
 <template>
   <div class="PR">
-    <p>Stuff</p>
+    <p>Stuff and things</p>
   </div>
 </template>
 
@@ -8,11 +8,20 @@
 export default {
   name: "PR",
   mounted() {
-    debugger;
-    this.$store.dispatch("getScoresById", this.user._id); //FIXME Scores in store
+    // this.$store.dispatch("getScoresById", this.user._id); //FIXME Scores in store
+    this.$store.dispatch("getOpenStones", this.user._id); //FIXME Scores in store
   },
   data() {
-    return {};
+    return {
+      Events: [
+        "Hammer Heavy",
+        "Hammer Light",
+        "W4D Heavy",
+        "W4D Light",
+        "Braemar",
+        "OpenStone"
+      ]
+    };
   },
   computed: {
     user() {
