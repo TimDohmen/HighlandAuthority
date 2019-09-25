@@ -35,7 +35,7 @@ export default new Vuex.Store({
       try {
         let user = await AuthService.Register(creds)
         commit('setUser', user)
-        router.push({ name: "boards" })
+        router.push({ name: "profile" })
       } catch (e) {
         console.warn(e.message)
       }
@@ -44,7 +44,7 @@ export default new Vuex.Store({
       try {
         let user = await AuthService.Login(creds)
         commit('setUser', user)
-        router.push({ name: "boards" })
+        router.push({ name: "profile" })
       } catch (e) {
         console.warn(e.message)
       }
@@ -87,8 +87,15 @@ export default new Vuex.Store({
         console.error(error)
 
       }
+    },
+    async getProfile({ commit, dispatch }) {
+      try {
 
-
-      //#endregion
+      } catch (error) {
+        next(error)
+      }
     }
+
+
+    //#endregion
   })
