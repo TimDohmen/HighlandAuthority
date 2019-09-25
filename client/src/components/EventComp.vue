@@ -8,7 +8,6 @@
 export default {
   name: "PR",
   mounted() {
-    debugger;
     this.$store.dispatch("getScoresById", this.user._id); //FIXME Scores in store
   },
   data() {
