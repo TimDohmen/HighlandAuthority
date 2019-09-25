@@ -4,7 +4,7 @@
       <div class="offset-8 col-4">
         <router-link to="/login" class="mr-3">Info</router-link>
         <router-link to="/profile" class="mr-3">Home</router-link>
-        <button class="btn btn-danger">Logout</button>
+        <button class="btn btn-danger" @click="Logout()">Logout</button>
       </div>
       <div class="offset-9 col-3 mt-2">
         <div class="input-group">
@@ -21,7 +21,12 @@
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  methods: {
+    Logout() {
+      this.$store.dispatch("logout");
+    }
+  }
 };
 </script>
 
