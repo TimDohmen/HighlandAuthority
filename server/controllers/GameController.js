@@ -25,7 +25,7 @@ export default class GameController {
 
   async getAll(req, res, next) {
     try {
-      let data = await _gameService.find({ userId: req.session.uid })
+      let data = await _gameService.find({})
       return res.send(data)
     }
     catch (err) { next(err) }
