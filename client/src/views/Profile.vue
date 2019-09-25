@@ -1,5 +1,8 @@
 <template>
-  <div class="profile">{{profile.title}}</div>
+  <div class="profile">
+    {{user.name}}
+    <h1>{{profile.bio}}</h1>
+  </div>
 </template>
 
 <script>
@@ -12,15 +15,15 @@ export default {
   computed: {
     profile() {
       return this.$store.state.activeProfile;
+    },
+    user() {
+      return this.$store.state.user;
     }
   },
   props: [],
   methods: {
     getMyProfile() {
-      this.$store.dispatch("getActiveProfile", {
-        profiles: this.$store.state.profiles,
-        userId: session.uid
-      });
+      this.$store.dispatch("getMyProfile", this.user._id);
     }
   }
 };
