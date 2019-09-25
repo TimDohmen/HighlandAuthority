@@ -124,10 +124,13 @@ export default {
   methods: {
     //TODO Make in Store
     editProfile() {
+      let profile = {
+        athleteId: this._id,
+        userId: this.userId
+      };
       this.$store.dispatch("editProfile", this.newEdit);
       this.newEdit = {};
-            $(".close").click();
-
+      $(".close").click();
     }
   }
 };
