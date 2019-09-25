@@ -282,7 +282,6 @@
                   Professional: All aspects of performance are consistently outstanding: drones stay steady and tuned
                   for long periods of playing, lovely expression, crisp and clear embellishments, very fast tempo on
                   demand.</p>
-                </p>
               </div>
             </div>
           </Section>
