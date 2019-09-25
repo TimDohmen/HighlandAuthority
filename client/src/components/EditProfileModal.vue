@@ -126,6 +126,8 @@ export default {
     editProfile() {
       this.$store.dispatch("editProfile", this.newEdit);
       this.newEdit = {};
+            $(".close").click();
+
     }
   }
 };

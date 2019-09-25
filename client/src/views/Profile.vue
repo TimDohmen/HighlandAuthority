@@ -5,6 +5,9 @@
 <script>
 export default {
   name: "profile",
+  mounted() {
+    this.$store.dispatch("getProfile")
+  },
   computed: {
     profile() {
       return (

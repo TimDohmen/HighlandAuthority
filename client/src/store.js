@@ -35,7 +35,7 @@ export default new Vuex.Store({
       try {
         let user = await AuthService.Register(creds)
         commit('setUser', user)
-        router.push({ name: "boards" })
+        router.push({ name: "profile" })
       } catch (e) {
         console.warn(e.message)
       }
@@ -44,7 +44,7 @@ export default new Vuex.Store({
       try {
         let user = await AuthService.Login(creds)
         commit('setUser', user)
-        router.push({ name: "boards" })
+        router.push({ name: "profile" })
       } catch (e) {
         console.warn(e.message)
       }
@@ -74,14 +74,28 @@ export default new Vuex.Store({
         .then(serverBoard => {
           dispatch('getBoards')
         })
+    },
+    //#endregion
+
+
+    //#region -- EditProfileModal --
+    async editProfile({ dispatch }, profile) {
+      try {
+        let res = await api.post('/profile', profile)
+        dispatch('getProfile')
+      } catch (error) {
+        console.error(error)
+
+      }
+    },
+    async getProfile({ commit, dispatch }) {
+      try {
+
+      } catch (error) {
+        next(error)
+      }
     }
-    //#endregion
-
-
-    //#region -- LISTS --
-
 
 
     //#endregion
-  }
-})
+  })
