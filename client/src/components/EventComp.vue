@@ -8,7 +8,7 @@
 export default {
   name: "PR",
   mounted() {
-    this.$store.dispatch("getScoresById", this.user._id);
+    this.$store.dispatch("getScoresById", this.user._id); //FIXME Scores in store
   },
   data() {
     return {};
