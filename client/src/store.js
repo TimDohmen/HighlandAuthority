@@ -116,10 +116,10 @@ export default new Vuex.Store({
 
 
     //#region -- EditProfileModal --
-    async editProfile({ dispatch }, profile) {
+    async editProfile({ commit, dispatch }, payload) {
       try {
-        let res = await api.post('profile', profile)
-        dispatch('getProfile')
+        let res = await api.put('athletes/' + payload.userId, payload)
+        dispatch('setMyProfile', payload.userId)
       } catch (error) {
         console.error(error)
 
