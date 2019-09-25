@@ -1,5 +1,5 @@
 <template>
-  <div id="EditProfileModal" class="modal" tabindex="-1" role="dialog">
+  <div id="Edit-Profile-Modal" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">

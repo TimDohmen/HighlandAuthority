@@ -2,13 +2,19 @@
   <div class="profile container-fluid">
     <!-- Profile Card -->
     <div class="row">
-      <div class="card w-25 text-left">
-        <img :src="profile.picture" class="card-img-top border rounded m-auto" />
+      <div class="card col-sm-12 col-md-3 text-left">
+        <img :src="profile.picture" class="card-img-top border rounded m-auto img-fluid" />
         <div class="card-body">
           <h3>{{user.name}}</h3>
           <h6>Nickname: {{profile.nickname}}</h6>
           <h6>Class: {{profile.class}}</h6>
         </div>
+        <button
+          class="btn btn-outline-warning"
+          data-toggle="modal"
+          data-target="#Edit-Profile-Modal"
+        >Edit</button>
+        <EditProfileModal />
       </div>
     </div>
     <!-- End of Profile Card -->
@@ -17,14 +23,15 @@
     <PR />
     <!-- End of Event/PR area -->
     <!-- Start of Bio/Location/Phone -->
+    <hr />
     <div class="row">
-      <div class="col-4">
+      <div class="col-sm-12 col-md-4">
         <h4>Bio: {{profile.bio}}</h4>
       </div>
-      <div class="col-4">
+      <div class="col-sm-12 col-md-4">
         <h4>Location: {{profile.location}}</h4>
       </div>
-      <div class="col-4">
+      <div class="col-sm-12 col-md-4">
         <h4>Phone #: {{profile.phone}}</h4>
       </div>
     </div>
@@ -34,6 +41,7 @@
 
 <script>
 import PR from "../components/EventComp";
+import EditProfileModal from "../components/EditProfileModal";
 export default {
   name: "profile",
   mounted() {
@@ -54,7 +62,7 @@ export default {
       this.$store.dispatch("getMyProfile", this.user._id);
     }
   },
-  components: { PR }
+  components: { PR, EditProfileModal }
 };
 </script>
 
