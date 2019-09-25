@@ -59,7 +59,7 @@
             <div class="form-group">
               <label for="phone">Phone Number:</label>
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 id="phone"
                 placeholder="Enter in Telephone Number"
@@ -129,7 +129,7 @@ export default {
     //TODO Make in Store
     editProfile() {
       this.$store.dispatch("editProfile", {
-        userId: this.profile.userId._id,
+        userId: this.profile._id,
         nickname: this.newEdit.nickname,
         location: this.newEdit.location,
         class: this.newEdit.class,

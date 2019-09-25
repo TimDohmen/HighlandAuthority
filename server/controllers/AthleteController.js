@@ -34,7 +34,7 @@ export default class AthleteController {
       let data = await _as.find({}).populate('userId', 'name')
       return res.send(data)
     } catch (error) {
-      console.error(error)
+      next(error)
     }
   }
 
@@ -43,7 +43,7 @@ export default class AthleteController {
   //     let data = await _as.findOne({ _id: req.params.id }).populate('userId', 'name')
   //     return res.send(data)
   //   } catch (error) {
-  //     console.error(error)
+  //    next(error)
   //   }
   // }
   async getAthleteByUserId(req, res, next) {
@@ -51,7 +51,7 @@ export default class AthleteController {
       let data = await _as.findOne({ userId: req.params.userId }).populate('userId', 'name')
       return res.send(data)
     } catch (error) {
-      console.error(error)
+      next(error)
     }
   }
   async create(req, res, next) {
@@ -59,7 +59,7 @@ export default class AthleteController {
       let data = await _as.create(req.body)
       return res.send(data)
     } catch (error) {
-      console.error(error)
+      next(error)
     }
   }
   async edit(req, res, next) {
@@ -67,7 +67,7 @@ export default class AthleteController {
       let data = await _as.findOneAndUpdate({ _id: req.params.id, userId: req.session.uid }, req.body, { new: true })
       return res.send(data)
     } catch (error) {
-      console.error(error)
+      next(error)
     }
   }
 
