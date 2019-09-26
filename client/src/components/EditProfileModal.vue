@@ -134,7 +134,7 @@ export default {
         picture: this.newEdit.picture,
         phone: this.newEdit.phone
       });
-      this.newEdit = {};
+      // this.newEdit = {};
     }
   }
 };
