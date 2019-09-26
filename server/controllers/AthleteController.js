@@ -39,12 +39,21 @@ export default class AthleteController {
     }
   }
 
+
   async findAthleteByQuery(req, res, next) {
     try {
       let query = new RegExp(req.query.name, "i")
-      let data = await _us.find({ name: { '$regex': query } }).select('name') // Regex Allows search to find partial names and ignores case sensitive(https://stackoverflow.com/questions/7101703/how-do-i-make-case-insensitive-queries-on-mongodb)
-      if (!data) { throw new Error("No profile found") }
-      res.send(data)
+      let users = await _us.find({ name: { '$regex': query } }).select('name')
+      // Regex Allows search to find partial names and ignores case sensitive(https://stackoverflow.com/questions/7101703/how-do-i-make-case-insensitive-queries-on-mongodb)
+      if (!users) { throw new Error("No profile found") }
+      let photos = users.map(async user => {
+        return await _as.findOne({ userId: user.id }).select('picture')
+      });
+      let result = await Promise.all(photos)
+      console.log(result, photos) //Black Magic
+      let payload = { users, result }
+      res.send(payload) // Need to send both users and results
+
     } catch (error) {
       next(error)
     }
@@ -68,7 +77,7 @@ export default class AthleteController {
   // }
   async getAthleteByUserId(req, res, next) {
     try {
-      let data = await _as.findOne({ userId: req.params.userId }).populate('userId', 'name')
+      let data = await _as.findOne({ userId: req.params.id }).populate('userId', 'picture')
       return res.send(data)
     } catch (error) {
       next(error)
