@@ -10,7 +10,7 @@
     </div>
     <div class="row p-2">
       <div class="col-sm-8"></div>
-      <div class="col-md-4 col-sm-3">
+      <div class="col-sm-3 col-md-4">
           <div class="input-group" >
             <input type="text" class="form-control" placeholder="Search..." v-model="query"/>
             <div class="input-group-append">
