@@ -64,6 +64,7 @@ export default class AthleteController {
   }
   async edit(req, res, next) {
     try {
+      delete req.body.userId
       let data = await _as.findOneAndUpdate({ _id: req.params.id, userId: req.session.uid }, req.body, { new: true })
       return res.send(data)
     } catch (error) {

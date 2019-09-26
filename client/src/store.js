@@ -28,10 +28,8 @@ export default new Vuex.Store({
     hiWFDLScore: {},
     hiHammerHScore: {},
     hiHammerLScore: {},
-    oneEventScores: []
-
-
-
+    oneEventScores: [],
+    searchResults: {}
   },
   mutations: {
     setUser(state, user) {
@@ -72,6 +70,9 @@ export default new Vuex.Store({
     },
     setHiHammerHScores(state, score) {
       state.hiHammerHScore = score
+    },
+    setSearchResults(state, payload) {
+      state.searchResults = payload
     },
     resetState(state, user) {
       state.user = {}
@@ -139,8 +140,6 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
-
-
 
     async getHiStoneScores({ commit, dispatch }, payload) {
       try {
@@ -213,8 +212,8 @@ export default new Vuex.Store({
     //#region -- EditProfileModal --
     async editProfile({ commit, dispatch }, payload) {
       try {
-        let res = await api.put('athletes/' + payload.userId, payload)
-        dispatch('setMyProfile', payload.userId)
+        let res = await api.put('athletes/' + payload._id, payload)
+        commit('setActiveProfile', res.data)
       } catch (error) {
         console.error(error)
 
@@ -253,6 +252,17 @@ export default new Vuex.Store({
     },
 
 
+    //#endregion
+
+    //#region Search Results
+    async findUserByName({ commit, dispatch }, query) {
+      try {
+        let res = await api.get(`/athletes/${query}`) //FIXME athletes?
+        commit('setSearchResults', res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
     //#endregion
   }
 })
