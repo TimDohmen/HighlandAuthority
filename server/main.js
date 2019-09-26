@@ -46,7 +46,6 @@ server.use('/api/games', new GameController().router)
 server.use('/api/scores', new ScoreController().router)
 
 
-
 //Default Error Handler
 server.use((error, req, res, next) => {
   res.status(error.status || 400).send({ error: { message: error.message } })
