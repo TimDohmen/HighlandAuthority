@@ -46,12 +46,30 @@ export default class AthleteController {
       let users = await _us.find({ name: { '$regex': query } }).select('name')
       // Regex Allows search to find partial names and ignores case sensitive(https://stackoverflow.com/questions/7101703/how-do-i-make-case-insensitive-queries-on-mongodb)
       if (!users) { throw new Error("No profile found") }
+      //REVIEW Itterate over the users, and create a request for each user to find their athlete photo
       let photos = users.map(async user => {
-        return await _as.findOne({ userId: user.id }).select('picture')
+        return await _as.findOne({ userId: user.id }).select('picture userId')
       });
+      //REVIEW The previous note created the request, this fires the requests
       let result = await Promise.all(photos)
-      console.log(result, photos) //Black Magic
-      let payload = { users, result }
+
+      //NOTE Itterates over users and connects them with their photo
+      let payload = users.map(u => {
+        let photo = result.find(p => {
+          if (p) {
+            return p.userId.equals(u._id)
+          }
+          return false;
+        })
+        //REVIEW Payload becomes an array of these objects
+        let data = { _id: u._id, name: u.name, photo }
+        if (data.photo) {
+          data.photo = data.photo.picture
+        }
+        return data
+      })
+      //NOTE Filter out any non-athlete users becasue they don't have a photo
+      payload = payload.filter(u => u.photo)
       res.send(payload) // Need to send both users and results
 
     } catch (error) {
