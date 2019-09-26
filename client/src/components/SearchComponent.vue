@@ -3,11 +3,11 @@
     <div class="card mb-3" style="max-width: 540px;">
       <div class="row no-gutters">
         <div class="col-md-4">
-          <!-- <img :src="payload.picture" class="card-img" alt="Broken Image" /> -->
+          <!-- <img :src="user.result.picture" class="card-img" alt="Broken Image" /> -->
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">{{userProp.name}}</h5>
+            <h5 class="card-title">{{userProp.users.name}}</h5>
           </div>
         </div>
       </div>
@@ -23,7 +23,11 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    results() {
+      return this.$store.state.searchResults;
+    }
+  },
   methods: {
     user() {
       return this.$store.state.searchResults;
