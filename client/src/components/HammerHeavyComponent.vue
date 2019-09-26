@@ -23,10 +23,16 @@ export default {
   methods: {},
   components: {},
   mounted() {
-    this.$store.dispatch("getHiHammerHScores", {
-      userId: this.user._id,
-      eventName: "hammer-heavy"
-    });
+    if (this.$route.params.userId) {
+      this.$store.dispatch("getHiHammerHScores", {
+        userId: this.$route.params.userId,
+        eventName: "hammer-heavy"
+      });
+    } else
+      this.$store.dispatch("getHiHammerHScores", {
+        userId: this.user._id,
+        eventName: "hammer-heavy"
+      });
   }
 };
 </script>
