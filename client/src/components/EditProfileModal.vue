@@ -20,7 +20,6 @@
                 id="nickname"
                 placeholder="Enter Nickname"
                 v-model="newEdit.nickname"
-                required
               />
             </div>
             <div class="form-group">
@@ -31,7 +30,6 @@
                 id="picture"
                 placeholder="Enter Profile Picture"
                 v-model="newEdit.picture"
-                required
               />
             </div>
             <div class="form-group">
@@ -42,7 +40,6 @@
                 id="bio"
                 placeholder="Enter Profile Bio"
                 v-model="newEdit.bio"
-                required
               />
             </div>
             <div class="form-group">
@@ -53,7 +50,6 @@
                 id="location"
                 placeholder="Enter Location"
                 v-model="newEdit.location"
-                required
               />
             </div>
             <div class="form-group">
@@ -64,7 +60,6 @@
                 id="phone"
                 placeholder="Enter in Telephone Number"
                 v-model="newEdit.phone"
-                required
               />
             </div>
             <!-- TODO Classes -->
@@ -83,17 +78,17 @@
               <!-- Form Group? or input-group -->
               <select class="custom-select" id="inputGroupSelect02" v-model="newEdit.class">
                 <option selected>Choose...</option>
-                <option value="1">Pros</option>
-                <option value="2">A</option>
-                <option value="3">B</option>
-                <option value="4">C</option>
-                <option value="5">Master 40-49</option>
-                <option value="6">Master 50-59</option>
-                <option value="7">Master 60+</option>
-                <option value="8">Women's Open</option>
-                <option value="9">Women's Master</option>
-                <option value="10">Women's Pro</option>
-                <option value="11">Lightweight</option>
+                <option value="Pros">Pros</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="Master 40-49">Master 40-49</option>
+                <option value="Master 50-59">Master 50-59</option>
+                <option value="Master 60+">Master 60+</option>
+                <option value="Women's Open">Women's Open</option>
+                <option value="Women's Master">Women's Master</option>
+                <option value="Women's Pro">Women's Pro</option>
+                <option value="Lightweight">Lightweight</option>
               </select>
               <div class="input-group-append">
                 <label class="input-group-text" for="inputGroupSelect02">Classes</label>
@@ -117,7 +112,7 @@ export default {
   name: "EditProfileModal",
   data() {
     return {
-      newEdit: {} //newProfile??
+      newEdit: {}
     };
   },
   computed: {
@@ -126,8 +121,6 @@ export default {
     }
   },
   methods: {
-    //TODO Make in Store
-    //FIXME make this better
     editProfile() {
       this.$store.dispatch("editProfile", {
         _id: this.profile._id,
@@ -139,7 +132,6 @@ export default {
         phone: this.newEdit.phone
       });
       this.newEdit = {};
-      $(".close").click();
     }
   }
 };

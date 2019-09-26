@@ -1,6 +1,7 @@
 <template>
   <div class="searchResults">
     <div class="row">
+      D$ Rocks
       <SearchComponent />
     </div>
   </div>
