@@ -21,7 +21,16 @@ export default new Vuex.Store({
     profiles: [],
     activeProfile: {},
     scores: [],
-    hiScores: []
+    hiScores: [],
+    hiStoneScore: {},
+    hiBraemarScore: {},
+    hiWFDScore: {},
+    hiWFDLScore: {},
+    hiHammerLScore: {},
+    hiHammerHScore: {}
+
+
+
   },
   mutations: {
     setUser(state, user) {
@@ -39,15 +48,34 @@ export default new Vuex.Store({
     setScores(state, scores) {
       state.scores = scores
     },
-    setStoneScores(state, scores) {
+    setHiScores(state, scores) {
       state.hiScores.push(scores)
     },
-
+    setHiStoneScores(state, score) {
+      state.hiStoneScore = score
+    },
+    setHiBraemarScores(state, score) {
+      state.hiBraemarScore = score
+    },
+    setHiWFDScores(state, score) {
+      state.hiWFDScore = score
+    },
+    setHiWFDLScores(state, score) {
+      state.hiWFDLScore = score
+    },
+    setHiHammerLScores(state, score) {
+      state.hiHammerLScore = score
+    },
+    setHiHammerHScores(state, score) {
+      state.hiHammerHScore = score
+    },
     resetState(state, user) {
       state.user = {}
     }
   },
   actions: {
+    // DONT GO FARTHER BACK
+
     //#region -- AUTH STUFF --
     async register({ commit, dispatch }, creds) {
       try {
@@ -89,18 +117,72 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
-    async getOpenStones({ commit, dispatch }, userId) {
+    async getHiScores({ commit, dispatch }, payload) {
       try {
-        let query = "?eventName=Braemar"
-        debugger
-        let res = await api.get(`scores/${userId}/find` + query)
-        debugger
-        commit('setStoneScores', res.data)
+        let query = `?eventName=${payload.eventName}`
+        let res = await api.get(`scores/${payload.userId}/find` + query)
+        commit('setHiScores', res.data)
       } catch (error) {
         console.error(error)
       }
     },
 
+
+
+    async getHiStoneScores({ commit, dispatch }, payload) {
+      try {
+        let query = `?eventName=${payload.eventName}`
+        let res = await api.get(`scores/${payload.userId}/find` + query)
+        commit('setHiStoneScores', res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async getHiBraemarScores({ commit, dispatch }, payload) {
+      try {
+        let query = `?eventName=${payload.eventName}`
+        let res = await api.get(`scores/${payload.userId}/find` + query)
+        commit('setHiBraemarScores', res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async getHiWFDScores({ commit, dispatch }, payload) {
+      try {
+        let query = `?eventName=${payload.eventName}`
+        let res = await api.get(`scores/${payload.userId}/find` + query)
+        commit('setHiWFDScores', res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async getHiWFDLScores({ commit, dispatch }, payload) {
+      try {
+        let query = `?eventName=${payload.eventName}`
+        let res = await api.get(`scores/${payload.userId}/find` + query)
+        commit('setHiWFDLScores', res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async getHiHammerLScores({ commit, dispatch }, payload) {
+      try {
+        let query = `?eventName=${payload.eventName}`
+        let res = await api.get(`scores/${payload.userId}/find` + query)
+        commit('setHiHammerLScores', res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async getHiHammerHScores({ commit, dispatch }, payload) {
+      try {
+        let query = `?eventName=${payload.eventName}`
+        let res = await api.get(`scores/${payload.userId}/find` + query)
+        commit('setHiHammerHScores', res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
     // getBoards({ commit, dispatch }) {
     //   api.get('boards')
     //     .then(res => {

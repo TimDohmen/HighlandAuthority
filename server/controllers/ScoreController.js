@@ -6,6 +6,8 @@ let _scoreService = new ScoreService().repository
 
 //PUBLIC
 export default class ScoreController {
+  // DONT GO FARTHER BACK
+
   constructor() {
     this.router = express.Router()
       .use(Authorize.authenticated)

@@ -18,7 +18,6 @@
       </div>
     </div>
     <!-- End of Profile Card -->
-
     <!-- Event/PR area -->
     <PR />
     <!-- End of Event/PR area -->
