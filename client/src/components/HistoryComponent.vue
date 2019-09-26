@@ -6,10 +6,16 @@
 <script>
 export default {
   name: "history",
+  mounted() {    
+  },
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+scores(){
+  return this.$store.state.oneEventScores
+}
+  },
   methods: {},
   components: {}
 };

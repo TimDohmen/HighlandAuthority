@@ -21,6 +21,9 @@
     <!-- Event/PR area -->
     <PR />
     <!-- End of Event/PR area -->
+
+    <history />
+
     <!-- Start of Bio/Location/Phone -->
     <hr />
     <div class="row">
@@ -41,6 +44,8 @@
 <script>
 import PR from "../components/EventComp";
 import EditProfileModal from "../components/EditProfileModal";
+import history from "../components/HistoryComponent";
+
 export default {
   name: "profile",
   mounted() {
@@ -61,7 +66,7 @@ export default {
       this.$store.dispatch("getMyProfile", this.user._id);
     }
   },
-  components: { PR, EditProfileModal }
+  components: { PR, EditProfileModal, history }
 };
 </script>
 

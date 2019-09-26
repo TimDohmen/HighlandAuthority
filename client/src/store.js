@@ -20,14 +20,15 @@ export default new Vuex.Store({
     user: {},
     profiles: [],
     activeProfile: {},
-    scores: [],
+    // scores: [],
     hiScores: [],
     hiStoneScore: {},
     hiBraemarScore: {},
     hiWFDScore: {},
     hiWFDLScore: {},
+    hiHammerHScore: {},
     hiHammerLScore: {},
-    hiHammerHScore: {}
+    oneEventScores: []
 
 
 
@@ -45,8 +46,11 @@ export default new Vuex.Store({
     setMyProfile(state, payload) {
       state.activeProfile = payload
     },
-    setScores(state, scores) {
-      state.scores = scores
+    // setScores(state, scores) {
+    //   state.scores = scores
+    // },
+    setOneEventScores(state, scores) {
+      state.oneEventScores = scores
     },
     setHiScores(state, scores) {
       state.hiScores.push(scores)
@@ -109,19 +113,28 @@ export default new Vuex.Store({
 
 
     //#region -- SCORES --
-    async getScoresById({ commit, dispatch }, userId) {
-      try {
-        let res = await api.get(`scores/${userId}`)
-        commit('setScores', res.data)
-      } catch (error) {
-        console.error(error)
-      }
-    },
-    async getHiScores({ commit, dispatch }, payload) {
+    // async getScoresById({ commit, dispatch }, userId) {
+    //   try {
+    //     let res = await api.get(`scores/${userId}`)
+    //     commit('setScores', res.data)
+    //   } catch (error) {
+    //     console.error(error)
+    //   }
+    // },
+    // async getHiScores({ commit, dispatch }, payload) {
+    //   try {
+    //     let query = `?eventName=${payload.eventName}`
+    //     let res = await api.get(`scores/${payload.userId}/find` + query)
+    //     commit('setHiScores', res.data)
+    //   } catch (error) {
+    //     console.error(error)
+    //   }
+    // },
+    async getOneEventScores({ commit, dispatch }, payload) {
       try {
         let query = `?eventName=${payload.eventName}`
-        let res = await api.get(`scores/${payload.userId}/find` + query)
-        commit('setHiScores', res.data)
+        let res = await api.get(`scores/${payload.userId}/findAll` + query)
+        commit('setOneEventScores', res.data)
       } catch (error) {
         console.error(error)
       }

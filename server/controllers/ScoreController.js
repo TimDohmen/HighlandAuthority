@@ -14,6 +14,7 @@ export default class ScoreController {
       .get('', this.getAll)
       .get('/:id/find', this.getByQuery)
       // .get('/:id', this.getByQuery)
+      .get('/:id/findAll', this.getAllByQuery)
 
       .post('', this.create)
       .put('/:id', this.edit)
@@ -41,6 +42,13 @@ export default class ScoreController {
       return res.send(data)
     } catch (error) { next(error) }
   }
+  async getAllByQuery(req, res, next) {
+    try {
+      let data = await _scoreService.find({ userId: req.params.id, eventName: req.query.eventName })
+      return res.send(data)
+    } catch (error) { next(error) }
+  }
+
 
   async create(req, res, next) {
     try {

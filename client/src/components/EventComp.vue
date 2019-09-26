@@ -1,21 +1,21 @@
 <template>
   <div class="PR row">
-    <div class="col">
+    <div class="col" @click="setHistory('open-stone')">
       <openStone />
     </div>
-    <div class="col">
+    <div class="col" @click="setHistory('braemar')">
       <braemar />
     </div>
-    <div class="col">
+    <div class="col" @click="setHistory('w4d-heavy')">
       <WFDHeavy />
     </div>
-    <div class="col">
+    <div class="col" @click="setHistory('w4d-light')">
       <WFDLight />
     </div>
-    <div class="col">
+    <div class="col" @click="setHistory('hammer-light')">
       <hammerLight />
     </div>
-    <div class="col">
+    <div class="col" @click="setHistory('hammer-heavy')">
       <hammerHeavy />
     </div>
     <!-- <div>
@@ -42,7 +42,6 @@
       {{this.hiScore[5].eventName}}
       {{this.hiScore[5].topAttempt}}
     </div>-->
-    <history />
   </div>
 </template>
 
@@ -57,11 +56,10 @@ import openStone from "../components/OpenStoneComponent";
 import WFDLight from "../components/WFDLightComponent";
 import hammerLight from "../components/HammerLightComponent";
 import hammerHeavy from "../components/HammerHeavyComponent";
-import history from "../components/HistoryComponent";
 export default {
   name: "PR",
   mounted() {
-    this.$store.dispatch("getScoresById", this.user._id); //FIXME Scores in store
+    // this.$store.dispatch("getScoresById", this.user._id); //FIXME Scores in store
     // this.$store.dispatch("getHiScores", {
     //   userId: this.user._id,
     //   eventName: "open-stone"
@@ -101,15 +99,21 @@ export default {
     //   return this.$store.state.scores.eventName;
     // }
   },
-  methods: {},
+  methods: {
+    setHistory(eventName) {
+      this.$store.dispatch("getOneEventScores", {
+        eventName: eventName,
+        userId: this.user._id
+      });
+    }
+  },
   components: {
     openStone,
     braemar,
     WFDHeavy,
     WFDLight,
     hammerLight,
-    hammerHeavy,
-    history
+    hammerHeavy
   }
 };
 </script>
