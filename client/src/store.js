@@ -270,7 +270,7 @@ export default new Vuex.Store({
       try {
         let res = await api.get("athletes/find?name=" + query) //FIXME athletes?
         commit('setSearchResults', res.data)
-        //router.push({ name: "search", params:{ id:res.data._id}})
+        router.push({ name: "search" })
       } catch (error) {
         console.error(error)
       }
