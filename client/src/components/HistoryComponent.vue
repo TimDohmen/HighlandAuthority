@@ -1,5 +1,6 @@
 <template>
   <div class="history">
+    Event: {{this.scores[0].eventName}}
     <historyScore v-for="score in scores" :scoreProp="score" :key="score._id" />
   </div>
 </template>
