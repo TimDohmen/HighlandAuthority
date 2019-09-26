@@ -42,6 +42,7 @@
       {{this.hiScore[5].eventName}}
       {{this.hiScore[5].topAttempt}}
     </div>-->
+    <history />
   </div>
 </template>
 
@@ -56,7 +57,7 @@ import openStone from "../components/OpenStoneComponent";
 import WFDLight from "../components/WFDLightComponent";
 import hammerLight from "../components/HammerLightComponent";
 import hammerHeavy from "../components/HammerHeavyComponent";
-
+import history from "../components/HistoryComponent";
 export default {
   name: "PR",
   mounted() {
@@ -107,7 +108,8 @@ export default {
     WFDHeavy,
     WFDLight,
     hammerLight,
-    hammerHeavy
+    hammerHeavy,
+    history
   }
 };
 </script>
