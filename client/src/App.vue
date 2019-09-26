@@ -7,12 +7,14 @@
         <button class="btn btn-danger" @click="Logout()">Logout</button>
       </div>
       <div class="offset-9 col-3 mt-2">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search..." />
-          <div class="input-group-append">
-            <button class="btn btn-outline-success" type="button">Go</button>
-          </div>
-        </div>
+        <form @submit="Search()" >
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search..." />
+            <div class="input-group-append">
+              <button class="btn btn-outline-success" type="submit">Go</button>
+            </div>
+         </div>
+        </form>
       </div>
     </div>
     <router-view />
@@ -22,11 +24,19 @@
 <script>
 export default {
   name: "App",
+  data(){
+    return {
+      results: "",
+    }
+  },
   methods: {
     Logout() {
       this.$store.dispatch("logout");
     }
-  }
+  },
+    Search(){
+      this.$store.dispatch('findUserByName',this.results)
+    }
 };
 </script>
 
