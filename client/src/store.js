@@ -252,8 +252,11 @@ export default new Vuex.Store({
     },
     async getSearchedProfile({ commit, dispatch }, payload) {
       try {
-        let res = payload.profiles.find(p => p.userId == payload.userId)
-        if (res) commit('setActiveProfile', res)
+        debugger
+        let res = await api.get('athletes/' + payload.userId)
+
+        // let res = payload.profile.find(p => p.userId == payload.userId)
+        if (res) commit('setActiveProfile', res.data)
       } catch (error) {
         console.error(error)
       }
