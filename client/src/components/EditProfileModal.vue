@@ -103,7 +103,7 @@
         </div>
         <!-- end of modal body -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
       </div>
     </div>
@@ -135,6 +135,7 @@ export default {
         phone: this.newEdit.phone
       });
       // this.newEdit = {};
+      $("#close").click();
     }
   }
 };
