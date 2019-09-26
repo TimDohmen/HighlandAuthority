@@ -1,5 +1,5 @@
 <template>
-  <div class="PR row">
+  <div class="PR row mt-4">
     <div class="col enumEvents" @click="setHistory('open-stone')">
       <openStone />
     </div>
@@ -101,10 +101,16 @@ export default {
   },
   methods: {
     setHistory(eventName) {
-      this.$store.dispatch("getOneEventScores", {
-        eventName: eventName,
-        userId: this.user._id
-      });
+      if (this.$route.params.userId) {
+        this.$store.dispatch("getOneEventScores", {
+          userId: this.$route.params.userId,
+          eventName: eventName
+        });
+      } else
+        this.$store.dispatch("getOneEventScores", {
+          eventName: eventName,
+          userId: this.user._id
+        });
     }
   },
   components: {

@@ -6,7 +6,7 @@ let ObjectId = Schema.Types.ObjectId
 let _schema = new Schema({
   name: { type: String },
   location: { type: String },
-  date: { type: Number },
+  date: { type: Date },
   hostingOrg: { type: String, default: "Northern Rockies" },
   userId: { type: ObjectId, ref: "User", required: true }
 }, { timestamps: true })

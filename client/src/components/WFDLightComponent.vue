@@ -23,10 +23,16 @@ export default {
   methods: {},
   components: {},
   mounted() {
-    this.$store.dispatch("getHiWFDLScores", {
-      userId: this.user._id,
-      eventName: "w4d-light"
-    });
+    if (this.$route.params.userId) {
+      this.$store.dispatch("getHiWFDLScores", {
+        userId: this.$route.params.userId,
+        eventName: "w4d-light"
+      });
+    } else
+      this.$store.dispatch("getHiWFDLScores", {
+        userId: this.user._id,
+        eventName: "w4d-light"
+      });
   }
 };
 </script>

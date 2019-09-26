@@ -13,10 +13,16 @@ export default {
     return {};
   },
   mounted() {
-    this.$store.dispatch("getHiStoneScores", {
-      userId: this.user._id,
-      eventName: "open-stone"
-    });
+    if (this.$route.params.userId) {
+      this.$store.dispatch("getHiStoneScores", {
+        userId: this.$route.params.userId,
+        eventName: "open-stone"
+      });
+    } else
+      this.$store.dispatch("getHiStoneScores", {
+        userId: this.user._id,
+        eventName: "open-stone"
+      });
   },
   computed: {
     hiStoneScore() {

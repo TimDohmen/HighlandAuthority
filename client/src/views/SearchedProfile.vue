@@ -1,11 +1,11 @@
 <template>
-  <div class="profile container-fluid">
+  <div class="profileSearched container-fluid">
     <!-- Profile Card -->
     <div class="row">
       <div class="card col-sm-12 col-md-3 text-left">
         <img :src="profile.picture" class="card-img-top border rounded m-auto img-fluid" />
         <div class="card-body">
-          <h3>{{user.name}}</h3>
+          <h3>{{profile.userId.name}}</h3>
           <h6>Nickname: {{profile.nickname}}</h6>
           <h6>Class: {{profile.class}}</h6>
         </div>
@@ -37,27 +37,25 @@
 
 <script>
 import PR from "../components/EventComp";
-import EditProfileModal from "../components/EditProfileModal";
 import history from "../components/HistoryComponent";
 
 export default {
-  name: "profile",
+  name: "profileSearched",
   mounted() {
-    this.$store.dispatch("getAllProfiles");
+    // this.$store.dispatch("getAllProfiles");
     this.getSearchedProfile();
   },
   computed: {
     profile() {
       return this.$store.state.activeProfile;
-    },
-    user() {
-      return this.$store.state.user;
     }
   },
   props: [],
   methods: {
-    getSearchedProfile(data) {
-      this.$store.dispatch("getSearchedProfile", data);
+    getSearchedProfile() {
+      this.$store.dispatch("getSearchedProfile", {
+        userId: this.$route.params.userId
+      });
     }
   },
   components: { PR, history }
