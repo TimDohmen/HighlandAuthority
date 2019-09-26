@@ -1,0 +1,72 @@
+<template>
+  <div class="profile container-fluid">
+    <!-- Profile Card -->
+    <div class="row">
+      <div class="card col-sm-12 col-md-3 text-left">
+        <img :src="profile.picture" class="card-img-top border rounded m-auto img-fluid" />
+        <div class="card-body">
+          <h3>{{user.name}}</h3>
+          <h6>Nickname: {{profile.nickname}}</h6>
+          <h6>Class: {{profile.class}}</h6>
+        </div>
+      </div>
+    </div>
+    <!-- End of Profile Card -->
+    <!-- Event/PR area -->
+    <PR />
+    <!-- End of Event/PR area -->
+
+    <history />
+
+    <!-- Start of Bio/Location/Phone -->
+    <hr />
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <h4>Bio: {{profile.bio}}</h4>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <h4>Location: {{profile.location}}</h4>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <h4>Phone #: {{profile.phone}}</h4>
+      </div>
+    </div>
+    <!-- End of Bio/Location/Phone -->
+  </div>
+</template>
+
+<script>
+import PR from "../components/EventComp";
+import EditProfileModal from "../components/EditProfileModal";
+import history from "../components/HistoryComponent";
+
+export default {
+  name: "profile",
+  mounted() {
+    this.$store.dispatch("getAllProfiles");
+    this.getSearchedProfile();
+  },
+  computed: {
+    profile() {
+      return this.$store.state.activeProfile;
+    },
+    user() {
+      return this.$store.state.user;
+    }
+  },
+  props: [],
+  methods: {
+    getSearchedProfile(data) {
+      this.$store.dispatch("getSearchedProfile", data);
+    }
+  },
+  components: { PR, history }
+};
+</script>
+
+<style scoped>
+img {
+  height: 225px;
+  width: 225px;
+}
+</style>

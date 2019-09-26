@@ -1,6 +1,7 @@
 <template>
   <div class="historyScore">
     Distance: {{scoreProp.topAttempt}}
+    Game: {{scoreProp.gamesId.name}}
     Date: {{this.dateTest}}
   </div>
 </template>
