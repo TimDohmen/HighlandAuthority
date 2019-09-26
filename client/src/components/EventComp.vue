@@ -1,21 +1,21 @@
 <template>
   <div class="PR row">
-    <div class="col" @click="setHistory('open-stone')">
+    <div class="col enumEvents" @click="setHistory('open-stone')">
       <openStone />
     </div>
-    <div class="col" @click="setHistory('braemar')">
+    <div class="col enumEvents" @click="setHistory('braemar')">
       <braemar />
     </div>
-    <div class="col" @click="setHistory('w4d-heavy')">
+    <div class="col enumEvents" @click="setHistory('w4d-heavy')">
       <WFDHeavy />
     </div>
-    <div class="col" @click="setHistory('w4d-light')">
+    <div class="col enumEvents" @click="setHistory('w4d-light')">
       <WFDLight />
     </div>
-    <div class="col" @click="setHistory('hammer-light')">
+    <div class="col enumEvents" @click="setHistory('hammer-light')">
       <hammerLight />
     </div>
-    <div class="col" @click="setHistory('hammer-heavy')">
+    <div class="col enumEvents" @click="setHistory('hammer-heavy')">
       <hammerHeavy />
     </div>
     <!-- <div>
@@ -117,3 +117,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+.enumEvents {
+  cursor: pointer;
+}
+</style>

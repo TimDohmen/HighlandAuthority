@@ -4,7 +4,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <div class="modal-title">
-            <h1>Edit Your Profile</h1>
+            <h1>
+              Edit Your Profile
+              <button data-dismiss="modal" class="btn btn-secondary xButton">x</button>
+            </h1>
             <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>-->
@@ -100,7 +103,7 @@
         </div>
         <!-- end of modal body -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
       </div>
     </div>
@@ -131,11 +134,16 @@ export default {
         picture: this.newEdit.picture,
         phone: this.newEdit.phone
       });
-      this.newEdit = {};
+      // this.newEdit = {};
+      $("#close").click();
     }
   }
 };
 </script>
 
 <style scoped>
+.xButton {
+  margin-left: 135px;
+  margin-bottom: 5px;
+}
 </style>
