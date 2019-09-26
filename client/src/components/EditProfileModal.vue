@@ -133,7 +133,7 @@ export default {
     //FIXME make this better
     editProfile() {
       this.$store.dispatch("editProfile", {
-        id: this.user._id,
+        userId: this.user._id,
         nickname: this.newEdit.nickname,
         location: this.newEdit.location,
         class: this.newEdit.class,
