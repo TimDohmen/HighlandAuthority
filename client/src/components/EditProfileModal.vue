@@ -81,7 +81,7 @@
             </div>-->
             <div class="input-group mb-3">
               <!-- Form Group? or input-group -->
-              <select class="custom-select" id="inputGroupSelect02">
+              <select class="custom-select" id="inputGroupSelect02" v-model="newEdit.class">
                 <option selected>Choose...</option>
                 <option value="1">Pros</option>
                 <option value="2">A</option>
@@ -133,7 +133,6 @@ export default {
     //FIXME make this better
     editProfile() {
       this.$store.dispatch("editProfile", {
-        userId: this.user._id,
         nickname: this.newEdit.nickname,
         location: this.newEdit.location,
         class: this.newEdit.class,
