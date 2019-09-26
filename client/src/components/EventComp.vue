@@ -1,5 +1,5 @@
 <template>
-  <div class="PR row">
+  <div class="PR row mt-4">
     <div class="col enumEvents" @click="setHistory('open-stone')">
       <openStone />
     </div>
