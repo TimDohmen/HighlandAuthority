@@ -1,16 +1,17 @@
 import AthleteService from '../services/AthleteService'
 import express from 'express'
 import { Authorize } from '../middleware/authorize.js'
-// import UserService from '../services/UserService'
+import UserService from '../services/UserService'
 
 let _as = new AthleteService().repository
-// let _us = new UserService().repository
+let _us = new UserService().repository
 
 export default class AthleteController {
   constructor() {
     this.router = express.Router()
       .use('', this.myDebug)
       .get('', this.getAll)
+      .get('/find', this.findAthleteByQuery)
       // .get('/:id', this.getById)
       .get('/:userId', this.getAthleteByUserId)
       .use(Authorize.authenticated)
@@ -37,6 +38,24 @@ export default class AthleteController {
       next(error)
     }
   }
+
+  async findAthleteByQuery(req, res, next) {
+    try {
+      let data = await _us.find({ name: req.query }).select('name')
+      if (!data) { throw new Error("No profile found") }
+      res.send(data)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  // async findUserByQuery(req, res, next) {
+  //   try {
+  //     let user = await _userService.findOne(req.query).select('name email work phoneNumber location image netWorth')
+  //     if (!user) { throw new Error("No user found") }
+  //     res.send(user)
+  //   } catch (error) { next(error) }
+  // }
 
   // async getById(req, res, next) {
   //   try {

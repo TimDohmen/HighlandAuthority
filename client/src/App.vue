@@ -1,20 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav" class="row">
-      <div class="offset-8 col-4">
+    <div id="nav" class="row p-2">
+      <div class="col-sm-8"></div>
+      <div class="col-sm-4 col-md-4">
         <router-link to="/login" class="mr-3">Info</router-link>
         <router-link to="/profile" class="mr-3">Home</router-link>
         <button class="btn btn-danger" @click="Logout()">Logout</button>
       </div>
-      <div class="offset-9 col-3 mt-2">
-        <form @submit="Search()" >
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search..." />
+    </div>
+    <div class="row p-2">
+      <div class="col-sm-8"></div>
+      <div class="col-md-4 col-sm-3">
+          <div class="input-group" >
+            <input type="text" class="form-control" placeholder="Search..." v-model="query"/>
             <div class="input-group-append">
-              <button class="btn btn-outline-success" type="submit">Go</button>
+              <button class="btn btn-outline-success" type="submit" @click="searchUsers()" id="search">Go</button>
             </div>
          </div>
-        </form>
       </div>
     </div>
     <router-view />
@@ -26,17 +28,21 @@ export default {
   name: "App",
   data(){
     return {
-      results: "",
+      query: "",
     }
+  },
+  computed: {
+    
   },
   methods: {
     Logout() {
       this.$store.dispatch("logout");
+    },
+    searchUsers(){
+      this.$store.dispatch('findUserByName',this.query)
     }
   },
-    Search(){
-      this.$store.dispatch('findUserByName',this.results)
-    }
+    
 };
 </script>
 

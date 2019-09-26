@@ -29,7 +29,7 @@ export default new Vuex.Store({
     hiHammerHScore: {},
     hiHammerLScore: {},
     oneEventScores: [],
-    searchResults: {}
+    searchResults: []
   },
   mutations: {
     setUser(state, user) {
@@ -257,8 +257,9 @@ export default new Vuex.Store({
     //#region Search Results
     async findUserByName({ commit, dispatch }, query) {
       try {
-        let res = await api.get(`/athletes/${query}`) //FIXME athletes?
+        let res = await api.get("athletes/find?name=" + query) //FIXME athletes?
         commit('setSearchResults', res.data)
+        //router.push({ name: "search", params:{ id:res.data._id}})
       } catch (error) {
         console.error(error)
       }

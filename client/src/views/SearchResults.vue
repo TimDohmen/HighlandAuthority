@@ -9,7 +9,7 @@
 
 
 <script>
-import SearchComponent from './components/SearchComponent'
+import SearchComponent from "../components/SearchComponent";
 export default {
   name: 'searchResults',
   data(){
