@@ -3,6 +3,7 @@
     Distance: {{scoreProp.topAttempt}}
     Game: {{scoreProp.gamesId.name}}
     Date: {{this.dateTest}}
+    <!-- Date: {{scoreProp.gamesId.date }} -->
   </div>
 </template>
 
@@ -19,7 +20,10 @@ export default {
       return this.$store.state.oneEventScores;
     },
     dateTest() {
-      return this.scoreProp.createdAt.split("T")[0];
+      let date = new Date(this.scoreProp.gamesId.date);
+      return date.toLocaleDateString();
+      // return this.scoreProp.createdAt.split("T")[0];
+      // return this.scoreProp.gamesId.date.toDateString();
     }
   },
   methods: {},

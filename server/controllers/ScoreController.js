@@ -44,7 +44,7 @@ export default class ScoreController {
   }
   async getAllByQuery(req, res, next) {
     try {
-      let data = await _scoreService.find({ userId: req.params.id, eventName: req.query.eventName }).populate('gamesId', 'name')
+      let data = await _scoreService.find({ userId: req.params.id, eventName: req.query.eventName }).populate('gamesId', 'name date')
       return res.send(data)
     } catch (error) { next(error) }
   }
