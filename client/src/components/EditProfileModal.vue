@@ -123,9 +123,6 @@ export default {
   computed: {
     profile() {
       return this.$store.state.activeProfile;
-    },
-    user() {
-      return this.$store.state.user;
     }
   },
   methods: {
@@ -133,6 +130,7 @@ export default {
     //FIXME make this better
     editProfile() {
       this.$store.dispatch("editProfile", {
+        _id: this.profile._id,
         nickname: this.newEdit.nickname,
         location: this.newEdit.location,
         class: this.newEdit.class,
