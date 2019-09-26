@@ -1,7 +1,7 @@
 <template>
   <div class="historyScore">
-    <p>{{scoreProp.topAttempt}}</p>
-    <p>{{scoreProp.createdAt}}</p>
+    Distance: {{scoreProp.topAttempt}}
+    Date: {{this.dateTest}}
   </div>
 </template>
 
@@ -16,6 +16,9 @@ export default {
   computed: {
     scores() {
       return this.$store.state.oneEventScores;
+    },
+    dateTest() {
+      return this.scoreProp.createdAt.split("T")[0];
     }
   },
   methods: {},
