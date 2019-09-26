@@ -250,6 +250,14 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+    async getSearchedProfile({ commit, dispatch }, payload) {
+      try {
+        let res = payload.profiles.find(p => p.userId == payload.userId)
+        if (res) commit('setActiveProfile', res)
+      } catch (error) {
+        console.error(error)
+      }
+    },
 
 
     //#endregion
