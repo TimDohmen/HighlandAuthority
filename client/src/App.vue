@@ -16,8 +16,8 @@
 
           <div class="offset-9 col-sm-4 col-md-4">
             <!-- <router-link to="/login" class="btn btn-light m-1">Info</router-link> -->
-            <router-link to="/profile" class="btn my-btn m-1">Home</router-link>
-            <button class="btn my-btn" @click="Logout()">Logout</button>
+            <router-link to="/profile" class="btn btn-light m-1">Home</router-link>
+            <button class="btn btn-danger" @click="Logout()">Logout</button>
           </div>
 
           <!-- <div class="row p-2"> -->
@@ -32,7 +32,12 @@
                   v-model="query"
                 />
                 <div class="input-group-append">
-                  <button class="btn my-btn" type="submit" @click="searchUsers()" id="search">Search</button>
+                  <button
+                    class="btn btn-success"
+                    type="submit"
+                    @click="searchUsers()"
+                    id="search"
+                  >Search</button>
                 </div>
               </div>
             </form>
@@ -66,44 +71,6 @@ export default {
 </script>
 
 <style>
-.my-btn {
-  background: #1aab8a;
-  color: #fff;
-  border: none;
-  position: relative;
-  height: 60px;
-  font-size: 1.6em;
-  padding: 0 2em;
-  cursor: pointer;
-  transition: 800ms ease all;
-  outline: none;
-}
-.my-btn:hover {
-  background: #fff;
-  color: #1aab8a;
-}
-.my-btn:before,
-.my-btn:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background: #1aab8a;
-  transition: 400ms ease all;
-}
-.my-btn:after {
-  right: inherit;
-  top: inherit;
-  left: 0;
-  bottom: 0;
-}
-.my-btn:hover:before,
-.my-btn:hover:after {
-  width: 100%;
-  transition: 800ms ease all;
-}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
