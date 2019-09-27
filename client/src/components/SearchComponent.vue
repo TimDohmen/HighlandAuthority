@@ -46,7 +46,6 @@ export default {
       return this.$store.state.searchResults;
     },
     selectAthlete(payload) {
-      debugger;
       router.push({ path: `/profile/` + payload });
     }
   },

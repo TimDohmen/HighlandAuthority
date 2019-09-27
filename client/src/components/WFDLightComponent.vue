@@ -1,5 +1,5 @@
 <template>
-  <div class="WFDLight">
+  <div class="WFDLight card">
     Event Name: W4D Light
     <p>PR: {{this.hiScore.topAttempt}}</p>
   </div>
