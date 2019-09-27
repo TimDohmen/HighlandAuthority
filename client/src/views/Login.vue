@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <!-- Login Section -->
-    <Section class="row">
+    <Section v-if="!user._id" class="row">
       <div class="col-12 mt-3">
         <div class="login">
           <form v-if="loginForm" @submit.prevent="loginUser">
@@ -369,6 +369,11 @@
       },
       loginUser() {
         this.$store.dispatch("login", this.creds);
+      }
+    },
+    computed: {
+      user() {
+        return this.$store.state.user
       }
     }
   };
