@@ -14,9 +14,9 @@
         </div>
 
         <div class="col-sm-4 col-md-4 m-auto">
-          <!-- <router-link to="/login" class="btn btn-light m-1">Info</router-link> -->
-          <router-link to="/profile" class="btn btn-light m-1">Home</router-link>
-          <button class="btn btn-danger ml-2" @click="Logout()">Logout</button>
+          <router-link v-if="!user._id" to="/login" class="btn btn-light m-1">Home</router-link>
+          <router-link v-if="user._id" to="/profile" class="btn btn-light m-1">My Profile</router-link>
+          <button v-if="user._id" class="btn btn-danger ml-2" @click="Logout()">Logout</button>
           <form>
             <div class="input-group">
               <input
@@ -50,7 +50,11 @@ export default {
       query: ""
     };
   },
-  computed: {},
+  computed: {
+    user() {
+      return this.$store.state.user;
+    }
+  },
   methods: {
     Logout() {
       this.$store.dispatch("logout");
