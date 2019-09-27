@@ -1,5 +1,5 @@
 <template>
-  <div class="history card">
+  <div class="history card mt-2">
     <u
       @click="showHistory = !showHistory"
       class="historyPart"
