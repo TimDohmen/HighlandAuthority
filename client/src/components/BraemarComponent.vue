@@ -1,5 +1,5 @@
 <template>
-  <div class="braemar">
+  <div class="braemar card">
     Event: Braemar
     <p>PR: {{this.hiScore.topAttempt}}</p>
   </div>

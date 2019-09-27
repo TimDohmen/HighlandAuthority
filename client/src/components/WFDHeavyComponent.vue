@@ -1,5 +1,5 @@
 <template>
-  <div class="WFDHeavy">
+  <div class="WFDHeavy card">
     Event: W4D Heavy
     <p>PR: {{this.hiScore.topAttempt}}</p>
   </div>
