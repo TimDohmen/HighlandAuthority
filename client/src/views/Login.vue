@@ -378,4 +378,8 @@
   .action {
     cursor: pointer;
   }
+  .action:hover {
+    text-decoration: underline;
+    color: blue;
+  }
 </style>
