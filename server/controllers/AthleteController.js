@@ -95,7 +95,7 @@ export default class AthleteController {
   // }
   async getAthleteByUserId(req, res, next) {
     try {
-      let data = await _as.findOne({ userId: req.params.id }).populate('userId', 'picture')
+      let data = await _as.findOne({ userId: req.params.userId }).populate('userId', 'name')
       return res.send(data)
     } catch (error) {
       next(error)

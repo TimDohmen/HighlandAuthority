@@ -53,9 +53,7 @@ export default {
   props: [],
   methods: {
     getSearchedProfile() {
-      this.$store.dispatch("getSearchedProfile", {
-        userId: this.$route.params.userId
-      });
+      this.$store.dispatch("getSearchedProfile", this.$route.params.userId);
     }
   },
   components: { PR, history }

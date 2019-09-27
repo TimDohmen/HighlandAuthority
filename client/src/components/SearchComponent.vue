@@ -1,5 +1,5 @@
 <template>
-  <div class="user">
+  <div class="user" @click="selectAthlete(userProp._id)">
     <div class="card mb-3" style="max-width: 540px;">
       <div class="row no-gutters">
         <div class="col-md-4">
@@ -7,7 +7,8 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">{{userProp.users.name}}</h5>
+            <h5 class="card-title">{{userProp.name}}</h5>
+            <img :src="userProp.photo" alt />
           </div>
         </div>
       </div>
@@ -17,6 +18,7 @@
 
 
 <script>
+import router from "../router";
 export default {
   name: "user",
   props: ["userProp"],
@@ -31,6 +33,10 @@ export default {
   methods: {
     user() {
       return this.$store.state.searchResults;
+    },
+    selectAthlete(payload) {
+      debugger;
+      router.push({ path: `/profile/` + payload });
     }
   },
   components: {}
@@ -39,4 +45,8 @@ export default {
 
 
 <style scoped>
+img {
+  height: 125px;
+  width: 125px;
+}
 </style>
