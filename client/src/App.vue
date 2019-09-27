@@ -58,6 +58,8 @@ export default {
   methods: {
     Logout() {
       this.$store.dispatch("logout");
+      // get rid of access to old data on screen when loggin out by refreshing
+      location.reload();
     },
     searchUsers() {
       this.$store.dispatch("findUserByName", this.query);
