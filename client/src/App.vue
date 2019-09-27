@@ -16,7 +16,7 @@
         <div class="col-sm-4 col-md-4 m-auto">
           <!-- <router-link to="/login" class="btn btn-light m-1">Info</router-link> -->
           <router-link to="/profile" class="btn btn-light m-1">Home</router-link>
-          <button class="btn btn-danger" @click="Logout()">Logout</button>
+          <button class="btn btn-danger ml-2" @click="Logout()">Logout</button>
           <form>
             <div class="input-group">
               <input
