@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <!-- Login Section -->
     <Section class="row">
-      <div class="col-12">
+      <div class="col-12 mt-3">
         <div class="login">
           <form v-if="loginForm" @submit.prevent="loginUser">
             <input type="email" v-model="creds.email" placeholder="email" />
@@ -377,5 +377,9 @@
 <style>
   .action {
     cursor: pointer;
+  }
+  .action:hover {
+    text-decoration: underline;
+    color: blue;
   }
 </style>

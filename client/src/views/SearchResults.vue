@@ -1,5 +1,5 @@
 <template>
-  <div class="searchResults bg-dark green-bg m-5">
+  <div class="searchResults green-bg m-5">
     <h2 class="text-align-center card-header bg-light mb-4 mt-4">
       <hr />Athletes Profile
       <hr />
@@ -38,9 +38,12 @@ export default {
 .db-border {
   border-width: 5px;
   border-style: double;
-  /* opacity: 0.9; */
+  opacity: 1;
 }
 .green-bg {
-  background-image: url(https://bloximages.chicago2.vip.townnews.com/murrayledger.com/content/tncms/assets/v3/editorial/9/3b/93bd2f6e-5f84-11e0-8d78-001cc4c03286/4d9b124058d8f.image.jpg?resize=400%2C395);
+  /* background-image: url(http://bgfons.com/uploads/iron/iron_texture74.jpg); */
+  /* background-color; */
+  z-index: 0.5;
+  opacity: 0.9;
 }
 </style>
