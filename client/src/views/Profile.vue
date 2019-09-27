@@ -50,9 +50,6 @@ import history from "../components/HistoryComponent";
 export default {
   name: "profile",
   mounted() {
-    if (!this.authenticated) {
-      this.$router.replace({ name: "login" });
-    }
     this.$store.dispatch("getAllProfiles");
     this.getMyProfile();
   },

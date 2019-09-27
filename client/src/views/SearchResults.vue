@@ -1,6 +1,6 @@
 <template>
   <div class="searchResults green-bg m-5">
-    <h2 class="text-align-center card-header bg-light mb-4 mt-4">
+    <h2 class="text-align-center card-header bg-light mb-4 mt-4 db-border">
       <hr />Athletes Profile
       <hr />
     </h2>
