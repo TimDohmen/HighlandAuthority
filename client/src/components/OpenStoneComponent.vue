@@ -1,5 +1,5 @@
 <template>
-  <div class="openStone">
+  <div class="openStone card">
     Event: Open Stone
     <p>PR: {{this.hiStoneScore.topAttempt}}</p>
   </div>

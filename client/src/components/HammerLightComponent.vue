@@ -1,5 +1,5 @@
 <template>
-  <div class="hammerLight">
+  <div class="hammerLight card">
     Event: Hammer Light
     <p>PR: {{this.hiScore.topAttempt}}</p>
   </div>
