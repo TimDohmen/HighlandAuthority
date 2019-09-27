@@ -2,49 +2,41 @@
   <div id="app">
     <div class="container-fluid">
       <div id="nav" class="row p-2">
-        <div class="row m-4">
-          <div class="col-2">
-            <img
-              src="https://www.spokanehighlandgames.net/uploads/1/0/3/2/103286654/male-athlete_1_orig.png"
-              alt="Strongman"
-              class="img-size"
-            />
-          </div>
-          <div class="col-6 d-flex align-items-center">
-            <h1 class="title">Highland Authority</h1>
-          </div>
+        <div class="col-sm-2 col-md-2">
+          <img
+            src="https://www.spokanehighlandgames.net/uploads/1/0/3/2/103286654/male-athlete_1_orig.png"
+            alt="Strongman"
+            class="img-size"
+          />
+        </div>
+        <div class="col-sm-6 col-md-6 d-flex align-items-center">
+          <h1 class="title">Highland Authority</h1>
+        </div>
 
-          <div class="offset-9 col-sm-4 col-md-4">
-            <!-- <router-link to="/login" class="btn btn-light m-1">Info</router-link> -->
-            <router-link to="/profile" class="btn btn-light m-1">Home</router-link>
-            <button class="btn btn-danger" @click="Logout()">Logout</button>
-          </div>
-
-          <!-- <div class="row p-2"> -->
-          <!-- <div class="col-sm-8"></div> -->
-          <div class="offset-sm-4 col-sm-3 offset-md-9 col-md-4">
-            <form action>
-              <div class="input-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Search Athletes..."
-                  v-model="query"
-                />
-                <div class="input-group-append">
-                  <button
-                    class="btn btn-success"
-                    type="submit"
-                    @click="searchUsers()"
-                    id="search"
-                  >Search</button>
-                </div>
+        <div class="col-sm-4 col-md-4 m-auto">
+          <!-- <router-link to="/login" class="btn btn-light m-1">Info</router-link> -->
+          <router-link to="/profile" class="btn btn-light m-1">Home</router-link>
+          <button class="btn btn-danger" @click="Logout()">Logout</button>
+          <form>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search Athletes..."
+                v-model="query"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-success"
+                  type="submit"
+                  @click="searchUsers()"
+                  id="search"
+                >Search</button>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
-      <!-- </div> -->
       <router-view />
     </div>
   </div>
@@ -92,7 +84,8 @@ export default {
   color: black;
 }
 .img-size {
-  max-width: 100%;
+  height: 200px;
+  width: 160px;
 }
 .title {
   font-family: "IM Fell English SC", serif;
