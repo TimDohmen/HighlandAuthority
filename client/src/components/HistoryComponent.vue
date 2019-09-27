@@ -1,7 +1,10 @@
 <template>
   <div class="history">
-    Event: {{this.scores[0].eventName}}
-    <historyScore v-for="score in scores" :scoreProp="score" :key="score._id" />
+    <p @click="showHistory = !showHistory">History</p>
+    <div v-if="showHistory">
+      Event: {{this.scores[0].eventName}}
+      <historyScore v-for="score in scores" :scoreProp="score" :key="score._id" />
+    </div>
   </div>
 </template>
 
@@ -12,7 +15,9 @@ export default {
   name: "history",
   mounted() {},
   data() {
-    return {};
+    return {
+      showHistory: false
+    };
   },
   computed: {
     scores() {
@@ -26,4 +31,7 @@ export default {
 
 
 <style scoped>
+p:hover {
+  cursor: pointer;
+}
 </style>
