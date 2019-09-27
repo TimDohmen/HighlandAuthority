@@ -16,8 +16,8 @@
 
           <div class="offset-9 col-sm-4 col-md-4">
             <!-- <router-link to="/login" class="btn btn-light m-1">Info</router-link> -->
-            <router-link to="/profile" class="btn btn-light m-1">Home</router-link>
-            <button class="btn btn-danger" @click="Logout()">Logout</button>
+            <router-link to="/profile" class="btn my-btn m-1">Home</router-link>
+            <button class="btn my-btn" @click="Logout()">Logout</button>
           </div>
 
           <!-- <div class="row p-2"> -->
@@ -32,12 +32,7 @@
                   v-model="query"
                 />
                 <div class="input-group-append">
-                  <button
-                    class="btn btn-success"
-                    type="submit"
-                    @click="searchUsers()"
-                    id="search"
-                  >Search</button>
+                  <button class="btn my-btn" type="submit" @click="searchUsers()" id="search">Search</button>
                 </div>
               </div>
             </form>
@@ -71,7 +66,7 @@ export default {
 </script>
 
 <style>
-button {
+.my-btn {
   background: #1aab8a;
   color: #fff;
   border: none;
@@ -83,12 +78,12 @@ button {
   transition: 800ms ease all;
   outline: none;
 }
-button:hover {
+.my-btn:hover {
   background: #fff;
   color: #1aab8a;
 }
-button:before,
-button:after {
+.my-btn:before,
+.my-btn:after {
   content: "";
   position: absolute;
   top: 0;
@@ -98,14 +93,14 @@ button:after {
   background: #1aab8a;
   transition: 400ms ease all;
 }
-button:after {
+.my-btn:after {
   right: inherit;
   top: inherit;
   left: 0;
   bottom: 0;
 }
-button:hover:before,
-button:hover:after {
+.my-btn:hover:before,
+.my-btn:hover:after {
   width: 100%;
   transition: 800ms ease all;
 }
