@@ -10,11 +10,11 @@ export default class ScoreController {
 
   constructor() {
     this.router = express.Router()
-      .use(Authorize.authenticated)
       .get('', this.getAll)
       .get('/:id/find', this.getByQuery)
       // .get('/:id', this.getByQuery)
       .get('/:id/findAll', this.getAllByQuery)
+      .use(Authorize.authenticated)
 
       .post('', this.create)
       .put('/:id', this.edit)
