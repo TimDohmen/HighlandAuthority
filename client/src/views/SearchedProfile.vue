@@ -42,9 +42,6 @@ import history from "../components/HistoryComponent";
 export default {
   name: "profileSearched",
   mounted() {
-    if (!this.authenticated) {
-      this.$router.replace({ name: "login" });
-    }
     // this.$store.dispatch("getAllProfiles");
     this.getSearchedProfile();
   },
