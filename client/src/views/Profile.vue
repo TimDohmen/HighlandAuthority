@@ -28,13 +28,13 @@
     <!-- Start of Bio/Location/Phone -->
     <hr />
     <div class="row">
-      <div class="col-sm-12 col-md-4">
+      <div class="col-sm-12 col-md-4 card justify-content-center">
         <h4>Bio: {{profile.bio}}</h4>
       </div>
-      <div class="col-sm-12 col-md-4">
+      <div class="col-sm-12 col-md-4 card justify-content-center">
         <h4>Location: {{profile.location}}</h4>
       </div>
-      <div class="col-sm-12 col-md-4">
+      <div class="col-sm-12 col-md-4 card justify-content-center">
         <h4>Phone #: {{profile.phone}}</h4>
       </div>
     </div>
@@ -75,5 +75,8 @@ export default {
 img {
   height: 225px;
   width: 225px;
+}
+.card {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 </style>
