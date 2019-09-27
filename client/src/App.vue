@@ -1,48 +1,63 @@
 <template>
   <div id="app">
-    <div id="nav" class="row p-2">
-      <div class="col-sm-8"></div>
-      <div class="col-sm-4 col-md-4">
-        <router-link to="/login" class="mr-3">Info</router-link>
-        <router-link to="/profile" class="mr-3">Home</router-link>
-        <button class="btn btn-danger" @click="Logout()">Logout</button>
+    <div class="container-fluid">
+      <div id="nav" class="row p-2">
+        <div class="row">
+          <div class="col">
+            <img
+              src="https://www.spokanehighlandgames.net/uploads/1/0/3/2/103286654/male-athlete_1_orig.png"
+              alt="Strongman"
+              class="img-size"
+            />
+          </div>
+          <div class="col-6 d-flex align-items-center">
+            <h1 class="title">Highland Authority</h1>
+          </div>
+        </div>
+
+        <div class="col-sm-8"></div>
+        <div class="offset-9 col-sm-4 col-md-4">
+          <router-link to="/login" class="btn btn-light m-1">Info</router-link>
+          <router-link to="/profile" class="btn btn-light m-1">Home</router-link>
+          <button class="btn btn-danger" @click="Logout()">Logout</button>
+        </div>
       </div>
-    </div>
-    <div class="row p-2">
-      <div class="col-sm-8"></div>
-      <div class="col-sm-3 col-md-4">
-          <div class="input-group" >
-            <input type="text" class="form-control" placeholder="Search..." v-model="query"/>
-            <div class="input-group-append">
-              <button class="btn btn-outline-success" type="submit" @click="searchUsers()" id="search">Go</button>
+
+      <div class="row p-2">
+        <div class="col-sm-8"></div>
+        <div class="col-sm-3 col-md-4">
+          <form action>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search..." v-model="query" />
+              <div class="input-group-append">
+                <button class="btn btn-success" type="submit" @click="searchUsers()" id="search">Go</button>
+              </div>
             </div>
-         </div>
+          </form>
+        </div>
       </div>
+      <router-view />
     </div>
-    <router-view />
   </div>
 </template>
 
 <script>
 export default {
   name: "App",
-  data(){
+  data() {
     return {
-      query: "",
-    }
+      query: ""
+    };
   },
-  computed: {
-    
-  },
+  computed: {},
   methods: {
     Logout() {
       this.$store.dispatch("logout");
     },
-    searchUsers(){
-      this.$store.dispatch('findUserByName',this.query)
+    searchUsers() {
+      this.$store.dispatch("findUserByName", this.query);
     }
-  },
-    
+  }
 };
 </script>
 
@@ -66,5 +81,12 @@ export default {
 
 #nav a.router-link-exact-active {
   color: black;
+}
+.img-size {
+  max-width: 25%;
+}
+.title {
+  font-family: "IM Fell English SC", serif;
+  text-shadow: 2px 2px 8px white;
 }
 </style>
