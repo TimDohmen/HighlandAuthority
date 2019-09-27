@@ -17,7 +17,7 @@
 
         <div class="col-sm-8"></div>
         <div class="offset-9 col-sm-4 col-md-4">
-          <router-link to="/login" class="btn btn-light m-1">Info</router-link>
+          <!-- <router-link to="/login" class="btn btn-light m-1">Info</router-link> -->
           <router-link to="/profile" class="btn btn-light m-1">Home</router-link>
           <button class="btn btn-danger" @click="Logout()">Logout</button>
         </div>
