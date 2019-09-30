@@ -6,9 +6,9 @@
         <img :src="profile.picture" class="card-img-top border rounded m-auto img-fluid" />
         <div class="card-body">
           <h3 class="displayRole">{{user.name}}</h3>
-          <i v-if="user.role == 'Admin'" class="ra ra-shield ra-2x"></i>
-          <i v-if="user.role == 'Athlete'" class="ra ra-muscle-fat ra-2x"></i>
-          <i v-if="user.role == 'Judge'" class="ra ra-gavel ra-2x"></i>
+          <i v-if="user.role == 'Admin'" class="ra ra-shield ra-2x ml-1"></i>
+          <i v-if="user.role == 'Athlete'" class="ra ra-muscle-fat ra-2x ml-1"></i>
+          <i v-if="user.role == 'Judge'" class="ra ra-gavel ra-2x ml-1"></i>
           <h6>Nickname: {{profile.nickname}}</h6>
           <h6>Class: {{profile.class}}</h6>
         </div>
