@@ -5,7 +5,10 @@
       <div class="card col-sm-12 col-md-3 text-left">
         <img :src="profile.picture" class="card-img-top border rounded m-auto img-fluid" />
         <div class="card-body">
-          <h3>{{profile.userId.name}}</h3>
+          <h3 class="displayRole">{{profile.userId.name}}</h3>
+          <i v-if="profile.userId.role == 'Admin'" class="ra ra-shield ra-2x ml-1"></i>
+          <i v-if="profile.userId.role == 'Athlete'" class="ra ra-muscle-fat ra-2x ml-1"></i>
+          <i v-if="profile.userId.role == 'Judge'" class="ra ra-gavel ra-2x ml-1"></i>
           <h6>Nickname: {{profile.nickname}}</h6>
           <h6>Class: {{profile.class}}</h6>
         </div>
@@ -113,5 +116,8 @@ img {
 }
 .card {
   background-color: rgba(255, 255, 255, 0.8);
+}
+.displayRole {
+  display: inline;
 }
 </style>
