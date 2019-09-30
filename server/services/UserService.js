@@ -12,7 +12,7 @@ let _schema = new Schema({
   //every email must be unique on the database
   email: { type: String, required: true, unique: true },
   hash: { type: String, required: true },
-  role: { type: String, enum: ["Athlete", "Judge", "Admin"], default: "athlete" }
+  role: { type: String, enum: ["Athlete", "Judge", "Admin"], default: "Athlete" }
 }, { timestamps: true })
 
 //schema.methods are used to add a method to a Model instance
