@@ -10,13 +10,37 @@
           <h6>Class: {{profile.class}}</h6>
         </div>
         <div v-if="user.role=='admin'">
-          <input type="checkbox" aria-label="Checkbox for following text input" /> Athlete
-        </div>
-        <div v-if="user.role=='admin'">
-          <input type="checkbox" aria-label="Checkbox for following text input" /> Judge
-        </div>
-        <div v-if="user.role=='admin'">
-          <input type="checkbox" aria-label="Checkbox for following text input" /> Admin
+          Role: {{profile.userId.role}}
+          <div v-if="user.role=='admin' && profile.userId.role!='athlete'">
+            <input
+              type="radio"
+              aria-label="Checkbox for following text input"
+              name="role"
+              v-model="athlete"
+              id="athleteButton"
+              @click="setRole('athlete')"
+            /> Athlete
+          </div>
+          <div v-if="user.role=='admin' && profile.userId.role!='judge'">
+            <input
+              type="radio"
+              aria-label="Checkbox for following text input"
+              v-model="judge"
+              name="role"
+              id="judgeButton"
+              @click="setRole('judge')"
+            /> Judge
+          </div>
+          <div v-if="user.role=='admin' && profile.userId.role!='admin'">
+            <input
+              type="radio"
+              aria-label="Checkbox for following text input"
+              v-model="admin"
+              name="role"
+              id="adminButton"
+              @click="setRole('admin')"
+            /> Admin
+          </div>
         </div>
       </div>
     </div>
@@ -66,6 +90,16 @@ export default {
   methods: {
     getSearchedProfile() {
       this.$store.dispatch("getSearchedProfile", this.$route.params.userId);
+    },
+    setRole(role) {
+      this.$store.dispatch("setRole", {
+        _id: this.profile.userId._id,
+        role: role
+      });
+      this.getSearchedProfile();
+      document.querySelectorAll("input").forEach(v => {
+        v.checked = false;
+      });
     }
   },
   components: { PR, history }

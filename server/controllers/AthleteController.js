@@ -32,7 +32,7 @@ export default class AthleteController {
 
   async getAll(req, res, next) {
     try {
-      let data = await _as.find({}).populate('userId', 'name')
+      let data = await _as.find({}).populate('userId', 'name', 'role')
       return res.send(data)
     } catch (error) {
       next(error)
@@ -95,7 +95,7 @@ export default class AthleteController {
   // }
   async getAthleteByUserId(req, res, next) {
     try {
-      let data = await _as.findOne({ userId: req.params.userId }).populate('userId', 'name')
+      let data = await _as.findOne({ userId: req.params.userId }).populate('userId', 'name role')
       return res.send(data)
     } catch (error) {
       next(error)
