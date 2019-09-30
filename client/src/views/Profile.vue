@@ -14,6 +14,7 @@
           data-toggle="modal"
           data-target="#Edit-Profile-Modal"
         >Edit</button>
+
         <EditProfileModal />
       </div>
     </div>

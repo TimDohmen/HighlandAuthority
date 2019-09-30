@@ -98,6 +98,38 @@
               </div>
             </div>
             <!-- End of Classes Dropdown -->
+            <!--FIXME  Reset Password -->
+            <hr />
+            <div class="form-group">
+              <label for="password">New Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Enter in a new Password"
+                v-model="userEdit.password"
+              />
+              <label for="confirm-password">confirm Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="confirm-password"
+                placeholder="Enter in a new Password"
+                v-model="userEdit.password"
+              />
+            </div>
+            <hr />
+            <div class="form-group">
+              <input
+                type="button"
+                @click="resetPassword"
+                value="Reset Password"
+                class="btn btn-danger"
+              />
+            </div>
+            <hr />
+            <!-- END OF RESET -->
+
             <button v-if="profile._id" type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
@@ -258,6 +290,7 @@ export default {
       // this.newEdit = {};
       $("#close").click();
     },
+
     createProfile() {
       this.$store.dispatch("createProfile", {
         nickname: this.newEdit.nickname,
@@ -270,6 +303,29 @@ export default {
       });
       // this.newEdit = {};
       $("#close").click();
+    },
+
+    editUser() {
+      this.$store.dispatch("editUser", {
+        _id: this.profile._id,
+        password: this.newEdit.password
+      });
+      // this.newEdit = {};
+      $("#close").click();
+    },
+
+    //FIXME  Reset Password
+    resetPassword() {
+      const auth = fb.auth();
+
+      auth
+        .sendPasswordResetEmail(auth.user.email)
+        .then(() => {
+          console.log("Email sent");
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   }
 };
