@@ -297,6 +297,13 @@ export default new Vuex.Store({
       try {
         let res = await api.post("games", payload)
         window.alert("Game created")
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async getGames({ commit, dispatch }) {
+      try {
+        let res = await api.get("games")
         commit("setGames", res.data)
       } catch (error) {
         console.error(error)

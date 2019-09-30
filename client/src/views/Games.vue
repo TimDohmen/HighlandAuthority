@@ -37,12 +37,16 @@
           <button type="submit" class="btn btn-primary mb-2">Submit</button>
         </form>
       </div>
+      <div class="row">
+        <CreatedGames v-for="game in games" :key="game._id" :gameProp="game" />
+      </div>
     </div>
   </div>
 </template>
 
 
 <script>
+import CreatedGames from "../components/CreatedGames";
 export default {
   name: "games",
   data() {
@@ -50,9 +54,15 @@ export default {
       newGame: {}
     };
   },
+  mounted() {
+    this.getGames();
+  },
   computed: {
     user() {
       return this.$store.state.user;
+    },
+    games() {
+      return this.$store.state.games;
     }
   },
   methods: {
@@ -63,9 +73,12 @@ export default {
         location: this.newGame.location,
         date: this.newGame.date
       });
+    },
+    getGames() {
+      this.$store.dispatch("getGames");
     }
   },
-  components: {}
+  components: { CreatedGames }
 };
 </script>
 
