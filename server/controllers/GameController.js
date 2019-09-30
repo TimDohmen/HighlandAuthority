@@ -8,7 +8,8 @@ let _gameService = new GameService().repository
 export default class GameController {
   constructor() {
     this.router = express.Router()
-      .use(Authorize.authenticated)
+      // .use(Authorize.authenticated)
+      .use(Authorize.adminAuthenticated)
       .get('', this.getAll)
       .get('/:id', this.getById)
 

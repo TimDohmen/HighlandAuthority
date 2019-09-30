@@ -17,7 +17,7 @@
           data-toggle="modal"
           data-target="#Edit-Profile-Modal"
         >Edit</button>
-        <router-link v-if="user.role!='athlete'" to="/games" class="btn btn-light m-1">Admin Page</router-link>
+        <router-link v-if="user.role!='Athlete'" to="/games" class="btn btn-light m-1">Admin Page</router-link>
 
         <EditProfileModal />
       </div>
