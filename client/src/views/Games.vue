@@ -1,6 +1,6 @@
 <template>
   <div class="games container-fluid">
-    <div class="row">
+    <div class="row mt-2">
       <div class="col-12">
         <form @submit.prevent="createGame()">
           <h1>Games Creator</h1>
@@ -78,5 +78,8 @@ form {
 .form-group {
   text-align: left;
   padding: 5px 10px 5px 10px;
+}
+h1 {
+  font-family: "IM Fell English SC", serif;
 }
 </style>
