@@ -283,7 +283,6 @@ export default new Vuex.Store({
     //#region Reset Password
 
     async changePassword({ commit, dispatch }, payload) {
-      debugger
       try {
         // let res = await apiUser.put(':id/forgot', payload)
         let res = await apiUser.put(`account/:id/forgot`, payload)

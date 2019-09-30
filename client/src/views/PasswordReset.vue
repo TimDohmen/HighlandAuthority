@@ -5,22 +5,16 @@
         <h1 class="card-header">Reset Password</h1>
         <div class="card-body">
           <h5>Enter in New Password:</h5>
-          <input
-            type="password"
-            placeholder="New Password"
-            id="password"
-            v-model="newEdit.password"
-            required
-          />
+          <input type="password" placeholder="New Password" id="password" required />
           <hr />
-          <!-- <h5>Confirm New Password:</h5>
+          <h5>Confirm New Password:</h5>
           <input
             type="password"
             placeholder="Confirm Password"
             id="confirm_password"
-            v-model="newEdit.confirmPassword"
+            v-model="newEdit.password"
             required
-          />-->
+          />
         </div>
         <div class="card-footer">
           <button type="submit" class="btn btn-outline-success">Confirm</button>
@@ -48,31 +42,27 @@ export default {
   },
   methods: {
     editUser() {
-      this.$store.dispatch("changePassword", {
-        _id: this.user._id,
-        password: this.newEdit.password
-        // hash: this.newEdit.password
-        // _id: this.profile._id,
-      });
-      // this.newEdit = {};
-      this.$router.push({ name: "profile" });
+      if (this.validatePassword()) {
+        this.$store.dispatch("changePassword", {
+          _id: this.user._id,
+          password: this.newEdit.password
+        });
+        this.$router.push({ name: "profile" });
+      }
+    },
+
+    validatePassword() {
+      let password = document.getElementById("password"),
+        confirm_password = document.getElementById("confirm_password");
+      if (password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+      } else {
+        confirm_password.setCustomValidity("");
+        return true;
+      }
+      password.onchange = validatePassword;
+      confirm_password.onkeyup = validatePassword;
     }
-
-    //Validates passwords match
-    // matchingPasswords() {
-    //   let password = document.getElementById("password"),
-    //     confirm_password = document.getElementById("confirm_password");
-
-    //   function validatePassword() {
-    //     if (password.value != confirm_password.value) {
-    //       confirm_password.setCustomValidity("Passwords Don't Match");
-    //     } else {
-    //       confirm_password.setCustomValidity("");
-    //     }
-    //   }
-    //   password.onchange = validatePassword;
-    //   confirm_password.onkeyup = validatePassword;
-    // }
   },
   components: {}
 };
