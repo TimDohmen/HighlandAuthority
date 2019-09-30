@@ -1,7 +1,9 @@
 <template>
-  <div class="CreatedGames col-5 bgGame mx-auto" @click="showButton = !showButton">
-    <h4>{{gameProp.name}}</h4>
-    <h6>Location: {{gameProp.location}} - Date: {{this.gameDate}}</h6>
+  <div class="CreatedGames col-5 bgGame mx-auto">
+    <div @click="showButton = !showButton" class="show">
+      <h4>{{gameProp.name}}</h4>
+      <h6>Location: {{gameProp.location}} - Date: {{this.gameDate}}</h6>
+    </div>
     <div v-if="showButton">
       <button
         class="btn btn-warning"
@@ -42,7 +44,7 @@ export default {
   margin: 5px;
   border-radius: 5px;
 }
-.CreatedGames:hover {
+.show:hover {
   cursor: pointer;
 }
 </style>
