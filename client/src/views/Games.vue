@@ -2,8 +2,8 @@
   <div class="games container-fluid">
     <div class="row">
       <div class="col-12">
-        <h1>Games Creator</h1>
         <form @submit.prevent="createGame()">
+          <h1>Games Creator</h1>
           <div class="form-group">
             <label for="name">Name</label>
             <input
@@ -34,7 +34,7 @@
               v-model="newGame.date"
             />
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary mb-2">Submit</button>
         </form>
       </div>
     </div>
@@ -73,8 +73,10 @@ export default {
 <style scoped>
 form {
   background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
 }
 .form-group {
   text-align: left;
+  padding: 5px 10px 5px 10px;
 }
 </style>
