@@ -15,7 +15,7 @@ export default class ScoreController {
       // .get('/:id', this.getByQuery)
       .get('/:id/findAll', this.getAllByQuery)
       .use(Authorize.authenticated)
-      .use(Authorize.adminAuthenticated)
+      // .use(Authorize.adminAuthenticated)
 
       .post('', this.create)
       .put('/:id', this.edit)

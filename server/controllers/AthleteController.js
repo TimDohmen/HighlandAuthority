@@ -9,7 +9,7 @@ let _us = new UserService().repository
 export default class AthleteController {
   constructor() {
     this.router = express.Router()
-      .use('', this.myDebug)
+      // .use('', this.myDebug)
       .get('', this.getAll)
       .get('/find', this.findAthleteByQuery)
       // .get('/:id', this.getById)

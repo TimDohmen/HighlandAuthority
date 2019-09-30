@@ -96,42 +96,24 @@
               <div class="input-group-append">
                 <label class="input-group-text" for="inputGroupSelect02">Classes</label>
               </div>
-              <u>Reset Password</u>
             </div>
             <!-- End of Classes Dropdown -->
-            <!--FIXME  Reset Password -->
-            <hr />
-            <!-- <div class="form-group">
-              <label for="password">New Password:</label>
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Enter in a new Password"
-                v-model="userEdit.password"
-              />
-              <label for="confirm-password">confirm Password:</label>
-              <input
-                type="password"
-                class="form-control"
-                id="confirm-password"
-                placeholder="Enter in a new Password"
-                v-model="userEdit.password"
-              />
-            </div>
-            <hr />
-            <div class="form-group">
-              <input
-                type="button"
-                @click="resetPassword"
-                value="Reset Password"
-                class="btn btn-danger"
-              />
-            </div>
-            <hr />-->
-            <!-- END OF RESET -->
 
-            <button v-if="profile._id" type="submit" class="btn btn-primary">Submit</button>
+            <div class="modal-footer">
+              <!--FIXME  Reset Password -->
+              <div class="form-group d-flex align-item-center">
+                <hr />
+                <input
+                  type="button"
+                  @click="resetPassword"
+                  value="Reset Password"
+                  class="btn btn-danger"
+                />
+                <hr />
+              </div>
+              <!-- END OF RESET -->
+              <button v-if="profile._id" type="submit" class="btn btn-primary">Submit</button>
+            </div>
           </form>
         </div>
         <!-- end of modal body -->
@@ -139,7 +121,7 @@
           <button
             id="close"
             type="button"
-            class="btn btn-outline-danger"
+            class="btn btn-outline-danger float-right"
             data-dismiss="modal"
           >Cancel</button>
         </div>
@@ -306,27 +288,10 @@ export default {
       $("#close").click();
     },
 
-    editUser() {
-      this.$store.dispatch("editUser", {
-        _id: this.profile._id,
-        password: this.newEdit.password
-      });
-      // this.newEdit = {};
-      $("#close").click();
-    },
-
     //FIXME  Reset Password
     resetPassword() {
-      const auth = fb.auth();
-
-      auth
-        .sendPasswordResetEmail(auth.user.email)
-        .then(() => {
-          console.log("Email sent");
-        })
-        .catch(error => {
-          console.log(error);
-        });
+      this.$router.push({ name: "forgot" });
+      $("#close").click();
     }
   }
 };
