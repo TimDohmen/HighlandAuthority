@@ -11,6 +11,7 @@ export default class GameController {
       .use(Authorize.authenticated)
       .get('', this.getAll)
       .get('/:id', this.getById)
+
       .post('', this.create)
       .put('/:id', this.edit)
       .delete('/:id', this.delete)

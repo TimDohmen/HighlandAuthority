@@ -9,6 +9,30 @@
           <h6>Nickname: {{profile.nickname}}</h6>
           <h6>Class: {{profile.class}}</h6>
         </div>
+        <div v-if="user.role=='admin'">
+          <input
+            type="checkbox"
+            aria-label="Checkbox for following text input"
+            v-model="athlete"
+            @click="setRole('athlete')"
+          /> Athlete
+        </div>
+        <div v-if="user.role=='admin'">
+          <input
+            type="checkbox"
+            aria-label="Checkbox for following text input"
+            v-model="judge"
+            @click="setRole('judge')"
+          /> Judge
+        </div>
+        <div v-if="user.role=='admin'">
+          <input
+            type="checkbox"
+            aria-label="Checkbox for following text input"
+            v-model="admin"
+            @click="setRole('admin')"
+          /> Admin
+        </div>
       </div>
     </div>
     <!-- End of Profile Card -->
@@ -48,12 +72,21 @@ export default {
   computed: {
     profile() {
       return this.$store.state.activeProfile;
+    },
+    user() {
+      return this.$store.state.user;
     }
   },
   props: [],
   methods: {
     getSearchedProfile() {
       this.$store.dispatch("getSearchedProfile", this.$route.params.userId);
+    },
+    setRole(role) {
+      this.$store.dispatch("setRole", {
+        _id: this.profile.userId._id,
+        role: role
+      });
     }
   },
   components: { PR, history }

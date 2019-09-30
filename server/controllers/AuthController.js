@@ -11,6 +11,9 @@ export default class AuthController {
             .post('/login', this.login)
             .use(Authorize.authenticated)
             .get('/authenticate', this.authenticate)
+            .get('/adminAuthenticate', this.adminAuthenticate)
+            .put('/:id', this.editRole)
+
             .delete('/logout', this.logout)
             .use(this.defaultRoute)
     }
@@ -18,6 +21,23 @@ export default class AuthController {
     defaultRoute(req, res, next) {
         next({ status: 404, message: 'No Such Route' })
     }
+
+    async editRole(req, res, next) {
+        try {
+            let data = await _userService.findByIdAndUpdate({ _id: req.body._id }, req.body, { new: true })
+            if (data) {
+                return res.send(data)
+            }
+            throw new Error("invalid role to update")
+        } catch (error) {
+            next(error)
+
+        }
+    }
+
+
+
+
     async register(req, res, next) {
         //VALIDATE PASSWORD LENGTH
         if (req.body.password.length < 6) {
@@ -79,7 +99,22 @@ export default class AuthController {
             res.status(500).send(err)
         }
     }
-
+    async adminAuthenticate(req, res, next) {
+        try {
+            let user = await _userService.findOne({ _id: req.session.uid, role: "admin" })
+            if (!user) {
+                return res.status(401).send({
+                    error: 'Please contact admin or judge'
+                })
+            }
+            delete user._doc.hash
+            res.send(user)
+        }
+        catch (err) {
+            console.error(err)
+            res.status(500).send(err)
+        }
+    }
     async logout(req, res, next) {
         try {
             req.session.destroy(err => {

@@ -14,7 +14,11 @@ let api = Axios.create({
   timeout: 3000,
   withCredentials: true
 })
-
+let apiUser = Axios.create({
+  baseURL: base,
+  timeout: 3000,
+  withCredentials: true
+})
 export default new Vuex.Store({
   state: {
     user: {},
@@ -281,7 +285,27 @@ export default new Vuex.Store({
       } catch (error) {
         console.error(error)
       }
+    },
+    //#endregion
+
+    //#region Games
+    async createGame({ commit, dispatch }, payload) {
+      try {
+        let res = await api.post("games", payload)
+        window.alert("Game created")
+      } catch (error) {
+        console.error(error)
+      }
+    },
+
+    async setRole({ commit, dispatch }, payload) {
+      try {
+        let res = await apiUser.put(`account/${payload._id}`, payload)
+      } catch (error) {
+
+      }
     }
+
     //#endregion
   }
 })

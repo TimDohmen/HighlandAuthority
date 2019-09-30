@@ -10,10 +10,11 @@
           <h6>Class: {{profile.class}}</h6>
         </div>
         <button
-          class="btn btn-outline-warning"
+          class="btn btn-outline-warning mb-2"
           data-toggle="modal"
           data-target="#Edit-Profile-Modal"
         >Edit</button>
+        <router-link v-if="user.role!='athlete'" to="/games" class="btn btn-light m-1">Admin Page</router-link>
 
         <EditProfileModal />
       </div>
