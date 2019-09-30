@@ -12,7 +12,7 @@ export default class AuthController {
             .post('/login', this.login)
             .use(Authorize.authenticated)
             .get('/authenticate', this.authenticate)
-            .get('/adminAuthenticate', this.adminAuthenticate)
+            // .get('/adminAuthenticate', this.adminAuthenticate)
             .put('/:id', this.editRole)
             //FIXME Change Password
             .put('/:id/forgot', this.changePassword)

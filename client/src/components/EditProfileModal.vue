@@ -96,29 +96,24 @@
               <div class="input-group-append">
                 <label class="input-group-text" for="inputGroupSelect02">Classes</label>
               </div>
-              <u>Reset Password</u>
             </div>
             <!-- End of Classes Dropdown -->
 
-            <button v-if="profile._id" type="submit" class="btn btn-primary">Submit</button>
-          </form>
-          <div class="modal-footer">
-            <!--FIXME  Reset Password -->
-            <div class="form-group d-flex align-item-center">
-              <hr />
-              <input
-                type="button"
-                @click="resetPassword"
-                value="Reset Password"
-                class="btn btn-danger"
-              />
-              <hr />
+            <div class="modal-footer">
+              <!--FIXME  Reset Password -->
+              <div class="form-group d-flex align-item-center">
+                <hr />
+                <input
+                  type="button"
+                  @click="resetPassword"
+                  value="Reset Password"
+                  class="btn btn-danger"
+                />
+                <hr />
+              </div>
               <!-- END OF RESET -->
+              <button v-if="profile._id" type="submit" class="btn btn-primary">Submit</button>
             </div>
-            <hr />-->
-            <!-- END OF RESET -->
-
-            <button v-if="profile._id" type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
         <!-- end of modal body -->
