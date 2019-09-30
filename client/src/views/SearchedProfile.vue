@@ -9,36 +9,36 @@
           <h6>Nickname: {{profile.nickname}}</h6>
           <h6>Class: {{profile.class}}</h6>
         </div>
-        <div v-if="user.role=='admin'">
+        <div v-if="user.role=='Admin'">
           Role: {{profile.userId.role}}
-          <div v-if="user.role=='admin' && profile.userId.role!='athlete'">
+          <div v-if="user.role=='Admin' && profile.userId.role!='Athlete'">
             <input
               type="radio"
               aria-label="Checkbox for following text input"
               name="role"
-              v-model="athlete"
+              v-model="Athlete"
               id="athleteButton"
-              @click="setRole('athlete')"
+              @click="setRole('Athlete')"
             /> Athlete
           </div>
-          <div v-if="user.role=='admin' && profile.userId.role!='judge'">
+          <div v-if="user.role=='Admin' && profile.userId.role!='Judge'">
             <input
               type="radio"
               aria-label="Checkbox for following text input"
-              v-model="judge"
+              v-model="Judge"
               name="role"
               id="judgeButton"
-              @click="setRole('judge')"
+              @click="setRole('Judge')"
             /> Judge
           </div>
-          <div v-if="user.role=='admin' && profile.userId.role!='admin'">
+          <div v-if="user.role=='Admin' && profile.userId.role!='Admin'">
             <input
               type="radio"
               aria-label="Checkbox for following text input"
-              v-model="admin"
+              v-model="Admin"
               name="role"
               id="adminButton"
-              @click="setRole('admin')"
+              @click="setRole('Admin')"
             /> Admin
           </div>
         </div>
