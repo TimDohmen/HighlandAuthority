@@ -1,8 +1,7 @@
 <template>
-  <div class="CreatedGames">
-    <div class="col-4">
-      <h1>{{gameProp.name}}</h1>
-    </div>
+  <div class="CreatedGames col-5 bgGame mx-auto">
+    <h4>{{gameProp.name}}</h4>
+    <h6>Location: {{gameProp.location}} - Date: {{this.gameDate}}</h6>
   </div>
 </template>
 
@@ -14,7 +13,12 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    gameDate() {
+      let date = new Date(this.gameProp.date);
+      return date.toLocaleDateString();
+    }
+  },
   methods: {},
   components: {}
 };
@@ -22,4 +26,9 @@ export default {
 
 
 <style scoped>
+.bgGame {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 5px;
+  border-radius: 5px;
+}
 </style>

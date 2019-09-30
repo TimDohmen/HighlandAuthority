@@ -37,9 +37,10 @@
           <button type="submit" class="btn btn-primary mb-2">Submit</button>
         </form>
       </div>
-      <div class="row">
-        <CreatedGames v-for="game in games" :key="game._id" :gameProp="game" />
-      </div>
+    </div>
+    <h1 class="title mt-4">Recent Games</h1>
+    <div class="row mt-2">
+      <CreatedGames v-for="game in games" :key="game._id" :gameProp="game" />
     </div>
   </div>
 </template>
@@ -94,5 +95,9 @@ form {
 }
 h1 {
   font-family: "IM Fell English SC", serif;
+}
+.title {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
 }
 </style>
