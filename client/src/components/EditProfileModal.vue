@@ -96,11 +96,12 @@
               <div class="input-group-append">
                 <label class="input-group-text" for="inputGroupSelect02">Classes</label>
               </div>
+              <u>Reset Password</u>
             </div>
             <!-- End of Classes Dropdown -->
             <!--FIXME  Reset Password -->
             <hr />
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="password">New Password:</label>
               <input
                 type="password"
@@ -127,7 +128,7 @@
                 class="btn btn-danger"
               />
             </div>
-            <hr />
+            <hr />-->
             <!-- END OF RESET -->
 
             <button v-if="profile._id" type="submit" class="btn btn-primary">Submit</button>

@@ -301,6 +301,7 @@ export default new Vuex.Store({
     async setRole({ commit, dispatch }, payload) {
       try {
         let res = await apiUser.put(`account/${payload._id}`, payload)
+
       } catch (error) {
 
       }
