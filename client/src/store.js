@@ -281,7 +281,19 @@ export default new Vuex.Store({
       } catch (error) {
         console.error(error)
       }
+    },
+    //#endregion
+
+    //#region Games
+    async createGame({ commit, dispatch }, payload) {
+      try {
+        let res = await api.post("games", payload)
+        window.alert("Game created")
+      } catch (error) {
+        console.error(error)
+      }
     }
+
     //#endregion
   }
 })
