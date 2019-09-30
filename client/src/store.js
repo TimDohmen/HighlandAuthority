@@ -33,7 +33,8 @@ export default new Vuex.Store({
     hiHammerHScore: {},
     hiHammerLScore: {},
     oneEventScores: [],
-    searchResults: []
+    searchResults: [],
+    games: []
   },
   mutations: {
     setUser(state, user) {
@@ -77,6 +78,9 @@ export default new Vuex.Store({
     },
     setSearchResults(state, payload) {
       state.searchResults = payload
+    },
+    setGames(state, payload) {
+      state.games = payload
     },
     resetState(state, user) {
       state.user = {}
@@ -293,6 +297,7 @@ export default new Vuex.Store({
       try {
         let res = await api.post("games", payload)
         window.alert("Game created")
+        commit("setGames", res.data)
       } catch (error) {
         console.error(error)
       }
