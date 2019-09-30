@@ -15,7 +15,8 @@
             </div>
             <div id="collapseZero" class="collapse" aria-labelledby="headingZero" data-parent="#accordionExample">
               <div class="card-body">
-                <p>The highland games are events held throughout the year in Scotland and other countries as a way of
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJAhRB71QHRmrSYpktxPBpoyYPKrUAiTmwiL1g3f2YxVM4mJ6R4A" alt="Collage-Image">
+                <p class="mt-2">The highland games are events held throughout the year in Scotland and other countries as a way of
                   celebrating Scottish and Celtic culture. They are often in conjunction with festivals and full of rich
                   traditions. In their original form many centuries ago, Highland games revolved around athletic and
                   sports competitions.</p>
@@ -41,11 +42,14 @@
               </h2>
             </div>
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body">This event is similar to the modern-day shot put as seen in the Olympic games.
+              <div class="card-body">
+                <img src="https://s.hdnux.com/photos/45/13/42/9746608/3/360x0.jpg" alt="Collage-Image">
+                <p class="mt-2">This event is similar to the modern-day shot put as seen in the Olympic games.
                 Instead of a steel shot, a large stone of variable weight is often used. There are also some differences
                 from the Olympic shot put in allowable techniques. The “Braemar Stone” uses a 20–26 lb (9-11.7 kg) stone
                 for men. Women us a 13–18 lb (5.89-8.16 kg). Braemar throws do not allow any run up to the toeboard or
-                “trig” to deliver the stone, i.e., it is a standing put with no forward movement.</div>
+                “trig” to deliver the stone, i.e., it is a standing put with no forward movement.</p>
+                </div>
             </div>
           </Section>
           <!-- Card Open Stone -->
@@ -58,7 +62,8 @@
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
               <div class="card-body">
-                <p>This event is similar to the modern-day shot put as seen in the Olympic games. Instead of a steel
+               <img src="http://scottishheavyathletics.com/img/highland/stone_opt.jpg" alt="Collage-Image">
+                <p class="mt-2">This event is similar to the modern-day shot put as seen in the Olympic games. Instead of a steel
                   shot, a large stone of variable weight is often used. There are also some differences from the Olympic
                   shot put in allowable techniques. In the “Open Stone” using a 16–22 lb (7.25 - 9.98 kg) stone for men.
                   Women used an 8–12 lb (3.63 - 5.44 kg) stone. Utilizing the forward section of the trig (7ft 6in x 4ft
@@ -79,7 +84,8 @@
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
               <div class="card-body">
-                <p>The Weight for Distance event consists of a weight made of metal and consist of a spherical or box
+                 <img src="https://www.eveningtelegraph.co.uk/wp-content/uploads/sites/11/2019/08/stuart-anderson-weight-for-distance.jpg" alt="Collage-Image">
+                <p class="mt-2">The Weight for Distance event consists of a weight made of metal and consist of a spherical or box
                   weight with a chain and handle attached. The handle may be a ring, triangle, or a "D" shape. The
                   implement shall not measure more than 18 inches in overall length from the bottom of the weight to the
                   top of the handle. The official weight of each implement is the total weight, including the handle.
@@ -113,7 +119,8 @@
             </div>
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
               <div class="card-body">
-                <p>This event is similar to the hammer throw as seen in modern-day track and field competitions, though
+                <img src="https://www.charlotteobserver.com/news/local/community/lake-norman-mooresville/lr8dh7/picture19209501/alternates/FREE_960/LKN_MPRICE_HIGHLANDGAMES_10.JPG" alt="Collage-Image">
+                <p class="mt-2">This event is similar to the hammer throw as seen in modern-day track and field competitions, though
                   with some differences. In the Scottish event, a round metal ball weighing 16 lb (kg) for light and 22
                   lb
                   (kg) for heavy for the men classes. Women throw a 12 lb (kg) light hammer and 16 lb (kg) heavy hammer.
@@ -138,7 +145,8 @@
             </div>
             <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
               <div class="card-body">
-                <p>The athletes attempts to toss weight with an attached handle over a horizontal bar using only one
+                <img src="https://www.floridamemory.com/fpc/folklife/FS97422.jpg" alt="Collage-Image">
+                <p class="mt-2">The athletes attempts to toss weight with an attached handle over a horizontal bar using only one
                   hand.
                   Each athlete is allowed three attempts at each height. Successful clearance of the height allows the
                   athlete to advance into the next round at a greater height. The competition is determined by the
@@ -166,7 +174,8 @@
             </div>
             <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
               <div class="card-body">
-                <p>The Caber Toss is the signature event of the Highland Games. A Caber (gaelic for "Tree") is a tree
+                <img src="https://www.thesun.co.uk/wp-content/uploads/2018/10/NINTCHDBPICT000424764714.jpg" alt="Collage-Image">
+                <p class="mt-2">The Caber Toss is the signature event of the Highland Games. A Caber (gaelic for "Tree") is a tree
                   that
                   has been cut and trimmed down so one end is slightly wider than the other. It can vary length from 12
                   to
@@ -194,7 +203,8 @@
             </div>
             <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
               <div class="card-body">
-                <p>The sheaf toss is the only "non-traditional" Highland sport event originally contested at country
+                <img src="http://www.gmhg.org/Tossing%20the%20Sheaf/JJS-7873a.jpg" alt="Collage-Image">                
+                <p class="mt-2">The sheaf toss is the only "non-traditional" Highland sport event originally contested at country
                   fairs. A pitchfork is used to hurl a burlap bag stuffed with straw over a horizontal bar above the
                   competitor's head. Typical weight for the bag is 16 lb (kg) for men. Women typically use a 10 lb (kg)
                   bag.
@@ -212,7 +222,8 @@
             </div>
             <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
               <div class="card-body">
-                <p>There are six different grades in bagpiping: V - I (five through one are amateur grades) plus
+                <img src="https://ichef.bbci.co.uk/images/ic/480xn/p01m1rhx.jpg" alt="Collage-Image">                
+                <p class="mt-2">There are six different grades in bagpiping: V - I (five through one are amateur grades) plus
                   "Professional" which is sometimes called "Open." ("Open" competions are open to any grade level of
                   competitor, though lackluster pipers are not expected to subject the judges to a poor standard of
                   play.) Some associations also break grades further into "Juvenile" and "Adult" or "Junior" and
@@ -274,7 +285,8 @@
             </div>
             <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
               <div class="card-body">
-                <p>Irish dance or Irish dancing is a group of traditional dance forms originating from Ireland,
+                <img src="https://mediad.publicbroadcasting.net/p/wmuk/files/styles/x_large/public/201307/AP070317029794.jpg" alt="Collage-Image">                
+                <p class="mt-2">Irish dance or Irish dancing is a group of traditional dance forms originating from Ireland,
                   encompassing dancing both
                   solo and in groups, and dancing for social, competitive, and performance purposes. Irish dance in its
                   current form
@@ -333,5 +345,7 @@ export default {
 
 
 <style scoped>
-
+img{
+height: 200px;
+}
 </style>
