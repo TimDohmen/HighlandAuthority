@@ -50,10 +50,19 @@ export default {
       newGame: {}
     };
   },
-  computed: {},
+  computed: {
+    user() {
+      return this.$store.state.user;
+    }
+  },
   methods: {
     createGame() {
-      this.$store.dispatch("createGame", this.newGame);
+      this.$store.dispatch("createGame", {
+        userId: this.user._id,
+        name: this.newGame.name,
+        location: this.newGame.location,
+        date: this.newGame.date
+      });
     }
   },
   components: {}
