@@ -9,6 +9,15 @@
           <h6>Nickname: {{profile.nickname}}</h6>
           <h6>Class: {{profile.class}}</h6>
         </div>
+        <div v-if="user.role=='admin'">
+          <input type="checkbox" aria-label="Checkbox for following text input" /> Athlete
+        </div>
+        <div v-if="user.role=='admin'">
+          <input type="checkbox" aria-label="Checkbox for following text input" /> Judge
+        </div>
+        <div v-if="user.role=='admin'">
+          <input type="checkbox" aria-label="Checkbox for following text input" /> Admin
+        </div>
       </div>
     </div>
     <!-- End of Profile Card -->
@@ -48,6 +57,9 @@ export default {
   computed: {
     profile() {
       return this.$store.state.activeProfile;
+    },
+    user() {
+      return this.$store.state.user;
     }
   },
   props: [],
