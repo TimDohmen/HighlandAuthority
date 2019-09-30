@@ -11,6 +11,8 @@ export default class AuthController {
             .post('/login', this.login)
             .use(Authorize.authenticated)
             .get('/authenticate', this.authenticate)
+            .get('/adminAuthenticate', this.adminAuthenticate)
+
             .delete('/logout', this.logout)
             .use(this.defaultRoute)
     }
@@ -79,7 +81,22 @@ export default class AuthController {
             res.status(500).send(err)
         }
     }
-
+    async adminAuthenticate(req, res, next) {
+        try {
+            let user = await _userService.findOne({ _id: req.session.uid, role: "admin" })
+            if (!user) {
+                return res.status(401).send({
+                    error: 'Please contact admin or judge'
+                })
+            }
+            delete user._doc.hash
+            res.send(user)
+        }
+        catch (err) {
+            console.error(err)
+            res.status(500).send(err)
+        }
+    }
     async logout(req, res, next) {
         try {
             req.session.destroy(err => {
