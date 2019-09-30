@@ -276,6 +276,25 @@ export default new Vuex.Store({
 
     //#endregion
 
+    //#region Reset Password
+
+    async changePassword({ commit, dispatch }, payload) {
+      debugger
+      try {
+        // let res = await apiUser.put(':id/forgot', payload)
+        let res = await apiUser.put(`account/:id/forgot`, payload)
+
+        commit('setUser', res.data)
+        // commit('setActiveProfile', res.data)
+
+      } catch (error) {
+        console.error(error)
+
+      }
+    },
+    //#endregion
+
+
     //#region Search Results
     async findUserByName({ commit, dispatch }, query) {
       try {

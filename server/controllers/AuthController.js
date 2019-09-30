@@ -7,15 +7,23 @@ let _userService = new UserService().repository
 export default class AuthController {
     constructor() {
         this.router = express.Router()
+            .use('', this.myDebug)
             .post('/register', this.register)
             .post('/login', this.login)
             .use(Authorize.authenticated)
             .get('/authenticate', this.authenticate)
             .get('/adminAuthenticate', this.adminAuthenticate)
             .put('/:id', this.editRole)
-
+            //FIXME Change Password
+            .put('/:id/forgot', this.changePassword)
             .delete('/logout', this.logout)
             .use(this.defaultRoute)
+    }
+
+
+    myDebug(req, res, next) {
+        console.log('URL:', req.originalUrl, 'Type:', req.method, 'User:', req.session.uid)
+        next()
     }
 
     defaultRoute(req, res, next) {
@@ -35,6 +43,29 @@ export default class AuthController {
         }
     }
 
+
+    async changePassword(req, res, next) {
+        //VALIDATE PASSWORD LENGTH
+        if (req.body.password.length < 6) {
+            return res.status(400).send({
+                error: 'Password must be at least 6 characters'
+            })
+        }
+        try {
+            req.body.hash = UserService.generateHash(req.body.password)
+            let user = await _userService.findOneAndUpdate({ _id: req.session.uid, hash: req.body.hash }) //FIXME 
+
+
+            //Delete Password
+            delete user._doc.hash
+            //SET THE SESSION UID (SHORT FOR USERID)
+            req.session.uid = user._id
+            res.status(201).send(user)
+
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    }
 
 
 

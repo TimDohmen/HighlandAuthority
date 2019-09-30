@@ -98,47 +98,28 @@
               </div>
             </div>
             <!-- End of Classes Dropdown -->
+
+            <button v-if="profile._id" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <div class="modal-footer">
             <!--FIXME  Reset Password -->
-            <hr />
-            <div class="form-group">
-              <label for="password">New Password:</label>
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Enter in a new Password"
-                v-model="userEdit.password"
-              />
-              <label for="confirm-password">confirm Password:</label>
-              <input
-                type="password"
-                class="form-control"
-                id="confirm-password"
-                placeholder="Enter in a new Password"
-                v-model="userEdit.password"
-              />
-            </div>
-            <hr />
-            <div class="form-group">
+            <div class="form-group d-flex align-item-center">
+              <hr />
               <input
                 type="button"
                 @click="resetPassword"
                 value="Reset Password"
                 class="btn btn-danger"
               />
+              <hr />
+              <!-- END OF RESET -->
             </div>
-            <hr />
-            <!-- END OF RESET -->
-
-            <button v-if="profile._id" type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div>
-        <!-- end of modal body -->
-        <div class="modal-footer">
+          </div>
+          <!-- end of modal body -->
           <button
             id="close"
             type="button"
-            class="btn btn-outline-danger"
+            class="btn btn-outline-danger float-right"
             data-dismiss="modal"
           >Cancel</button>
         </div>
@@ -305,27 +286,10 @@ export default {
       $("#close").click();
     },
 
-    editUser() {
-      this.$store.dispatch("editUser", {
-        _id: this.profile._id,
-        password: this.newEdit.password
-      });
-      // this.newEdit = {};
-      $("#close").click();
-    },
-
     //FIXME  Reset Password
     resetPassword() {
-      const auth = fb.auth();
-
-      auth
-        .sendPasswordResetEmail(auth.user.email)
-        .then(() => {
-          console.log("Email sent");
-        })
-        .catch(error => {
-          console.log(error);
-        });
+      this.$router.push({ name: "forgot" });
+      $("#close").click();
     }
   }
 };
