@@ -6,6 +6,7 @@
         <img :src="profile.picture" class="card-img-top border rounded m-auto img-fluid" />
         <div class="card-body">
           <h3>{{user.name}}</h3>
+          <i class="ra ra-shield ra-2x"></i>
           <h6>Nickname: {{profile.nickname}}</h6>
           <h6>Class: {{profile.class}}</h6>
         </div>
