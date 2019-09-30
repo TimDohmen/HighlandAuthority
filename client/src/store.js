@@ -219,6 +219,15 @@ export default new Vuex.Store({
 
       }
     },
+    async createProfile({ commit, dispatch }, payload) {
+      try {
+        let res = await api.post('athletes/', payload)
+        commit('setActiveProfile', res.data)
+      } catch (error) {
+        console.error(error)
+
+      }
+    },
     async getProfile({ commit, dispatch }, userId) {
       try {
         // let res = await api.get('athletes')
