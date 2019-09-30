@@ -5,33 +5,45 @@
       <div class="card col-sm-12 col-md-3 text-left">
         <img :src="profile.picture" class="card-img-top border rounded m-auto img-fluid" />
         <div class="card-body">
-          <h3>{{profile.userId.name}}</h3>
+          <h3 class="displayRole">{{profile.userId.name}}</h3>
+          <i v-if="profile.userId.role == 'Admin'" class="ra ra-shield ra-2x ml-1"></i>
+          <i v-if="profile.userId.role == 'Athlete'" class="ra ra-muscle-fat ra-2x ml-1"></i>
+          <i v-if="profile.userId.role == 'Judge'" class="ra ra-gavel ra-2x ml-1"></i>
           <h6>Nickname: {{profile.nickname}}</h6>
           <h6>Class: {{profile.class}}</h6>
         </div>
-        <div v-if="user.role=='admin'">
-          <input
-            type="checkbox"
-            aria-label="Checkbox for following text input"
-            v-model="athlete"
-            @click="setRole('athlete')"
-          /> Athlete
-        </div>
-        <div v-if="user.role=='admin'">
-          <input
-            type="checkbox"
-            aria-label="Checkbox for following text input"
-            v-model="judge"
-            @click="setRole('judge')"
-          /> Judge
-        </div>
-        <div v-if="user.role=='admin'">
-          <input
-            type="checkbox"
-            aria-label="Checkbox for following text input"
-            v-model="admin"
-            @click="setRole('admin')"
-          /> Admin
+        <div v-if="user.role=='Admin'">
+          Role: {{profile.userId.role}}
+          <div v-if="user.role=='Admin' && profile.userId.role!='Athlete'">
+            <input
+              type="radio"
+              aria-label="Checkbox for following text input"
+              name="role"
+              v-model="Athlete"
+              id="athleteButton"
+              @click="setRole('Athlete')"
+            /> Athlete
+          </div>
+          <div v-if="user.role=='Admin' && profile.userId.role!='Judge'">
+            <input
+              type="radio"
+              aria-label="Checkbox for following text input"
+              v-model="Judge"
+              name="role"
+              id="judgeButton"
+              @click="setRole('Judge')"
+            /> Judge
+          </div>
+          <div v-if="user.role=='Admin' && profile.userId.role!='Admin'">
+            <input
+              type="radio"
+              aria-label="Checkbox for following text input"
+              v-model="Admin"
+              name="role"
+              id="adminButton"
+              @click="setRole('Admin')"
+            /> Admin
+          </div>
         </div>
       </div>
     </div>
@@ -87,6 +99,10 @@ export default {
         _id: this.profile.userId._id,
         role: role
       });
+      this.getSearchedProfile();
+      document.querySelectorAll("input").forEach(v => {
+        v.checked = false;
+      });
     }
   },
   components: { PR, history }
@@ -100,5 +116,8 @@ img {
 }
 .card {
   background-color: rgba(255, 255, 255, 0.8);
+}
+.displayRole {
+  display: inline;
 }
 </style>

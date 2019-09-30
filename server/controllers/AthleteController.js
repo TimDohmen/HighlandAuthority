@@ -32,7 +32,7 @@ export default class AthleteController {
 
   async getAll(req, res, next) {
     try {
-      let data = await _as.find({}).populate('userId', 'name')
+      let data = await _as.find({}).populate('userId', 'name', 'role')
       return res.send(data)
     } catch (error) {
       next(error)
@@ -43,7 +43,7 @@ export default class AthleteController {
   async findAthleteByQuery(req, res, next) {
     try {
       let query = new RegExp(req.query.name, "i")
-      let users = await _us.find({ name: { '$regex': query } }).select('name')
+      let users = await _us.find({ name: { '$regex': query } }).select('name role')
       // Regex Allows search to find partial names and ignores case sensitive(https://stackoverflow.com/questions/7101703/how-do-i-make-case-insensitive-queries-on-mongodb)
       if (!users) { throw new Error("No profile found") }
       //REVIEW Itterate over the users, and create a request for each user to find their athlete photo
@@ -62,7 +62,7 @@ export default class AthleteController {
           return false;
         })
         //REVIEW Payload becomes an array of these objects
-        let data = { _id: u._id, name: u.name, photo }
+        let data = { _id: u._id, name: u.name, photo, role: u.role }
         if (data.photo) {
           data.photo = data.photo.picture
         }
@@ -95,7 +95,7 @@ export default class AthleteController {
   // }
   async getAthleteByUserId(req, res, next) {
     try {
-      let data = await _as.findOne({ userId: req.params.userId }).populate('userId', 'name')
+      let data = await _as.findOne({ userId: req.params.userId }).populate('userId', 'name role')
       return res.send(data)
     } catch (error) {
       next(error)

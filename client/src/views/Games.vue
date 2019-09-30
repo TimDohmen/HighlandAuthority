@@ -38,11 +38,16 @@
         </form>
       </div>
     </div>
+    <h1 class="title mt-4">Recent Games</h1>
+    <div class="row mt-2">
+      <CreatedGames v-for="game in games" :key="game._id" :gameProp="game" />
+    </div>
   </div>
 </template>
 
 
 <script>
+import CreatedGames from "../components/CreatedGames";
 export default {
   name: "games",
   data() {
@@ -50,9 +55,15 @@ export default {
       newGame: {}
     };
   },
+  mounted() {
+    this.getGames();
+  },
   computed: {
     user() {
       return this.$store.state.user;
+    },
+    games() {
+      return this.$store.state.games;
     }
   },
   methods: {
@@ -63,9 +74,12 @@ export default {
         location: this.newGame.location,
         date: this.newGame.date
       });
+    },
+    getGames() {
+      this.$store.dispatch("getGames");
     }
   },
-  components: {}
+  components: { CreatedGames }
 };
 </script>
 
@@ -81,5 +95,9 @@ form {
 }
 h1 {
   font-family: "IM Fell English SC", serif;
+}
+.title {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
 }
 </style>

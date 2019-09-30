@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import AuthService from "./AuthService"
+import { RpgAwesome } from '../node_modules/rpg-awesome/css/rpg-awesome.min.css'
 
 //Vue.config.productionTip = false
 

@@ -96,6 +96,7 @@
               <div class="input-group-append">
                 <label class="input-group-text" for="inputGroupSelect02">Classes</label>
               </div>
+              <u>Reset Password</u>
             </div>
             <!-- End of Classes Dropdown -->
 
@@ -114,8 +115,14 @@
               <hr />
               <!-- END OF RESET -->
             </div>
-          </div>
-          <!-- end of modal body -->
+            <hr />-->
+            <!-- END OF RESET -->
+
+            <button v-if="profile._id" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <!-- end of modal body -->
+        <div class="modal-footer">
           <button
             id="close"
             type="button"

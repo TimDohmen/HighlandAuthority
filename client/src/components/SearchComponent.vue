@@ -17,6 +17,9 @@
       <div class="card profile p-2">
         <img class="pl-4" :src="userProp.photo" style="width:90%" />
         <h1>{{userProp.name}}</h1>
+        <i v-if="userProp.role == 'Admin'" class="ra ra-shield ra-2x"></i>
+        <i v-if="userProp.role == 'Athlete'" class="ra ra-muscle-fat ra-2x"></i>
+        <i v-if="userProp.role == 'Judge'" class="ra ra-gavel ra-2x"></i>
         <p class="title">CEO & Founder, Example</p>
         <p></p>
         <p>

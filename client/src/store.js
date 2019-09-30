@@ -33,7 +33,8 @@ export default new Vuex.Store({
     hiHammerHScore: {},
     hiHammerLScore: {},
     oneEventScores: [],
-    searchResults: []
+    searchResults: [],
+    games: []
   },
   mutations: {
     setUser(state, user) {
@@ -77,6 +78,9 @@ export default new Vuex.Store({
     },
     setSearchResults(state, payload) {
       state.searchResults = payload
+    },
+    setGames(state, payload) {
+      state.games = payload
     },
     resetState(state, user) {
       state.user = {}
@@ -316,10 +320,19 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+    async getGames({ commit, dispatch }) {
+      try {
+        let res = await api.get("games")
+        commit("setGames", res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
 
     async setRole({ commit, dispatch }, payload) {
       try {
         let res = await apiUser.put(`account/${payload._id}`, payload)
+
       } catch (error) {
 
       }
