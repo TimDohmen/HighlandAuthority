@@ -9,8 +9,15 @@ export default {
   data() {
     return {};
   },
+  mounted() {
+    this.getAthletes();
+  },
   computed: {},
-  methods: {},
+  methods: {
+    getAthletes() {
+      this.$store.dispatch("getAthletes");
+    }
+  },
   components: {}
 };
 </script>

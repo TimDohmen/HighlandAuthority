@@ -348,8 +348,19 @@ export default new Vuex.Store({
       } catch (error) {
 
       }
-    }
+    },
 
+    //#endregion
+
+    //#region Scoring
+    async getAthletes({ commit, dispatch }) {
+      try {
+        let res = await api.get("athletes")
+        commit("setAthlete", res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
     //#endregion
   }
 })
