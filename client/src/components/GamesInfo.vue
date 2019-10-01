@@ -15,7 +15,7 @@
             </div>
             <div id="collapseZero" class="collapse" aria-labelledby="headingZero" data-parent="#accordionExample">
               <div class="card-body">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJAhRB71QHRmrSYpktxPBpoyYPKrUAiTmwiL1g3f2YxVM4mJ6R4A" alt="Collage-Image">
+                <img src="https://teeshirtpalace-production.s3.amazonaws.com/spree/images/SAF943-BLACK-HPOST/large/SAF943-BLACK-HPOST.jpg?1551474793" width="100%" alt="Collage-Image">
                 <p class="mt-2">The highland games are events held throughout the year in Scotland and other countries as a way of
                   celebrating Scottish and Celtic culture. They are often in conjunction with festivals and full of rich
                   traditions. In their original form many centuries ago, Highland games revolved around athletic and
@@ -84,7 +84,7 @@
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
               <div class="card-body">
-                 <img src="https://www.eveningtelegraph.co.uk/wp-content/uploads/sites/11/2019/08/stuart-anderson-weight-for-distance.jpg" alt="Collage-Image">
+                 <img src="https://www.eveningtelegraph.co.uk/wp-content/uploads/sites/11/2019/08/stuart-anderson-weight-for-distance.jpg" width="100%" alt="Collage-Image">
                 <p class="mt-2">The Weight for Distance event consists of a weight made of metal and consist of a spherical or box
                   weight with a chain and handle attached. The handle may be a ring, triangle, or a "D" shape. The
                   implement shall not measure more than 18 inches in overall length from the bottom of the weight to the
@@ -119,7 +119,7 @@
             </div>
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
               <div class="card-body">
-                <img src="https://www.charlotteobserver.com/news/local/community/lake-norman-mooresville/lr8dh7/picture19209501/alternates/FREE_960/LKN_MPRICE_HIGHLANDGAMES_10.JPG" alt="Collage-Image">
+                <img src="https://www.charlotteobserver.com/news/local/community/lake-norman-mooresville/lr8dh7/picture19209501/alternates/FREE_960/LKN_MPRICE_HIGHLANDGAMES_10.JPG" width="100%" alt="Collage-Image">
                 <p class="mt-2">This event is similar to the hammer throw as seen in modern-day track and field competitions, though
                   with some differences. In the Scottish event, a round metal ball weighing 16 lb (kg) for light and 22
                   lb
@@ -222,7 +222,7 @@
             </div>
             <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
               <div class="card-body">
-                <img src="https://ichef.bbci.co.uk/images/ic/480xn/p01m1rhx.jpg" alt="Collage-Image">                
+                <img src="https://ichef.bbci.co.uk/images/ic/480xn/p01m1rhx.jpg" width="100%" alt="Collage-Image">                
                 <p class="mt-2">There are six different grades in bagpiping: V - I (five through one are amateur grades) plus
                   "Professional" which is sometimes called "Open." ("Open" competions are open to any grade level of
                   competitor, though lackluster pipers are not expected to subject the judges to a poor standard of
@@ -285,7 +285,7 @@
             </div>
             <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
               <div class="card-body">
-                <img src="https://mediad.publicbroadcasting.net/p/wmuk/files/styles/x_large/public/201307/AP070317029794.jpg" alt="Collage-Image">                
+                <img src="https://mediad.publicbroadcasting.net/p/wmuk/files/styles/x_large/public/201307/AP070317029794.jpg" width="100%" alt="Collage-Image">                
                 <p class="mt-2">Irish dance or Irish dancing is a group of traditional dance forms originating from Ireland,
                   encompassing dancing both
                   solo and in groups, and dancing for social, competitive, and performance purposes. Irish dance in its
@@ -346,7 +346,6 @@ export default {
 
 <style scoped>
 img{
-height: 200px;
-width: 200px;
+height: 250px;
 }
 </style>
