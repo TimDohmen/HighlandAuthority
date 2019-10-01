@@ -1,5 +1,5 @@
 <template>
-  <div class="CreatedGames col-5 bgGame mx-auto">
+  <div class="CreatedGames col-sm-5 col-md-5 bgGame mx-auto">
     <div @click="showButton = !showButton" class="show">
       <h4>{{gameProp.name}}</h4>
       <h6>Location: {{gameProp.location}} - Date: {{this.gameDate}}</h6>
