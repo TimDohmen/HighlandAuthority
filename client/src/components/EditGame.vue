@@ -19,7 +19,7 @@
             <form @submit.prevent="editGame()">
               <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" v-model="individualGameProp.name" />
+                <input type="text" class="form-control" id="name" v-model="editedGame.name" />
               </div>
               <div class="form-group">
                 <label for="location">Location:</label>
