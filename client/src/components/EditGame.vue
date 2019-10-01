@@ -28,8 +28,7 @@
               <div class="form-group">
                 <label for="date">Date:</label>
                 <input
-                  type="datetime-locale"
-                  date-format="YYYY MM DD"
+                  type="date"
                   class="form-control"
                   id="date"
                   placeholder="Enter Date"
@@ -56,6 +55,7 @@
 
 
 <script>
+import moment from "moment";
 export default {
   name: "EditGame",
   data() {
