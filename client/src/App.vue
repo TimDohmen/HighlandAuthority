@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import NotificationService from "./NotificationService";
+
 export default {
   name: "App",
   data() {
@@ -56,10 +58,12 @@ export default {
     }
   },
   methods: {
-    Logout() {
-      this.$store.dispatch("logout");
+    async Logout() {
+      if (await NotificationService.confirmLogout()) {
+        this.$store.dispatch("logout");
+        location.reload();
+      }
       // get rid of access to old data on screen when loggin out by refreshing
-      location.reload();
     },
     searchUsers() {
       this.$store.dispatch("findUserByName", this.query);
