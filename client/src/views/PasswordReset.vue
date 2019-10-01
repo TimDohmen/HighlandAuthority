@@ -1,7 +1,7 @@
 <template>
   <div class="PasswordReset container">
     <form @submit="editUser()">
-      <div class="card bg-dark text-white">
+      <div class="card op">
         <h1 class="card-header">Reset Password</h1>
         <div class="card-body">
           <h5>Enter in New Password:</h5>
@@ -17,7 +17,7 @@
           />
         </div>
         <div class="card-footer">
-          <button type="submit" class="btn btn-outline-success">Confirm</button>
+          <button type="submit" class="btn btn-success">Confirm</button>
         </div>
       </div>
     </form>
@@ -70,6 +70,9 @@ export default {
 
 
 <style scoped>
+.op {
+  background-color: rgba(255, 255, 255, 0.8);
+}
 </style>
 
 
