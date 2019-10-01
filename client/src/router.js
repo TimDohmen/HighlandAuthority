@@ -73,6 +73,17 @@ export default new Router({
       }
     },
     {
+      path: '/email-forgot',
+      name: 'forgot-email',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: function () {
+        return import(/* webpackChunkName: "search" */ './views/Forgot.vue')
+      }
+    },
+
+    {
       path: "*",
       redirect: '/login',
 

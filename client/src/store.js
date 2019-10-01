@@ -334,7 +334,7 @@ export default new Vuex.Store({
       try {
         let res = await api.post("games", payload)
         NotificationService.toast("Game Created")
-
+        dispatch("getGames", res.data)
       } catch (error) {
         console.error(error)
       }
@@ -343,6 +343,14 @@ export default new Vuex.Store({
       try {
         let res = await api.get("games")
         commit("setGames", res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async editGame({ commit, dispatch }, payload) {
+      try {
+        let res = await api.put("games/" + payload._id, payload)
+        dispatch("getGames", res.data)
       } catch (error) {
         console.error(error)
       }

@@ -107,7 +107,7 @@
                   type="button"
                   @click="resetPassword"
                   value="Reset Password"
-                  class="btn btn-danger"
+                  class="btn btn-danger mt-3"
                 />
                 <hr />
               </div>
