@@ -72,7 +72,7 @@ export default new Vuex.Store({
     setGames(state, payload) {
       state.games = payload
     },
-    setAthlete(state, payload) {
+    setAthletes(state, payload) {
       state.athletes = payload
     },
     resetState(state, user) {
@@ -356,7 +356,7 @@ export default new Vuex.Store({
     async getAthletes({ commit, dispatch }) {
       try {
         let res = await api.get("athletes")
-        commit("setAthlete", res.data)
+        commit("setAthletes", res.data)
       } catch (error) {
         console.error(error)
       }
