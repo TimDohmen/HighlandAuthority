@@ -15,13 +15,7 @@
             <form @submit.prevent="editProfile()">
               <div class="form-group">
                 <label for="name">Name:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  placeholder="Enter Name"
-                  v-model="newEdit.name"
-                />
+                <input type="text" class="form-control" id="name" v-model="individualGameProp.name" />
               </div>
               <div class="form-group">
                 <label for="location">Location:</label>
@@ -29,18 +23,17 @@
                   type="text"
                   class="form-control"
                   id="location"
-                  placeholder="Enter Location"
-                  v-model="newEdit.location"
+                  v-model="individualGameProp.location"
                 />
               </div>
               <div class="form-group">
-                <label for="date">Date :</label>
+                <label for="date">Date:</label>
                 <input
                   type="date"
                   class="form-control"
                   id="date"
                   placeholder="Enter Date"
-                  v-model="newEdit.date"
+                  v-model="individualGameProp.date"
                 />
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
@@ -67,9 +60,11 @@ export default {
   name: "EditGame",
   data() {
     return {
-      newEdit: {}
+      newEdit: {},
+      gameProp: {}
     };
   },
+  props: ["individualGameProp"],
   computed: {},
   methods: {},
   components: {}
