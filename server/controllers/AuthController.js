@@ -1,6 +1,8 @@
 import express from 'express'
 import UserService from '../services/UserService';
 import { Authorize } from '../middleware/authorize'
+// import SendEmailController from '../controllers/SendEmailController'
+import nodemailer from 'nodemailer'
 
 let _userService = new UserService().repository
 //PUBLIC
@@ -8,8 +10,10 @@ export default class AuthController {
     constructor() {
         this.router = express.Router()
             .use('', this.myDebug)
+            // .use('', new SendEmailController().router)
             .post('/register', this.register)
             .post('/login', this.login)
+            .post('/reset/', this.SendForgotEmail)
             .use(Authorize.authenticated)
             .get('/authenticate', this.authenticate)
             .get('/adminAuthenticate', this.adminAuthenticate)
@@ -42,6 +46,21 @@ export default class AuthController {
 
         }
     }
+    //Password Stuff
+
+    async SendForgotEmail(req, res) {
+        try {
+            req.body.hash = UserService.generateHash(req.body.password)
+            let user = _userService.findOne({ email: req.body.query }, function (err, user) {
+                if (!user) {
+                    req.alert('error', 'No account with that email address exists.'); //FIXME 
+                    return res.redirect('/email-forgot');
+                }
+            })
+        } catch (error) {
+
+        }
+    }
 
 
     async changePassword(req, res, next) {
@@ -55,9 +74,9 @@ export default class AuthController {
             req.body.hash = UserService.generateHash(req.body.password)
             let user = await _userService.findOneAndUpdate({ _id: req.session.uid, hash: req.body.hash }) //FIXME 
 
-
             //Delete Password
             delete user._doc.hash
+
             //SET THE SESSION UID (SHORT FOR USERID)
             req.session.uid = user._id
             res.status(201).send(user)
