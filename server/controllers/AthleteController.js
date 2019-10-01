@@ -32,7 +32,8 @@ export default class AthleteController {
 
   async getAll(req, res, next) {
     try {
-      let data = await _as.find({}).populate('userId', 'name', 'role')
+      //NOTE might be 'name' 'role'
+      let data = await _as.find({}).populate('userId', 'name role')
       return res.send(data)
     } catch (error) {
       next(error)
