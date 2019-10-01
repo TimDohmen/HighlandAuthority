@@ -43,6 +43,7 @@ export default class NotificationService {
 
 
 
+
   static confirmDelete() {
     return new Promise((resolve, reject) => {
       const swalWithBootstrapButtons = swal.mixin({
@@ -78,9 +79,9 @@ export default class NotificationService {
             type: 'error',
             backdrop: `
     rgba(0,0,0,0.6)
-    url("https://media.giphy.com/media/111ebonMs90YLu/giphy.gif")
     center
-  `,
+    `,
+            // url("https://media.giphy.com/media/111ebonMs90YLu/giphy.gif")
           })
           resolve(true)
         } else if (
@@ -94,9 +95,9 @@ export default class NotificationService {
             backdrop:
               `  
             rgba(0,0,0,0.6)
-            url("https://media.giphy.com/media/CiTLZWskt7Fu/giphy.gif")    
             center 
             `,
+            // url("https://media.giphy.com/media/CiTLZWskt7Fu/giphy.gif")    
           })
           resolve(false)
         }
@@ -117,17 +118,16 @@ export default class NotificationService {
       })
       swalWithBootstrapButtons.fire({
         title: 'Are you sure you want to log out?',
-        text: "You will have to log back in to view your boards!",
+        text: "",
         type: 'warning',
         width: 600,
         padding: '3em',
         background: '',
         backdrop: `
     rgba(0,0,0,0.6)
-    url("https://media.giphy.com/media/3o7aTskHEUdgCQAXde/giphy.gif")
     center left
-   
-  `,
+    `,
+        // url("https://media.giphy.com/media/3o7aTskHEUdgCQAXde/giphy.gif")
         showCancelButton: true,
         confirmButtonText: 'Yes, Logout!',
         cancelButtonText: 'No, Stay here!',
@@ -138,9 +138,9 @@ export default class NotificationService {
             title: 'You have been logged out.',
             backdrop: `
     rgba(0,0,0,0.6)
-    url("https://media.giphy.com/media/33E7ZjlQEMgF6kbkhY/giphy.gif")
     center
-  `,
+    `,
+            // url("https://media.giphy.com/media/33E7ZjlQEMgF6kbkhY/giphy.gif")
           })
           resolve(true)
         } else if (
@@ -152,10 +152,10 @@ export default class NotificationService {
             text: 'You are still logged in',
             backdrop: `
     rgba(0,0,0,0.6)
-    url("https://media.giphy.com/media/ZEU9ryYGZzttn0Cva7/giphy.gif")
     center
-   
-  `,
+    
+    `,
+            // url("https://media.giphy.com/media/ZEU9ryYGZzttn0Cva7/giphy.gif")
           })
           resolve(false)
         }
