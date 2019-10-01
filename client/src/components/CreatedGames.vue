@@ -11,7 +11,7 @@
         data-target="#Edit-Game-Modal"
       >Edit Game Info</button>
     </div>
-    <EditGameModal />
+    <EditGameModal :individualGameProp="gameProp" />
   </div>
 </template>
 
