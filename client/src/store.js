@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import Axios from 'axios'
 import router from './router'
 import AuthService from './AuthService'
+import NotificationService from "./NotificationService"
 
 Vue.use(Vuex)
 
@@ -92,6 +93,8 @@ export default new Vuex.Store({
         let user = await AuthService.Login(creds)
         commit('setUser', user)
         router.push({ name: "profile" })
+        NotificationService.toast("Login Successful")
+
       } catch (e) {
         console.warn(e.message)
       }
@@ -111,6 +114,8 @@ export default new Vuex.Store({
         let user = await AuthService.adminAuthenticate()
         if (!user) {
           router.push({ name: "login" })
+          NotificationService.toastError("")
+
         }
       } catch (e) {
         console.warn(e.message)
@@ -220,6 +225,9 @@ export default new Vuex.Store({
       try {
         let res = await api.put('athletes/' + payload._id, payload)
         commit('setActiveProfile', res.data)
+        if (payload.nickname || payload.location || payload.class || payload.bio || payload.picture || payload.phone) {
+          NotificationService.toast("Profile Edit Successful")
+        }
       } catch (error) {
         console.error(error)
 
@@ -229,6 +237,7 @@ export default new Vuex.Store({
       try {
         let res = await api.post('athletes/', payload)
         commit('setActiveProfile', res.data)
+        NotificationService.toast("Athlete Profile Created")
       } catch (error) {
         console.error(error)
 
@@ -287,6 +296,7 @@ export default new Vuex.Store({
 
         commit('setUser', res.data)
         // commit('setActiveProfile', res.data)
+        NotificationService.toast("Password Changed")
 
       } catch (error) {
         console.error(error)
@@ -312,7 +322,8 @@ export default new Vuex.Store({
     async createGame({ commit, dispatch }, payload) {
       try {
         let res = await api.post("games", payload)
-        window.alert("Game created")
+        NotificationService.toast("Game Created")
+
       } catch (error) {
         console.error(error)
       }

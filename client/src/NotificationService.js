@@ -16,7 +16,7 @@ export default class NotificationService {
       error.message = error.response.data
     }
     swal.fire({
-      title: "Fill in required field",
+      title: "Contact Admin or Judge",
       text: error.message,
       type: "error",
       timer: 8500,
