@@ -9,7 +9,14 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    games() {
+      return this.$store.state.games;
+    },
+    athletes() {
+      return this.$store.state.athletes;
+    }
+  },
   methods: {
     gamelist() {
       return this.$store.state.games;
