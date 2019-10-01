@@ -49,7 +49,8 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: function () {
         return import(/* webpackChunkName: "search" */ './views/Games.vue')
-      }
+      },
+
     },
     {
       path: '/forgot',
