@@ -31,7 +31,8 @@ export default new Vuex.Store({
     hiHammerLScore: {},
     oneEventScores: [],
     searchResults: [],
-    games: []
+    games: [],
+    athletes: []
   },
   mutations: {
     setUser(state, user) {
@@ -69,6 +70,9 @@ export default new Vuex.Store({
     },
     setGames(state, payload) {
       state.games = payload
+    },
+    setAthlete(state, payload) {
+      state.athletes = payload
     },
     resetState(state, user) {
       state.user = {}
