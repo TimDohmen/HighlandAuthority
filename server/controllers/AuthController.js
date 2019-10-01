@@ -12,7 +12,7 @@ export default class AuthController {
             .post('/login', this.login)
             .use(Authorize.authenticated)
             .get('/authenticate', this.authenticate)
-            // .use(Authorize.adminAuthenticate)
+            .get('/adminAuthenticate', this.adminAuthenticate)
             .put('/:id', this.editRole)
             //FIXME Change Password
             .put('/:id/forgot', this.changePassword)
@@ -130,22 +130,45 @@ export default class AuthController {
             res.status(500).send(err)
         }
     }
-    // async adminAuthenticate(req, res, next) {
-    //     try {
-    //         let user = await _userService.findOne({ _id: req.session.uid, role: "admin" })
-    //         if (!user) {
-    //             return res.status(401).send({
-    //                 error: 'Please contact admin or judge'
-    //             })
-    //         }
-    //         delete user._doc.hash
-    //         res.send(user)
-    //     }
-    //     catch (err) {
-    //         console.error(err)
-    //         res.status(500).send(err)
-    //     }
-    // }
+    async adminAuthenticate(req, res, next) {
+        // try {
+        //     let user = await _userService.findOne({ _id: req.session.uid, role: "admin" })
+        //     if (!user) {
+        //         return res.status(401).send({
+        //             error: 'Please contact admin or judge'
+        //         })
+        //     }
+        //     delete user._doc.hash
+        //     res.send(user)
+        // }
+        // catch (err) {
+        //     console.error(err)
+        //     res.status(500).send(err)
+        // }
+
+        try {
+            let user = await _userService.findOne({ role: "Admin", _id: req.session.uid })
+            if (!user) {
+                let user = await _userService.findOne({ role: "Judge", _id: req.session.uid })
+                if (!user) {
+                    return res.status(401).send({
+                        error: 'Please contact a judge to create a game'
+                    })
+                } else {
+                    delete user._doc.hash
+                    res.send(user)
+                }
+            }
+            delete user._doc.hash
+            res.send(user)
+        }
+        catch (err) {
+            console.error(err)
+            res.status(500).send()
+        }
+
+
+    }
     async logout(req, res, next) {
         try {
             req.session.destroy(err => {

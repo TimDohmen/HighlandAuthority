@@ -57,6 +57,7 @@ export default {
   },
   mounted() {
     this.getGames();
+    this.checkRole();
   },
   computed: {
     user() {
@@ -77,6 +78,9 @@ export default {
     },
     getGames() {
       this.$store.dispatch("getGames");
+    },
+    checkRole() {
+      this.$store.dispatch("checkRole");
     }
   },
   components: { CreatedGames }

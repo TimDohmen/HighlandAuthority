@@ -40,4 +40,12 @@ export default class AuthService {
       console.warn(`[Authentication failed] : ${!e.response ? 'No response from server' : e.response.data.error}`)
     }
   }
+  static async adminAuthenticate() {
+    try {
+      let res = await auth.get('adminAuthenticate')
+      return res.data
+    } catch (e) {
+      console.warn(`[Authentication failed] : ${!e.response ? 'No response from server' : e.response.data.error}`)
+    }
+  }
 }

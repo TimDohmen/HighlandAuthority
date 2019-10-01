@@ -106,6 +106,16 @@ export default new Vuex.Store({
         console.warn(e.message)
       }
     },
+    async checkRole({ commit, dispatch }) {
+      try {
+        let user = await AuthService.adminAuthenticate()
+        if (!user) {
+          router.push({ name: "login" })
+        }
+      } catch (e) {
+        console.warn(e.message)
+      }
+    },
     //#endregion
 
 
@@ -239,14 +249,14 @@ export default new Vuex.Store({
 
       }
     },
-    async getAllProfiles({ commit, dispatch }) {
-      try {
-        let res = await api.get('athletes')
-        commit('setProfiles', res.data)
-      } catch (error) {
-        console.error(error)
-      }
-    },
+    // async getAllProfiles({ commit, dispatch }) {
+    //   try {
+    //     let res = await api.get('athletes')
+    //     commit('setProfiles', res.data)
+    //   } catch (error) {
+    //     console.error(error)
+    //   }
+    // },
     async getActiveProfile({ commit, dispatch }, payload) {
       try {
         let res = payload.profiles.find(p => p.userId == payload.userId)
