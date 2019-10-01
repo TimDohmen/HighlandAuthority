@@ -22,10 +22,7 @@ let apiUser = Axios.create({
 export default new Vuex.Store({
   state: {
     user: {},
-    profiles: [],
     activeProfile: {},
-    // scores: [],
-    hiScores: [],
     hiStoneScore: {},
     hiBraemarScore: {},
     hiWFDScore: {},
@@ -43,20 +40,11 @@ export default new Vuex.Store({
     setActiveProfile(state, activeProfile) {
       state.activeProfile = activeProfile
     },
-    setProfiles(state, profiles) {
-      state.profiles = profiles
-    },
     setMyProfile(state, payload) {
       state.activeProfile = payload
     },
-    // setScores(state, scores) {
-    //   state.scores = scores
-    // },
     setOneEventScores(state, scores) {
       state.oneEventScores = scores
-    },
-    setHiScores(state, scores) {
-      state.hiScores.push(scores)
     },
     setHiStoneScores(state, score) {
       state.hiStoneScore = score
