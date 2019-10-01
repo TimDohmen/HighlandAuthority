@@ -50,12 +50,12 @@
 
 <script>
 // DONT GO FARTHER BACK
-import braemar from "../components/BraemarComponent";
-import WFDHeavy from "../components/WFDHeavyComponent";
-import openStone from "../components/OpenStoneComponent";
-import WFDLight from "../components/WFDLightComponent";
-import hammerLight from "../components/HammerLightComponent";
-import hammerHeavy from "../components/HammerHeavyComponent";
+import braemar from "../components/EventsComponents/BraemarComponent";
+import WFDHeavy from "../components/EventsComponents/WFDHeavyComponent";
+import openStone from "../components/EventsComponents/OpenStoneComponent";
+import WFDLight from "../components/EventsComponents/WFDLightComponent";
+import hammerLight from "../components/EventsComponents/HammerLightComponent";
+import hammerHeavy from "../components/EventsComponents/HammerHeavyComponent";
 export default {
   name: "PR",
   mounted() {
