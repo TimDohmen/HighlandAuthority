@@ -33,7 +33,8 @@ export default new Vuex.Store({
     oneEventScores: [],
     searchResults: [],
     games: [],
-    athletes: []
+    athletes: [],
+    test: []
   },
   mutations: {
     setUser(state, user) {
@@ -77,7 +78,14 @@ export default new Vuex.Store({
     },
     resetState(state, user) {
       state.user = {}
-    }
+    },
+    setScore(state, payload) {
+      state.athletes[state.athletes.findIndex(a => a._id == payload.athleteId)].topAttempt = payload.newTopScore
+    },
+    // setThrowingClass(state, payload) {
+    //   debugger
+    //   state.athletes[state.athletes.findIndex(a => a._id == payload.athleteId)].throwingclass = payload.newThrowingClass
+    // },
   },
   actions: {
     // DONT GO FARTHER BACK
@@ -129,10 +137,9 @@ export default new Vuex.Store({
 
 
     //#region -- SCORES --
-    // async getScoresById({ commit, dispatch }, userId) {
+    // async getScore({ commit, dispatch }, payload) {
     //   try {
-    //     let res = await api.get(`scores/${userId}`)
-    //     commit('setScores', res.data)
+    //     let res = await api.post("scores/", payload)
     //   } catch (error) {
     //     console.error(error)
     //   }
