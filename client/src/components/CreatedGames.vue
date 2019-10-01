@@ -18,6 +18,7 @@
 
 <script>
 import EditGameModal from "../components/EditGame";
+import moment from "moment";
 export default {
   name: "CreatedGames",
   props: ["gameProp"],
@@ -28,8 +29,10 @@ export default {
   },
   computed: {
     gameDate() {
-      let date = new Date(this.gameProp.date);
-      return date.toLocaleDateString();
+      let date = moment(this.gameProp.date)
+        .utcOffset(7)
+        .format("MM-DD-YYYY");
+      return date;
     }
   },
   methods: {},
