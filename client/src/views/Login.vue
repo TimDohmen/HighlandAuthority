@@ -15,8 +15,10 @@
             <input type="password" v-model="newUser.password" placeholder="password" />
             <button class="btn btn-warning" type="submit">Create Account</button>
           </form>
+          <p v-if="loginForm" @click="ForgotPassword()">Forgot Password?</p>
           <div class="action" @click="loginForm = !loginForm">
             <p v-if="loginForm">No account? Click here to Register</p>
+
             <p v-else>Already have an account? Click here to Login</p>
           </div>
         </div>
@@ -27,53 +29,56 @@
 </template>
 
 <script>
-  import router from "@/router.js";
-  import GamesInfo from "../components/GamesInfo"
-  export default {
-    name: "login",
-    data() {
-      return {
-        loginForm: true,
-        creds: {
-          email: "",
-          password: ""
-        },
-        newUser: {
-          email: "",
-          password: "",
-          name: ""
-        }
-      };
-    },
-    beforeCreate() {
-      if (this.$store.state.user._id) {
-        this.$router.push({ name: "profile" });
-      }
-    },
-    methods: {
-      register() {
-        this.$store.dispatch("register", this.newUser);
+import router from "@/router.js";
+import GamesInfo from "../components/GamesInfo";
+export default {
+  name: "login",
+  data() {
+    return {
+      loginForm: true,
+      creds: {
+        email: "",
+        password: ""
       },
-      loginUser() {
-        this.$store.dispatch("login", this.creds);
+      newUser: {
+        email: "",
+        password: "",
+        name: ""
       }
+    };
+  },
+  beforeCreate() {
+    if (this.$store.state.user._id) {
+      this.$router.push({ name: "profile" });
+    }
+  },
+  methods: {
+    register() {
+      this.$store.dispatch("register", this.newUser);
     },
-    computed: {
-      user() {
-        return this.$store.state.user
-      }
+    loginUser() {
+      this.$store.dispatch("login", this.creds);
     },
-    components: { GamesInfo }
-  };
+    ForgotPassword() {
+      this.$router.push({ name: "forgot-email" });
+    }
+  },
+  computed: {
+    user() {
+      return this.$store.state.user;
+    }
+  },
+  components: { GamesInfo }
+};
 </script>
 
 <style>
-  .action {
-    cursor: pointer;
-  }
+.action {
+  cursor: pointer;
+}
 
-  .action:hover {
-    text-decoration: underline;
-    color: blue;
-  }
+.action:hover {
+  text-decoration: underline;
+  color: blue;
+}
 </style>
