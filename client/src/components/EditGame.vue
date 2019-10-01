@@ -90,4 +90,8 @@ export default {
 .form-group {
   text-align: left;
 }
+#closeModal {
+  margin-left: 230px;
+  margin-bottom: 5px;
+}
 </style>

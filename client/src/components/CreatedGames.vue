@@ -6,7 +6,7 @@
     </div>
     <div v-if="showButton">
       <button
-        class="btn btn-warning"
+        class="btn btn-warning mb-2"
         data-toggle="modal"
         :data-target="'#edit-game' + gameProp._id"
       >Edit Game Info</button>
