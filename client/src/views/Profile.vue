@@ -55,7 +55,7 @@ import history from "../components/HistoryComponent";
 export default {
   name: "profile",
   mounted() {
-    this.$store.dispatch("getAllProfiles");
+    // this.$store.dispatch("getAllProfiles");
     this.getMyProfile();
   },
   computed: {
