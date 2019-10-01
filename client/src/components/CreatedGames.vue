@@ -8,10 +8,10 @@
       <button
         class="btn btn-warning"
         data-toggle="modal"
-        data-target="#Edit-Game-Modal"
+        :data-target="'#edit-game' + gameProp._id"
       >Edit Game Info</button>
     </div>
-    <EditGameModal :individualGameProp="gameProp" />
+    <EditGameModal :individualGameProp="gameProp" :key="gameProp._id" />
   </div>
 </template>
 

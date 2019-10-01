@@ -1,6 +1,6 @@
 <template>
   <div class="EditGame">
-    <div id="Edit-Game-Modal" class="modal" tabindex="-1" role="dialog">
+    <div :id="'edit-game'+individualGameProp._id" class="modal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -59,10 +59,7 @@
 export default {
   name: "EditGame",
   data() {
-    return {
-      newEdit: {},
-      gameProp: {}
-    };
+    return {};
   },
   props: ["individualGameProp"],
   computed: {},
