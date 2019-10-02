@@ -10,6 +10,8 @@
         <h4>
           <b>Event:</b> Hammer Light
         </h4>
+        <small>Class: {{this.hiScore.throwingClass}}</small>
+
         <p>PR: {{this.hiScore.topAttempt}}</p>
       </div>
     </div>
@@ -95,7 +97,7 @@ export default {
   font-family: sans-serif;
   font-weight: bold;
   font-size: 30px;
-  margin-top: -80px;
+  margin-top: -120px;
   height: 40px;
 }
 

@@ -4,6 +4,7 @@
       <dt>Distance: {{scoreProp.topAttempt}}</dt>
       <dt>Game: {{scoreProp.gamesId.name}}</dt>
       <dt>Date: {{this.dateTest}}</dt>
+      <dt>Class: {{scoreProp.throwingClass}}</dt>
     </dl>
     <!-- Date: {{scoreProp.gamesId.date }} -->
   </div>
