@@ -1,6 +1,6 @@
 <template>
   <div class="Forgot-Password container">
-    <div class="card bg-light">
+    <div class="card bg-light db-border">
       <form @submit="sendEmail()">
         <h3 class="card-header">Forgot Password</h3>
         <div class="form-group">

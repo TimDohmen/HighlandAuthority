@@ -81,4 +81,11 @@ export default {
   text-decoration: underline;
   color: blue;
 }
+.db-border {
+  border-width: 5px;
+  border-style: double;
+  opacity: 1;
+}
+
+/* Card Boxes */
 </style>

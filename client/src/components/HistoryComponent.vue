@@ -1,5 +1,5 @@
 <template>
-  <div class="history card mt-2">
+  <div class="history card mt-2 db-border">
     <u
       @click="showHistory = !showHistory"
       class="historyPart"
