@@ -11,6 +11,7 @@
         <h4>
           <b>Event:</b> Open Stone
         </h4>
+        <small>Class: {{this.hiStoneScore.throwingClass}}</small>
         <p>PR: {{this.hiStoneScore.topAttempt}} Ft</p>
       </div>
     </div>
@@ -93,7 +94,7 @@ export default {
   font-family: sans-serif;
   font-weight: bold;
   font-size: 30px;
-  margin-top: -80px;
+  margin-top: -120px;
   height: 40px;
 }
 

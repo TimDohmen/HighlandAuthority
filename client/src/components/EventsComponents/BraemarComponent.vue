@@ -11,6 +11,7 @@
         <h4>
           <b>Event:</b> Braemar
         </h4>
+        <small>Class: {{this.hiScore.throwingClass}}</small>
         <p>PR: {{this.hiScore.topAttempt}} Ft</p>
       </div>
     </div>
@@ -57,6 +58,11 @@ export default {
 /* .card {
   background-color: rgba(255, 255, 255, 0.8);
 } */
+.throwingClass {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
 
 .cards-list {
   z-index: 0;
@@ -96,7 +102,7 @@ export default {
   font-family: sans-serif;
   font-weight: bold;
   font-size: 30px;
-  margin-top: -80px;
+  margin-top: -120px;
   height: 40px;
 }
 
