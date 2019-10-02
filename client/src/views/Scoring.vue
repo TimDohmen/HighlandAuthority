@@ -49,6 +49,7 @@
         <option value="womens-open">Women's Open</option>
         <option value="womens-masters">Women's Masters</option>
         <option value="womens-pro">Women's Pro</option>
+        <option value="lightweight">Lightweight</option>
       </select>
     </div>
     <ScoresheetComponent />
@@ -70,6 +71,7 @@ export default {
   mounted() {
     this.getAthletes();
     this.getGames();
+    this.checkRole();
   },
 
   computed: {
@@ -94,6 +96,9 @@ export default {
         game: this.game
       };
       this.$store.commit("setActiveGame", gameData);
+    },
+    checkRole() {
+      this.$store.dispatch("checkRole");
     }
   },
   components: { ScoresheetComponent }

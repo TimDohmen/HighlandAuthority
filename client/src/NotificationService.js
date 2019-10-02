@@ -127,7 +127,8 @@ export default class NotificationService {
     rgba(0,0,0,0.6)
     center left
     `,
-        // url("https://media.giphy.com/media/3o7aTskHEUdgCQAXde/giphy.gif")
+        // url("https://media.giphy.com/media/xUPGcCh4nUHyCkyuti/giphy.gif")
+        // <div class="tenor-gif-embed" data-postid="12767568" data-share-method="host" data-width="100%" data-aspect-ratio="1.0"><a href="https://tenor.com/view/dance-shrek-dancing-gif-12767568">Dance Shrek GIF</a> from <a href="https://tenor.com/search/dance-gifs">Dance GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
         showCancelButton: true,
         confirmButtonText: 'Yes, Logout!',
         cancelButtonText: 'No, Stay here!',
