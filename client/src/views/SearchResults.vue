@@ -1,7 +1,7 @@
 <template>
   <div class="searchResults green-bg m-5">
     <h2 class="text-align-center card-header bg-light mb-4 mt-4 db-border">
-      <hr />Athletes Profile
+      <hr />Athlete Profiles
       <hr />
     </h2>
     <div class="col offset-2 col-8 mb-2 bg-light text-dark db-border">
