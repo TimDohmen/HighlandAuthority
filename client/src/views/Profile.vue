@@ -14,20 +14,36 @@
       </div>-->
 
       <!-- FIXME Construction -->
+
       <figure class="snip1515">
         <div class="profile-image">
-          <img
-            :src="profile.picture"
-            class="card-img-top border rounded m-auto img-fluid db-border"
-          />
+          <img :src="profile.picture" class="card-img-top rounded-circle m-auto img-fluid" />
         </div>
         <figcaption>
           <h3 class="displayRole">{{user.name}}</h3>
           <i v-if="user.role == 'Admin'" class="ra ra-shield ra-2x ml-1"></i>
           <i v-if="user.role == 'Athlete'" class="ra ra-muscle-fat ra-2x ml-1"></i>
           <i v-if="user.role == 'Judge'" class="ra ra-gavel ra-2x ml-1"></i>
-          <h6>Nickname: {{profile.nickname}}</h6>
-          <h6>Class: {{profile.class}}</h6>
+          <h6>
+            <b>Nickname:</b>
+            {{profile.nickname}}
+          </h6>
+          <h6>
+            <b>Class:</b>
+            {{profile.class}}
+          </h6>
+          <h6>
+            <b>Location:</b>
+            {{profile.location}}
+          </h6>
+          <h4>
+            <b>Bio:</b>
+            {{profile.bio}}
+          </h4>
+          <h6>
+            <b>Phone #:</b>
+            {{profile.phone}}
+          </h6>
           <div class="icons">
             <button
               class="btn btn-warning m-2"
@@ -48,7 +64,7 @@
     </div>
     <!-- End of Profile Card -->
     <!-- Start of Bio/Location/Phone -->
-    <hr />
+    <!-- <hr />
     <div class="row">
       <div class="col-sm-12 col-md-4 card justify-content-center">
         <h4>Bio: {{profile.bio}}</h4>
@@ -59,7 +75,7 @@
       <div class="col-sm-12 col-md-4 card justify-content-center">
         <h4>Phone #: {{profile.phone}}</h4>
       </div>
-    </div>
+    </div>-->
     <!-- End of Bio/Location/Phone -->
   </div>
 </template>
@@ -131,6 +147,7 @@ img {
   position: relative;
   padding: 10px;
   border: 2px solid #e8b563;
+  border-radius: 50%;
 }
 
 .snip1515 .profile-image img {
