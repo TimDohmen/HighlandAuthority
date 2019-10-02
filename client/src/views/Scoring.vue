@@ -70,6 +70,7 @@ export default {
   mounted() {
     this.getAthletes();
     this.getGames();
+    this.checkRole();
   },
 
   computed: {
@@ -94,6 +95,9 @@ export default {
         game: this.game
       };
       this.$store.commit("setActiveGame", gameData);
+    },
+    checkRole() {
+      this.$store.dispatch("checkRole");
     }
   },
   components: { ScoresheetComponent }
