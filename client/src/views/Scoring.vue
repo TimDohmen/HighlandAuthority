@@ -49,6 +49,7 @@
         <option value="womens-open">Women's Open</option>
         <option value="womens-masters">Women's Masters</option>
         <option value="womens-pro">Women's Pro</option>
+        <option value="lightweight">Lightweight</option>
       </select>
     </div>
     <ScoresheetComponent />

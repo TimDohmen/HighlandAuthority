@@ -2,24 +2,24 @@
   <div class="PR">
     <div class="m-2">
       <div class="row">
-        <div class="col enumEvents" @click="setHistory('open-stone')">
+        <div class="col col-sm-4 enumEvents" @click="setHistory('open-stone')">
           <openStone />
         </div>
-        <div class="col enumEvents" @click="setHistory('braemar')">
+        <div class="col col-sm-4 enumEvents" @click="setHistory('braemar')">
           <braemar />
         </div>
-        <div class="col enumEvents" @click="setHistory('w4d-heavy')">
+        <div class="col col-sm-4 enumEvents" @click="setHistory('w4d-heavy')">
           <WFDHeavy />
         </div>
       </div>
       <div class="row">
-        <div class="col enumEvents" @click="setHistory('w4d-light')">
+        <div class="col col-sm-4 enumEvents" @click="setHistory('w4d-light')">
           <WFDLight />
         </div>
-        <div class="col enumEvents" @click="setHistory('hammer-light')">
+        <div class="col col-sm-4 enumEvents" @click="setHistory('hammer-light')">
           <hammerLight />
         </div>
-        <div class="col enumEvents" @click="setHistory('hammer-heavy')">
+        <div class="col col-sm-4 enumEvents" @click="setHistory('hammer-heavy')">
           <hammerHeavy />
         </div>
       </div>
