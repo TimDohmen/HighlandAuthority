@@ -52,10 +52,6 @@ export default {
 
 
 <style scoped>
-.cards {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
 .cards-list {
   z-index: 0;
   width: 100%;
