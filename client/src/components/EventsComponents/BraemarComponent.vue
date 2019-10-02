@@ -99,6 +99,7 @@ export default {
 .cards .card_title {
   text-align: center;
   border-radius: 0px 0px 40px 40px;
+  text-shadow: 1px 1px 2px black, 0 0 1em gold, 0 0 0.2em grey;
   font-family: sans-serif;
   font-weight: bold;
   font-size: 30px;
