@@ -20,14 +20,14 @@
           <img :src="profile.picture" class="card-img-top rounded-circle m-auto img-fluid" />
         </div>
         <figcaption>
-          <h3 class="displayRole">{{user.name}}</h3>
+          <h2 class="displayRole">{{user.name}}</h2>
           <i v-if="user.role == 'Admin'" class="ra ra-shield ra-2x ml-1"></i>
           <i v-if="user.role == 'Athlete'" class="ra ra-muscle-fat ra-2x ml-1"></i>
           <i v-if="user.role == 'Judge'" class="ra ra-gavel ra-2x ml-1"></i>
-          <h6>
+          <h3>
             <b>Nickname:</b>
             {{profile.nickname}}
-          </h6>
+          </h3>
           <h6>
             <b>Class:</b>
             {{profile.class}}
@@ -36,10 +36,10 @@
             <b>Location:</b>
             {{profile.location}}
           </h6>
-          <h4>
+          <h3>
             <b>Bio:</b>
             {{profile.bio}}
-          </h4>
+          </h3>
           <h6>
             <b>Phone #:</b>
             {{profile.phone}}
