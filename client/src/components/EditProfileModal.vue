@@ -147,6 +147,10 @@
           </div>
         </div>
         <div class="modal-body">
+          <form>
+            <img v-if="newEdit.picture" :src="newEdit.picture" height="100" alt />
+            <input @change="upload" type="file" accept="image/*" />
+          </form>
           <form @submit.prevent="createProfile()">
             <div class="form-group">
               <label for="nickname">Nickname:</label>
