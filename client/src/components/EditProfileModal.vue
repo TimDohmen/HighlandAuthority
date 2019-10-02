@@ -259,7 +259,7 @@ export default {
   data() {
     return {
       newEdit: {
-        picture: ""
+        picture: this.$store.state.activeProfile.picture
       }
     };
   },
