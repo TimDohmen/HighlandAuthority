@@ -1,10 +1,10 @@
 <template>
-  <div class="profile container-fluid">
+  <div class="profile container-fluid db-border">
     <!-- Profile Card -->
     <div class="row">
-      <div class="card col-sm-12 col-md-3 text-left">
-        <img :src="profile.picture" class="card-img-top border rounded m-auto img-fluid" />
-        <div class="card-body">
+      <div class="card col-sm-12 col-md-3 text-left db-border m-2">
+        <img :src="profile.picture" class="card-img-top border rounded m-auto img-fluid db-border" />
+        <div class="card-body db-border">
           <h3 class="displayRole">{{user.name}}</h3>
           <i v-if="user.role == 'Admin'" class="ra ra-shield ra-2x ml-1"></i>
           <i v-if="user.role == 'Athlete'" class="ra ra-muscle-fat ra-2x ml-1"></i>
@@ -13,23 +13,20 @@
           <h6>Class: {{profile.class}}</h6>
         </div>
         <button
-          class="btn btn-outline-warning mb-2"
+          class="btn btn-warning m-2"
           data-toggle="modal"
           data-target="#Edit-Profile-Modal"
         >Edit</button>
-        <router-link v-if="user.role!='Athlete'" to="/games" class="btn btn-light m-1">Admin Page</router-link>
+        <router-link v-if="user.role!='Athlete'" to="/games" class="btn btn-light mb-2">Admin Page</router-link>
 
         <EditProfileModal />
       </div>
+      <!-- Event/PR area -->
+      <PR />
+      <history />
+      <!-- End of Event/PR area -->
     </div>
     <!-- End of Profile Card -->
-    <!-- Event/PR area -->
-    <hr />
-    <PR />
-    <!-- End of Event/PR area -->
-
-    <history />
-
     <!-- Start of Bio/Location/Phone -->
     <hr />
     <div class="row">

@@ -1,8 +1,10 @@
 <template>
   <div class="historyScore">
-    Distance: {{scoreProp.topAttempt}}
-    Game: {{scoreProp.gamesId.name}}
-    Date: {{this.dateTest}}
+    <dl>
+      <dt>Distance: {{scoreProp.topAttempt}}</dt>
+      <dt>Game: {{scoreProp.gamesId.name}}</dt>
+      <dt>Date: {{this.dateTest}}</dt>
+    </dl>
     <!-- Date: {{scoreProp.gamesId.date }} -->
   </div>
 </template>

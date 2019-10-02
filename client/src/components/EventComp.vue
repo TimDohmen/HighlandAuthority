@@ -1,24 +1,31 @@
 <template>
-  <div class="PR row mt-4">
-    <div class="col enumEvents" @click="setHistory('open-stone')">
-      <openStone />
+  <div class="PR">
+    <div class="m-2">
+      <div class="row">
+        <div class="col enumEvents" @click="setHistory('open-stone')">
+          <openStone />
+        </div>
+        <div class="col enumEvents" @click="setHistory('braemar')">
+          <braemar />
+        </div>
+        <div class="col enumEvents" @click="setHistory('w4d-heavy')">
+          <WFDHeavy />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col enumEvents" @click="setHistory('w4d-light')">
+          <WFDLight />
+        </div>
+        <div class="col enumEvents" @click="setHistory('hammer-light')">
+          <hammerLight />
+        </div>
+        <div class="col enumEvents" @click="setHistory('hammer-heavy')">
+          <hammerHeavy />
+        </div>
+      </div>
     </div>
-    <div class="col enumEvents" @click="setHistory('braemar')">
-      <braemar />
-    </div>
-    <div class="col enumEvents" @click="setHistory('w4d-heavy')">
-      <WFDHeavy />
-    </div>
-    <div class="col enumEvents" @click="setHistory('w4d-light')">
-      <WFDLight />
-    </div>
-    <div class="col enumEvents" @click="setHistory('hammer-light')">
-      <hammerLight />
-    </div>
-    <div class="col enumEvents" @click="setHistory('hammer-heavy')">
-      <hammerHeavy />
-    </div>
-    <!-- <div>
+  </div>
+  <!-- <div>
       {{this.hiScore[0].eventName}}
       {{this.hiScore[0].topAttempt}}
     </div>
@@ -41,8 +48,7 @@
     <div>
       {{this.hiScore[5].eventName}}
       {{this.hiScore[5].topAttempt}}
-    </div>-->
-  </div>
+  </div>-->
 </template>
 
 
@@ -126,5 +132,13 @@ export default {
 <style scoped>
 .enumEvents {
   cursor: pointer;
+}
+
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 </style>
