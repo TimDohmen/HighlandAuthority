@@ -38,8 +38,8 @@
           </h6>
           <h3>
             <b>Bio:</b>
-            {{profile.bio}}
           </h3>
+          <h6>{{profile.bio}}</h6>
           <h6>
             <b>Phone #:</b>
             {{profile.phone}}
