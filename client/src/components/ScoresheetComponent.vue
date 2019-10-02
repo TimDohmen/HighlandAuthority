@@ -10,6 +10,7 @@
     </select>
     <hr />
     <ScoreField v-for="athlete in selectedAthletes" :key="athlete._id" :athlete="athlete" />
+    <button class="btn btn-primary mt-2" @click="addScores">Submit Scores</button>
   </div>
 </template>
 
@@ -39,6 +40,9 @@ export default {
       let selectedIndex = event.target.selectedIndex - 1;
       let athlete = this.athletes[selectedIndex];
       this.selectedAthletes.push(athlete);
+    },
+    addScores() {
+      this.$store.dispatch("addScores", this.selectedAthletes);
     }
   },
   components: { ScoreField }

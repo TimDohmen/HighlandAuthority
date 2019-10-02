@@ -2,7 +2,7 @@ import express from 'express'
 import UserService from '../services/UserService';
 import { Authorize } from '../middleware/authorize'
 // import SendEmailController from '../controllers/SendEmailController'
-import nodemailer from 'nodemailer'
+//import nodemailer from 'nodemailer'
 
 let _userService = new UserService().repository
 //PUBLIC

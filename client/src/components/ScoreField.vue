@@ -42,7 +42,9 @@
 <script>
 export default {
   name: "scorefield",
-  props: { athlete: { type: Object } },
+  props: {
+    athlete: { type: Object }
+  },
   data() {
     return {
       score1: 0,
@@ -52,9 +54,11 @@ export default {
   },
   watch: {
     topScore: function(newTopScore) {
+      let activeGame = this.$store.state.activeGame;
       this.$store.commit("setScore", {
         athleteId: this.athlete._id,
-        newTopScore
+        newTopScore,
+        activeGame
       });
     }
     // topScore: function(newTopScore) {
