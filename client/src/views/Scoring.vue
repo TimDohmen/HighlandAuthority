@@ -1,7 +1,12 @@
 <template>
   <div class="scoring">
     <div>
-      <select class="custom-select col-sm-12 col-md-6" v-model="game" id="inlineFormCustomSelect">
+      <select
+        class="custom-select col-sm-12 col-md-6"
+        v-model="game"
+        id="inlineFormCustomSelect"
+        @change="gameDataChange"
+      >
         <option selected>Pick a game</option>
         <option v-for="game in games" :key="game._id" :value="game._id">{{game.name}}</option>
       </select>
@@ -11,6 +16,7 @@
         class="custom-select col-sm-12 col-md-6 mt-2"
         v-model="event"
         id="inlineFormCustomSelect"
+        @change="gameDataChange"
       >
         <option selected>Pick an event</option>
         <option value="braemar">Braemar</option>
@@ -29,6 +35,7 @@
         class="custom-select col-sm-12 col-md-6 mt-2"
         v-model="throwingClass"
         id="inlineFormCustomSelect"
+        @change="gameDataChange"
       >
         <option selected>Pick an class</option>
         <option value="pro-class">Pro Class</option>
@@ -42,10 +49,10 @@
         <option value="womens-open">Women's Open</option>
         <option value="womens-masters">Women's Masters</option>
         <option value="womens-pro">Women's Pro</option>
+        <option value="lightweight">Lightweight</option>
       </select>
     </div>
     <ScoresheetComponent />
-    <button class="btn btn-primary mt-2" @submit="addScores">Submit Scores</button>
   </div>
 </template>
 
@@ -64,20 +71,10 @@ export default {
   mounted() {
     this.getAthletes();
     this.getGames();
+    this.checkRole();
   },
-  // watch: {
-  //   throwingclass: function(newThrowingClass) {
-  //     debugger;
-  //     this.$store.commit("setThrowingClass", {
-  //       athleteId: this.athlete._id,
-  //       newThrowingClass
-  //     });
-  //   }
-  // },
+
   computed: {
-    // throwingclass() {
-    //   return this.throwingClass;
-    // },
     athletes() {
       return this.$store.state.athletes;
     },
@@ -92,7 +89,17 @@ export default {
     getGames() {
       this.$store.dispatch("getGames");
     },
-    addScores() {}
+    gameDataChange() {
+      let gameData = {
+        throwingClass: this.throwingClass,
+        event: this.event,
+        game: this.game
+      };
+      this.$store.commit("setActiveGame", gameData);
+    },
+    checkRole() {
+      this.$store.dispatch("checkRole");
+    }
   },
   components: { ScoresheetComponent }
 };

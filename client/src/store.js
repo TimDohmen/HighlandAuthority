@@ -34,7 +34,8 @@ export default new Vuex.Store({
     searchResults: [],
     games: [],
     athletes: [],
-    test: []
+    test: [],
+    activeGames: []
   },
   mutations: {
     setUser(state, user) {
@@ -81,11 +82,13 @@ export default new Vuex.Store({
     },
     setScore(state, payload) {
       state.athletes[state.athletes.findIndex(a => a._id == payload.athleteId)].topAttempt = payload.newTopScore
+      state.athletes[state.athletes.findIndex(a => a._id == payload.athleteId)].gamesId = payload.activeGame.game
+      state.athletes[state.athletes.findIndex(a => a._id == payload.athleteId)].eventName = payload.activeGame.event
+      state.athletes[state.athletes.findIndex(a => a._id == payload.athleteId)].throwingClass = payload.activeGame.throwingClass
     },
-    // setThrowingClass(state, payload) {
-    //   debugger
-    //   state.athletes[state.athletes.findIndex(a => a._id == payload.athleteId)].throwingclass = payload.newThrowingClass
-    // },
+    setActiveGame(state, payload) {
+      Vue.set(state, "activeGame", payload)
+    },
   },
   actions: {
     // DONT GO FARTHER BACK
@@ -372,6 +375,14 @@ export default new Vuex.Store({
       try {
         let res = await api.get("athletes")
         commit("setAthletes", res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+
+    async addScores({ commit, dispatch }, payload) {
+      try {
+        let res = await api.post("scores", payload)
       } catch (error) {
         console.error(error)
       }
