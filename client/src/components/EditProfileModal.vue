@@ -14,6 +14,11 @@
           </div>
         </div>
         <div class="modal-body">
+          <form>
+            <img v-if="newEdit.picture" :src="newEdit.picture" height="100" alt />
+            <input @change="upload" type="file" accept="image/*" />
+          </form>
+
           <form @submit.prevent="editProfile()">
             <div class="form-group">
               <label for="nickname">Nickname:</label>
@@ -244,11 +249,14 @@
 </template>
 
 <script>
+import uploadFile from "../FileUploader";
 export default {
   name: "EditProfileModal",
   data() {
     return {
-      newEdit: {}
+      newEdit: {
+        picture: ""
+      }
     };
   },
   computed: {
@@ -272,6 +280,18 @@ export default {
       });
       // this.newEdit = {};
       $("#close").click();
+    },
+    async upload() {
+      let file = event.target.files[0];
+      let res = await uploadFile(
+        file,
+        "profile-images/" + this.profile.userId._id,
+        {
+          owner: this.profile.userId.name
+        }
+      );
+      this.newEdit.picture = res.url;
+      // this.profile.picture = res.url;
     },
 
     createProfile() {

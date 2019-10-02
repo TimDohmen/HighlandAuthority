@@ -9,7 +9,7 @@ let _userService = new UserService().repository
 export default class AuthController {
     constructor() {
         this.router = express.Router()
-            .use('', this.myDebug)
+            // .use('', this.myDebug)
             // .use('', new SendEmailController().router)
             .post('/register', this.register)
             .post('/login', this.login)
