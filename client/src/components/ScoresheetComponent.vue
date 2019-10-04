@@ -9,14 +9,17 @@
       <option v-for="athlete in athletes" :key="athlete._id">{{athlete.userId.name}}</option>
     </select>
     <hr />
-    <ScoreField v-for="athlete in selectedAthletes" :key="athlete._id" :athlete="athlete" />
+    <ScoreHeightEvents v-for="athlete in selectedAthletes" :key="athlete._id" :athlete="athlete" />
+    <hr />
+    <ScoreDistanceEvents v-for="athlete in selectedAthletes" :key="athlete._id" :athlete="athlete" />
     <button class="btn btn-primary mt-2" @click="addScores">Submit Scores</button>
   </div>
 </template>
 
 
 <script>
-import ScoreField from "./ScoreField";
+import ScoreDistanceEvents from "./ScoreDistanceEvents";
+import ScoreHeightEvents from "./ScoreHeightEvents";
 export default {
   name: "score-sheet",
   data() {
@@ -45,7 +48,7 @@ export default {
       this.$store.dispatch("addScores", this.selectedAthletes);
     }
   },
-  components: { ScoreField }
+  components: { ScoreDistanceEvents, ScoreHeightEvents }
 };
 </script>
 

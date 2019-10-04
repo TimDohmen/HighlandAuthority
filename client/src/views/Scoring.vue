@@ -18,7 +18,7 @@
         id="inlineFormCustomSelect"
         @change="gameDataChange"
       >
-        <option selected>Pick an event</option>
+        <option value>Pick an event</option>
         <option value="braemar">Braemar</option>
         <option value="open-stone">Open Stone</option>
         <option value="w4d-heavy">W4D Heavy</option>
@@ -37,7 +37,7 @@
         id="inlineFormCustomSelect"
         @change="gameDataChange"
       >
-        <option selected>Pick an class</option>
+        <option value>Pick an class</option>
         <option value="pro-class">Pro Class</option>
         <option value="a-class">A Class</option>
         <option value="b-class">B Class</option>
@@ -65,7 +65,7 @@ export default {
     return {
       throwingClass: "",
       event: "",
-      game: ""
+      game: undefined
     };
   },
   mounted() {
