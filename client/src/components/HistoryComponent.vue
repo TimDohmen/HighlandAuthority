@@ -1,6 +1,6 @@
 <template>
-  <div class="history mx-auto col-md-2 mb-2 card mt-2 db-border">
-    <u @click="showHistory = !showHistory" class="historyPart">Click Event Event History</u>
+  <div class="history mx-auto col-md-2 mb-2 card mt-2 db-bordero">
+    <u @click="showHistory = !showHistory" class="historyPart">Click Event To See Full Event History</u>
     <div v-if="showHistory">
       Event: {{this.scores[0].eventName}}
       <historyScore v-for="score in scores" :scoreProp="score" :key="score._id" />
@@ -41,5 +41,8 @@ p:hover {
   position: relative;
   float: right;
   min-width: 200px;
+}
+.db-bordero {
+  color: black;
 }
 </style>

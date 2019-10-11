@@ -131,6 +131,9 @@ img {
 .displayRole {
   display: inline;
 }
+.db-border {
+  color: seagreen;
+}
 
 .snip1515 {
   font-family: "Open Sans", Arial, sans-serif;
@@ -157,7 +160,7 @@ img {
   z-index: 1;
   position: relative;
   padding: 10px;
-  border: 2px solid #e8b563;
+  border: 2px solid seagreen;
   border-radius: 50%;
 }
 
