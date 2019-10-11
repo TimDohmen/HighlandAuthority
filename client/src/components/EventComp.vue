@@ -47,9 +47,6 @@ export default {
     hiScore() {
       return this.$store.state.hiScores;
     }
-    // eventName(){
-    //   return this.$store.state.scores.eventName;
-    // }
   },
   methods: {
     setHistory(eventName) {
