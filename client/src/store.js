@@ -137,24 +137,7 @@ export default new Vuex.Store({
     },
     //#endregion
 
-
     //#region -- SCORES --
-    // async getScore({ commit, dispatch }, payload) {
-    //   try {
-    //     let res = await api.post("scores/", payload)
-    //   } catch (error) {
-    //     console.error(error)
-    //   }
-    // },
-    // async getHiScores({ commit, dispatch }, payload) {
-    //   try {
-    //     let query = `?eventName=${payload.eventName}`
-    //     let res = await api.get(`scores/${payload.userId}/find` + query)
-    //     commit('setHiScores', res.data)
-    //   } catch (error) {
-    //     console.error(error)
-    //   }
-    // },
     async getOneEventScores({ commit, dispatch }, payload) {
       try {
         let query = `?eventName=${payload.eventName}`
@@ -165,60 +148,7 @@ export default new Vuex.Store({
       }
     },
 
-    async getHiStoneScores({ commit, dispatch }, payload) {
-      try {
-        let query = `?eventName=${payload.eventName}`
-        let res = await api.get(`scores/${payload.userId}/find` + query)
-        commit('setHiStoneScores', res.data)
-      } catch (error) {
-        console.error(error)
-      }
-    },
-    async getHiBraemarScores({ commit, dispatch }, payload) {
-      try {
-        let query = `?eventName=${payload.eventName}`
-        let res = await api.get(`scores/${payload.userId}/find` + query)
-        commit('setHiBraemarScores', res.data)
-      } catch (error) {
-        console.error(error)
-      }
-    },
-    async getHiWFDScores({ commit, dispatch }, payload) {
-      try {
-        let query = `?eventName=${payload.eventName}`
-        let res = await api.get(`scores/${payload.userId}/find` + query)
-        commit('setHiWFDScores', res.data)
-      } catch (error) {
-        console.error(error)
-      }
-    },
-    async getHiWFDLScores({ commit, dispatch }, payload) {
-      try {
-        let query = `?eventName=${payload.eventName}`
-        let res = await api.get(`scores/${payload.userId}/find` + query)
-        commit('setHiWFDLScores', res.data)
-      } catch (error) {
-        console.error(error)
-      }
-    },
-    async getHiHammerLScores({ commit, dispatch }, payload) {
-      try {
-        let query = `?eventName=${payload.eventName}`
-        let res = await api.get(`scores/${payload.userId}/find` + query)
-        commit('setHiHammerLScores', res.data)
-      } catch (error) {
-        console.error(error)
-      }
-    },
-    async getHiHammerHScores({ commit, dispatch }, payload) {
-      try {
-        let query = `?eventName=${payload.eventName}`
-        let res = await api.get(`scores/${payload.userId}/find` + query)
-        commit('setHiHammerHScores', res.data)
-      } catch (error) {
-        console.error(error)
-      }
-    },
+    //#endregion
 
     //#region -- EditProfileModal --
     async editProfile({ commit, dispatch }, payload) {
@@ -241,13 +171,6 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
-    async getProfile({ commit, dispatch }, userId) {
-      try {
-        // let res = await api.get('athletes')
-      } catch (error) {
-        console.error(error)
-      }
-    },
     async getMyProfile({ commit, dispatch }, userId) {
       try {
         let res = await api.get(`athletes/${userId}`)
@@ -256,14 +179,6 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
-    // async getAllProfiles({ commit, dispatch }) {
-    //   try {
-    //     let res = await api.get('athletes')
-    //     commit('setProfiles', res.data)
-    //   } catch (error) {
-    //     console.error(error)
-    //   }
-    // },
     async getActiveProfile({ commit, dispatch }, payload) {
       try {
         let res = payload.profiles.find(p => p.userId == payload.userId)
@@ -284,20 +199,16 @@ export default new Vuex.Store({
     //#endregion
 
     //#region Reset Password
-
     async changePassword({ commit, dispatch }, payload) {
       try {
-        // let res = await apiUser.put(':id/forgot', payload)
         let res = await apiUser.put(`account/:id/forgot`, payload)
         commit('setUser', res.data)
-        // commit('setActiveProfile', res.data)
         NotificationService.toast("Password Changed")
       } catch (error) {
         console.error(error)
       }
     },
     //#endregion
-
 
     //#region Search Results
     async findUserByName({ commit, dispatch }, query) {
@@ -338,15 +249,6 @@ export default new Vuex.Store({
       }
     },
 
-    async setRole({ commit, dispatch }, payload) {
-      try {
-        let res = await apiUser.put(`account/${payload._id}`, payload)
-
-      } catch (error) {
-        console.error(error)
-      }
-    },
-
     //#endregion
 
     //#region Scoring
@@ -361,7 +263,7 @@ export default new Vuex.Store({
 
     async addScores({ commit, dispatch }, payload) {
       try {
-        let res = await api.post("scores", payload)
+        await api.post("scores", payload)
       } catch (error) {
         console.error(error)
       }
