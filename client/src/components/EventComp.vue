@@ -60,33 +60,7 @@ import hammerLight from "../components/EventsComponents/HammerLightComponent";
 import hammerHeavy from "../components/EventsComponents/HammerHeavyComponent";
 export default {
   name: "PR",
-  mounted() {
-    // this.$store.dispatch("getScoresById", this.user._id); //FIXME Scores in store
-    this.$store.dispatch("getHiScores", {
-      userId: this.user._id,
-      eventName: "open-stone"
-    });
-    this.$store.dispatch("getHiScores", {
-      userId: this.user._id,
-      eventName: "braemar"
-    });
-    this.$store.dispatch("getHiScores", {
-      userId: this.user._id,
-      eventName: "w4d-light"
-    });
-    this.$store.dispatch("getHiScores", {
-      userId: this.user._id,
-      eventName: "w4d-heavy"
-    });
-    this.$store.dispatch("getHiScores", {
-      userId: this.user._id,
-      eventName: "hammer-heavy"
-    });
-    this.$store.dispatch("getHiScores", {
-      userId: this.user._id,
-      eventName: "hammer-light"
-    });
-  },
+  mounted() {},
   data() {
     return {};
   },
