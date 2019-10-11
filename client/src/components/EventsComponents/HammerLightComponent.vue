@@ -4,7 +4,7 @@
     <p>PR: {{this.hiScore.topAttempt}}</p>-->
     <div class="cards 1">
       <div class="card_image">
-        <img src="http://scottishheavyathletics.com/img/highland/stone_opt.jpg" />
+        <img src="http://www.halkirkgames.co.uk/wp-content/uploads/2015/08/hammer2.jpg" />
       </div>
       <div class="card_title title-white">
         <h4>

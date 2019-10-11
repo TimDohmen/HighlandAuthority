@@ -5,7 +5,7 @@
 
     <div class="cards 1">
       <div class="card_image">
-        <img src="http://www.ecns.cn/hd/2018/09/03/79871c6eb8834ee3af9755208ff411b6.jpg" />
+        <img src="http://www.heavyeventsjudging.org/wp-content/uploads/2013/10/Stones.jpg" />
       </div>
       <div class="card_title title-white">
         <h4>

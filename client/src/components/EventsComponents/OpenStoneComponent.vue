@@ -5,7 +5,7 @@
 
     <div class="cards 1">
       <div class="card_image">
-        <img src="http://scottishheavyathletics.com/img/highland/stone_opt.jpg" />
+        <img src="https://cdn.pixabay.com/photo/2016/11/18/17/46/grass-1836069_960_720.jpg" />
       </div>
       <div class="card_title title-white">
         <h4>
