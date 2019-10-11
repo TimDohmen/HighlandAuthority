@@ -1,27 +1,23 @@
 <template>
-  <div class="PR">
-    <div class="m-2">
-      <div class="row">
-        <div class="col col-sm-4 enumEvents" @click="setHistory('open-stone')">
-          <openStone />
-        </div>
-        <div class="col col-sm-4 enumEvents" @click="setHistory('braemar')">
-          <braemar />
-        </div>
-        <div class="col col-sm-4 enumEvents" @click="setHistory('w4d-heavy')">
-          <WFDHeavy />
-        </div>
+  <div class="PR cards-list">
+    <div class="row">
+      <div class="col-sm-4 col-md-6 enumEvents" @click="setHistory('open-stone')">
+        <openStone />
       </div>
-      <div class="row">
-        <div class="col col-sm-4 enumEvents" @click="setHistory('w4d-light')">
-          <WFDLight />
-        </div>
-        <div class="col col-sm-4 enumEvents" @click="setHistory('hammer-light')">
-          <hammerLight />
-        </div>
-        <div class="col col-sm-4 enumEvents" @click="setHistory('hammer-heavy')">
-          <hammerHeavy />
-        </div>
+      <div class="col-sm-4 col-md-6 enumEvents" @click="setHistory('braemar')">
+        <braemar />
+      </div>
+      <div class="col-sm-4 col-md-6 enumEvents" @click="setHistory('w4d-heavy')">
+        <WFDHeavy />
+      </div>
+      <div class="col-sm-4 col-md-6 enumEvents" @click="setHistory('w4d-light')">
+        <WFDLight />
+      </div>
+      <div class="col-sm-4 col-md-6 enumEvents" @click="setHistory('hammer-light')">
+        <hammerLight />
+      </div>
+      <div class="col-sm-4 col-md-6 enumEvents" @click="setHistory('hammer-heavy')">
+        <hammerHeavy />
       </div>
     </div>
   </div>
@@ -138,7 +134,7 @@ export default {
   z-index: 0;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   flex-wrap: wrap;
 }
 </style>

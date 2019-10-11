@@ -15,51 +15,52 @@
 
       <!-- FIXME Construction -->
 
-      <figure class="snip1515">
-        <div class="profile-image">
-          <img :src="profile.picture" class="card-img-top rounded-circle m-auto img-fluid" />
-        </div>
-        <figcaption>
-          <h2 class="displayRole">{{user.name}}</h2>
-          <i v-if="user.role == 'Admin'" class="ra ra-shield ra-2x ml-1"></i>
-          <i v-if="user.role == 'Athlete'" class="ra ra-muscle-fat ra-2x ml-1"></i>
-          <i v-if="user.role == 'Judge'" class="ra ra-gavel ra-2x ml-1"></i>
-          <h3>
-            <b>Nickname:</b>
-            {{profile.nickname}}
-          </h3>
-          <h6>
-            <b>Class:</b>
-            {{profile.class}}
-          </h6>
-          <h6>
-            <b>Location:</b>
-            {{profile.location}}
-          </h6>
-          <h3>
-            <b>Bio:</b>
-          </h3>
-          <h6>{{profile.bio}}</h6>
-          <h6>
-            <b>Phone #:</b>
-            {{profile.phone}}
-          </h6>
-          <div class="icons">
-            <button
-              class="btn btn-warning m-2"
-              data-toggle="modal"
-              data-target="#Edit-Profile-Modal"
-            >Edit</button>
+      <div class="col-2-sm">
+        <figure class="snip1515">
+          <div class="profile-image">
+            <img :src="profile.picture" class="card-img-top rounded-circle m-auto img-fluid" />
           </div>
-        </figcaption>
-      </figure>
-      <!-- //FIXME END OF CONSTRUCTION -->
-
+          <figcaption>
+            <h2 class="displayRole">{{user.name}}</h2>
+            <i v-if="user.role == 'Admin'" class="ra ra-shield ra-2x ml-1"></i>
+            <i v-if="user.role == 'Athlete'" class="ra ra-muscle-fat ra-2x ml-1"></i>
+            <i v-if="user.role == 'Judge'" class="ra ra-gavel ra-2x ml-1"></i>
+            <h3>
+              <b>Nickname:</b>
+              {{profile.nickname}}
+            </h3>
+            <h6>
+              <b>Class:</b>
+              {{profile.class}}
+            </h6>
+            <h6>
+              <b>Location:</b>
+              {{profile.location}}
+            </h6>
+            <h3>
+              <b>Bio:</b>
+            </h3>
+            <h6>{{profile.bio}}</h6>
+            <h6>
+              <b>Phone #:</b>
+              {{profile.phone}}
+            </h6>
+            <div class="icons">
+              <button
+                class="btn btn-warning m-2"
+                data-toggle="modal"
+                data-target="#Edit-Profile-Modal"
+              >Edit</button>
+            </div>
+          </figcaption>
+        </figure>
+        <!-- //FIXME END OF CONSTRUCTION -->
+      </div>
       <EditProfileModal />
       <!-- </div> -->
       <!-- Event/PR area -->
-      <PR />
-      <history />
+      <PR class="col" />
+      <history class="col-2" />
       <!-- End of Event/PR area -->
     </div>
     <!-- End of Profile Card -->
