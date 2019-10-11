@@ -7,6 +7,7 @@
             src="https://www.spokanehighlandgames.net/uploads/1/0/3/2/103286654/male-athlete_1_orig.png"
             alt="Strongman"
             class="img-size"
+            href="/login"
           />
         </div>
         <div class="col-sm-6 col-md-6 d-flex align-items-center">
