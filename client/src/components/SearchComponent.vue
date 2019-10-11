@@ -7,10 +7,16 @@
         <i v-if="userProp.role == 'Admin'" class="ra ra-shield ra-2x"></i>
         <i v-if="userProp.role == 'Athlete'" class="ra ra-muscle-fat ra-2x"></i>
         <i v-if="userProp.role == 'Judge'" class="ra ra-gavel ra-2x"></i>
-        <p class="title">CEO & Founder, Example</p>
+        <p class="title" v-if="userProp.role == 'Admin'">
+          CEO & Founder,
+          or Admin
+        </p>
         <p></p>
         <p>
-          <button>Veiw Profile</button>
+          <button>
+            <i class="fas fa-user-friends fa-sm"></i>
+            Veiw Profile
+          </button>
         </p>
       </div>
     </div>
