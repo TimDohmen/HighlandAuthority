@@ -89,6 +89,7 @@ import history from "../components/HistoryComponent";
 export default {
   name: "profileSearched",
   mounted() {
+    this.setHistory("open-stone");
     // this.$store.dispatch("getAllProfiles");
     this.getSearchedProfile();
   },
@@ -114,8 +115,15 @@ export default {
       document.querySelectorAll("input").forEach(v => {
         v.checked = false;
       });
+    },
+    setHistory(eventName) {
+      this.$store.dispatch("getOneEventScores", {
+        userId: this.$route.params.userId,
+        eventName: eventName
+      });
     }
   },
+
   components: { PR, history }
 };
 </script>
