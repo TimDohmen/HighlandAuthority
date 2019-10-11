@@ -33,11 +33,6 @@
               {{profile.phone}}
             </h6>
             <div class="icons">
-              <button
-                class="btn btn-warning m-2"
-                data-toggle="modal"
-                data-target="#Edit-Profile-Modal"
-              >Edit</button>
               <div v-if="user.role=='Admin'">
                 Role: {{profile.userId.role}}
                 <div v-if="user.role=='Admin' && profile.userId.role!='Athlete'">
