@@ -13,7 +13,7 @@
         </h4>
         <small>Class: {{this.hiScore.throwingClass}}</small>
 
-        <p>PR: {{this.hiScore.topAttempt}}</p>
+        <p>PR: {{this.hiScore.topAttempt}} Ft</p>
       </div>
     </div>
   </div>
