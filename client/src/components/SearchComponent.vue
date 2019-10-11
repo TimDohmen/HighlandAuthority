@@ -11,10 +11,12 @@
           CEO & Founder,
           or Admin
         </p>
-        <p></p>
+        <p class="title" v-if="userProp.role == 'Athlete'">Athlete</p>
+        <p class="title" v-if="userProp.role == 'Judge'">Judge</p>
+
         <p>
-          <button>
-            <i class="fas fa-user-friends fa-sm"></i>
+          <button class="button-pos">
+            <i class="fas fa-user-friends fa-sm float-bottom"></i>
             Veiw Profile
           </button>
         </p>
@@ -52,22 +54,28 @@ export default {
 
 <style scoped>
 .card {
+  position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
+  height: 450px;
   margin: auto;
+  width: 250px;
   text-align: center;
   font-family: arial;
-  width: 250px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   opacity: 1;
+}
+.button-pos {
+  position: absolute;
+  bottom: 0;
+  left: 0%;
 }
 img {
   max-height: 300px;
   max-width: 300px;
   width: 200px;
   height: 200px;
-  position: center;
   margin-top: 5%;
 }
 
