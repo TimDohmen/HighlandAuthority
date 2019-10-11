@@ -3,7 +3,7 @@
     <!-- Profile Card -->
     <div class="row" v-if="profile.userId">
       <div class="col-2-sm">
-        <figure class="snip1515">
+        <figure class="cssGod">
           <div class="profile-image">
             <img :src="profile.picture" class="card-img-top rounded-circle m-auto img-fluid" />
           </div>
@@ -138,7 +138,7 @@ img {
   color: seagreen;
 }
 
-.snip1515 {
+.cssGod {
   font-family: "Open Sans", Arial, sans-serif;
   position: relative;
   margin: 10px;
@@ -152,12 +152,12 @@ img {
   box-shadow: none !important;
 }
 
-.snip1515 * {
+.cssGod * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.snip1515 .profile-image {
+.cssGod .profile-image {
   display: inline-block;
   width: 80%;
   z-index: 1;
@@ -167,12 +167,12 @@ img {
   border-radius: 50%;
 }
 
-.snip1515 .profile-image img {
+.cssGod .profile-image img {
   max-width: 100%;
   vertical-align: top;
 }
 
-.snip1515 figcaption {
+.cssGod figcaption {
   width: 100%;
   background-color: #f2f2f2;
   color: #555;
@@ -181,36 +181,36 @@ img {
   display: inline-block;
 }
 
-.snip1515 h3,
-.snip1515 h4,
-.snip1515 p {
+.cssGod h3,
+.cssGod h4,
+.cssGod p {
   margin: 0 0 5px;
 }
 
-.snip1515 h3 {
+.cssGod h3 {
   font-weight: 600;
   font-size: 1.3em;
   font-family: "Playfair Display", Arial, sans-serif;
 }
 
-.snip1515 h4 {
+.cssGod h4 {
   color: #8c8c8c;
   font-weight: 400;
   letter-spacing: 2px;
 }
 
-.snip1515 p {
+.cssGod p {
   font-size: 0.9em;
   letter-spacing: 1px;
   opacity: 0.9;
 }
 
-.snip1515 .icons {
+.cssGod .icons {
   text-align: center;
   width: 100%;
 }
 
-.snip1515 i {
+.cssGod i {
   padding: 10px 2px;
   display: inline-block;
   font-size: 18px;
@@ -219,7 +219,7 @@ img {
   opacity: 0.75;
 }
 
-.snip1515 i:hover {
+.cssGod i:hover {
   opacity: 1;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;

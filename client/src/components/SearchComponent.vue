@@ -2,7 +2,7 @@
   <div class="user" @click="selectAthlete(userProp._id)">
     <div class="container-fluid">
       <div class="card profile p-2">
-        <img class="pl-4" :src="userProp.photo" style="width:90%" />
+        <img class="pl-4" :src="userProp.photo" />
         <h1>{{userProp.name}}</h1>
         <i v-if="userProp.role == 'Admin'" class="ra ra-shield ra-2x"></i>
         <i v-if="userProp.role == 'Athlete'" class="ra ra-muscle-fat ra-2x"></i>
@@ -55,6 +55,14 @@ export default {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   opacity: 1;
+}
+img {
+  max-height: 300px;
+  max-width: 300px;
+  width: 200px;
+  height: 200px;
+  position: center;
+  margin-top: 5%;
 }
 
 .title {
