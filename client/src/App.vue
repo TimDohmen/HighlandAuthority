@@ -15,9 +15,18 @@
         </div>
 
         <div class="col-sm-4 col-md-4 m-auto">
-          <router-link v-if="!user._id" to="/login" class="btn btn-light m-1">Home</router-link>
-          <router-link v-if="user._id" to="/profile" class="btn btn-light m-1">My Profile</router-link>
-          <button v-if="user._id" class="btn btn-danger ml-2" @click="Logout()">Logout</button>
+          <router-link v-if="!user._id" to="/login" class="btn btn-light m-1">
+            <i class="fas fa-home fa-sm"></i>
+            Home
+          </router-link>
+          <router-link v-if="user._id" to="/profile" class="btn btn-light m-1">
+            <i class="fas fa-user fa-sm"></i>
+            My Profile
+          </router-link>
+          <button v-if="user._id" class="btn btn-danger ml-2" @click="Logout()">
+            <i class="fas fa-sign-out-alt fa-sm"></i>
+            Logout
+          </button>
 
           <form>
             <div class="input-group">
@@ -28,12 +37,10 @@
                 v-model="query"
               />
               <div class="input-group-append">
-                <button
-                  class="btn btn-success"
-                  type="submit"
-                  @click="searchUsers()"
-                  id="search"
-                >Search</button>
+                <button class="btn btn-success" type="submit" @click="searchUsers()" id="search">
+                  <i class="fas fa-search fa-sm"></i>
+                  Search
+                </button>
               </div>
             </div>
           </form>
@@ -41,12 +48,18 @@
             v-if="user.role!='Athlete' && user._id"
             to="/scoring"
             class="btn btn-light m-1"
-          >Add Scores To Exisiting Game</router-link>
+          >
+            <i class="far fa-plus-square fa-sm"></i>
+            Add Scores To Exisiting Game
+          </router-link>
           <router-link
             v-if="user.role!='Athlete' && user._id"
             to="/games"
             class="btn btn-light m-1"
-          >Create A Game</router-link>
+          >
+            <i class="far fa-calendar-plus fa-sm"></i>
+            Create A Game
+          </router-link>
         </div>
       </div>
       <router-view />
