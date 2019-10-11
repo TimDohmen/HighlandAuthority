@@ -4,7 +4,9 @@
     <p>PR: {{this.hiScore.topAttempt}}</p>-->
     <div class="cards 1">
       <div class="card_image">
-        <img src="http://www.halkirkgames.co.uk/wp-content/uploads/2015/08/hammer2.jpg" />
+        <img
+          src="https://cdn.shopify.com/s/files/1/1755/9051/products/00100dPORTRAIT-00100-BURST20190515160732240-COVER_480x480.jpg?v=1562256750"
+        />
       </div>
       <div class="card_title title-white">
         <h4>
