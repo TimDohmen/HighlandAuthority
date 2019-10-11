@@ -21,30 +21,6 @@
       </div>
     </div>
   </div>
-  <!-- <div>
-      {{this.hiScore[0].eventName}}
-      {{this.hiScore[0].topAttempt}}
-    </div>
-    <div>
-      {{this.hiScore[1].eventName}}
-      {{this.hiScore[1].topAttempt}}
-    </div>
-    <div>
-      {{this.hiScore[2].eventName}}
-      {{this.hiScore[2].topAttempt}}
-    </div>
-    <div>
-      {{this.hiScore[3].eventName}}
-      {{this.hiScore[3].topAttempt}}
-    </div>
-    <div>
-      {{this.hiScore[4].eventName}}
-      {{this.hiScore[4].topAttempt}}
-    </div>
-    <div>
-      {{this.hiScore[5].eventName}}
-      {{this.hiScore[5].topAttempt}}
-  </div>-->
 </template>
 
 
