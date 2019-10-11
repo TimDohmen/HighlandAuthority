@@ -11,7 +11,6 @@ let _schema = new Schema({
   userId: { type: ObjectId, ref: "User", required: true }
 }, { timestamps: true })
 
-
 export default class GameService {
   get repository() {
     return mongoose.model('Game', _schema)

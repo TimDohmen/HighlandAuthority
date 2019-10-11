@@ -50,7 +50,6 @@ export default new Router({
       component: function () {
         return import(/* webpackChunkName: "search" */ './views/Games.vue')
       },
-
     },
     {
       path: '/scoring',
@@ -82,7 +81,6 @@ export default new Router({
         return import(/* webpackChunkName: "search" */ './views/Forgot.vue')
       }
     },
-
     {
       path: "*",
       redirect: '/login',

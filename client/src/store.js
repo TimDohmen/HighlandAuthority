@@ -50,24 +50,6 @@ export default new Vuex.Store({
     setOneEventScores(state, scores) {
       state.oneEventScores = scores
     },
-    setHiStoneScores(state, score) {
-      state.hiStoneScore = score
-    },
-    setHiBraemarScores(state, score) {
-      state.hiBraemarScore = score
-    },
-    setHiWFDScores(state, score) {
-      state.hiWFDScore = score
-    },
-    setHiWFDLScores(state, score) {
-      state.hiWFDLScore = score
-    },
-    setHiHammerLScores(state, score) {
-      state.hiHammerLScore = score
-    },
-    setHiHammerHScores(state, score) {
-      state.hiHammerHScore = score
-    },
     setSearchResults(state, payload) {
       state.searchResults = payload
     },
@@ -103,6 +85,7 @@ export default new Vuex.Store({
         console.warn(e.message)
       }
     },
+
     async login({ commit, dispatch }, creds) {
       try {
         let user = await AuthService.Login(creds)
@@ -114,6 +97,7 @@ export default new Vuex.Store({
         console.warn(e.message)
       }
     },
+
     async logout({ commit, dispatch }) {
       try {
         let success = await AuthService.Logout()
@@ -124,6 +108,7 @@ export default new Vuex.Store({
         console.warn(e.message)
       }
     },
+
     async checkRole({ commit, dispatch }) {
       try {
         let user = await AuthService.adminAuthenticate()
@@ -162,6 +147,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async createProfile({ commit, dispatch }, payload) {
       try {
         let res = await api.post('athletes/', payload)
@@ -171,6 +157,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getMyProfile({ commit, dispatch }, userId) {
       try {
         let res = await api.get(`athletes/${userId}`)
@@ -179,6 +166,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getActiveProfile({ commit, dispatch }, payload) {
       try {
         let res = payload.profiles.find(p => p.userId == payload.userId)
@@ -187,6 +175,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getSearchedProfile({ commit, dispatch }, payload) {
       try {
         let res = await api.get('athletes/' + payload)
@@ -232,6 +221,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getGames({ commit, dispatch }) {
       try {
         let res = await api.get("games")
@@ -240,6 +230,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async editGame({ commit, dispatch }, payload) {
       try {
         let res = await api.put("games/" + payload._id, payload)

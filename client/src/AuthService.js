@@ -33,7 +33,7 @@ export default class AuthService {
   }
   static async Logout() {
     try {
-      let res = await auth.delete('logout')
+      await auth.delete('logout')
       return true
     } catch (e) {
       throw new Error(`[logout failed] : ${!e.response ? 'No response from server' : e.response.data.error}`)

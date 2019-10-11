@@ -1,10 +1,9 @@
 import express from 'express'
 import UserService from '../services/UserService';
 import { Authorize } from '../middleware/authorize'
-// import SendEmailController from '../controllers/SendEmailController'
-//import nodemailer from 'nodemailer'
 
 let _userService = new UserService().repository
+
 //PUBLIC
 export default class AuthController {
     constructor() {
@@ -18,12 +17,10 @@ export default class AuthController {
             .get('/authenticate', this.authenticate)
             .get('/adminAuthenticate', this.adminAuthenticate)
             .put('/:id', this.editRole)
-            //FIXME Change Password
             .put('/:id/forgot', this.changePassword)
             .delete('/logout', this.logout)
             .use(this.defaultRoute)
     }
-
 
     myDebug(req, res, next) {
         console.log('URL:', req.originalUrl, 'Type:', req.method, 'User:', req.session.uid)
@@ -46,8 +43,8 @@ export default class AuthController {
 
         }
     }
-    //Password Stuff
 
+    //Password Stuff
     async SendForgotEmail(req, res) {
         try {
             req.body.hash = UserService.generateHash(req.body.password)
@@ -61,7 +58,6 @@ export default class AuthController {
 
         }
     }
-
 
     async changePassword(req, res, next) {
         //VALIDATE PASSWORD LENGTH
@@ -85,8 +81,6 @@ export default class AuthController {
             res.status(400).send(error)
         }
     }
-
-
 
     async register(req, res, next) {
         //VALIDATE PASSWORD LENGTH
@@ -149,22 +143,8 @@ export default class AuthController {
             res.status(500).send(err)
         }
     }
-    async adminAuthenticate(req, res, next) {
-        // try {
-        //     let user = await _userService.findOne({ _id: req.session.uid, role: "admin" })
-        //     if (!user) {
-        //         return res.status(401).send({
-        //             error: 'Please contact admin or judge'
-        //         })
-        //     }
-        //     delete user._doc.hash
-        //     res.send(user)
-        // }
-        // catch (err) {
-        //     console.error(err)
-        //     res.status(500).send(err)
-        // }
 
+    async adminAuthenticate(req, res, next) {
         try {
             let user = await _userService.findOne({ role: "Admin", _id: req.session.uid })
             if (!user) {
@@ -185,8 +165,6 @@ export default class AuthController {
             console.error(err)
             res.status(500).send()
         }
-
-
     }
     async logout(req, res, next) {
         try {
@@ -201,5 +179,3 @@ export default class AuthController {
         } catch (error) { next(error) }
     }
 }
-
-

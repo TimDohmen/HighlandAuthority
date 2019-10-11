@@ -5,8 +5,6 @@ import store from './store'
 import AuthService from "./AuthService"
 import { RpgAwesome } from '../node_modules/rpg-awesome/css/rpg-awesome.min.css'
 
-//Vue.config.productionTip = false
-
 async function init() {
   let user = await AuthService.Authenticate()
   if (user) { store.commit("setUser", user) }

@@ -42,8 +42,6 @@ export default class NotificationService {
   }
 
 
-
-
   static confirmDelete() {
     return new Promise((resolve, reject) => {
       const swalWithBootstrapButtons = swal.mixin({

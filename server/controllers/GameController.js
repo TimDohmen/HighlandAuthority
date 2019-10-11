@@ -18,8 +18,6 @@ export default class GameController {
       .use(this.defaultRoute)
   }
 
-  // this is pretty neat
-
   defaultRoute(req, res, next) {
     next({ status: 404, message: 'No Such Route' })
   }

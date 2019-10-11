@@ -10,6 +10,7 @@ export default class SearchController {
       .get("/find", this.findUserByQuery)
       .use(Authorize.authenticated)
   }
+
   async findUserByQuery(req, res, next) {
     try {
       let user = await _us.find(req.query).select('name')
