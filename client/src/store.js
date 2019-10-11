@@ -130,7 +130,6 @@ export default new Vuex.Store({
         if (!user) {
           router.push({ name: "login" })
           NotificationService.toastError("")
-
         }
       } catch (e) {
         console.warn(e.message)
@@ -220,19 +219,6 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
-    // getBoards({ commit, dispatch }) {
-    //   api.get('boards')
-    //     .then(res => {
-    //       commit('setBoards', res.data)
-    //     })
-    // },
-    // addBoard({ commit, dispatch }, boardData) {
-    //   api.post('boards', boardData)
-    //     .then(serverBoard => {
-    //       dispatch('getBoards')
-    //     })
-    //#endregion
-
 
     //#region -- EditProfileModal --
     async editProfile({ commit, dispatch }, payload) {
@@ -244,7 +230,6 @@ export default new Vuex.Store({
         }
       } catch (error) {
         console.error(error)
-
       }
     },
     async createProfile({ commit, dispatch }, payload) {
@@ -254,7 +239,6 @@ export default new Vuex.Store({
         NotificationService.toast("Athlete Profile Created")
       } catch (error) {
         console.error(error)
-
       }
     },
     async getProfile({ commit, dispatch }, userId) {
@@ -269,7 +253,7 @@ export default new Vuex.Store({
         let res = await api.get(`athletes/${userId}`)
         commit('setMyProfile', res.data)
       } catch (error) {
-
+        console.error(error)
       }
     },
     // async getAllProfiles({ commit, dispatch }) {
@@ -297,8 +281,6 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
-
-
     //#endregion
 
     //#region Reset Password
@@ -307,14 +289,11 @@ export default new Vuex.Store({
       try {
         // let res = await apiUser.put(':id/forgot', payload)
         let res = await apiUser.put(`account/:id/forgot`, payload)
-
         commit('setUser', res.data)
         // commit('setActiveProfile', res.data)
         NotificationService.toast("Password Changed")
-
       } catch (error) {
         console.error(error)
-
       }
     },
     //#endregion
@@ -364,7 +343,7 @@ export default new Vuex.Store({
         let res = await apiUser.put(`account/${payload._id}`, payload)
 
       } catch (error) {
-
+        console.error(error)
       }
     },
 

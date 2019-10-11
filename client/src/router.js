@@ -86,7 +86,6 @@ export default new Router({
     {
       path: "*",
       redirect: '/login',
-
     }
   ]
 })
