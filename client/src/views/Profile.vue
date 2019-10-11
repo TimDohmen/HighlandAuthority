@@ -50,7 +50,10 @@
                 class="btn btn-warning m-2"
                 data-toggle="modal"
                 data-target="#Edit-Profile-Modal"
-              >Edit</button>
+              >
+                <i class="fas fa-edit fa-sm"></i>
+                Edit
+              </button>
             </div>
           </figcaption>
         </figure>
