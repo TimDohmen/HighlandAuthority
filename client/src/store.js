@@ -91,8 +91,6 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    // DONT GO FARTHER BACK
-
     //#region -- AUTH STUFF --
     async register({ commit, dispatch }, creds) {
       try {
@@ -110,7 +108,6 @@ export default new Vuex.Store({
         commit('setUser', user)
         router.push({ name: "profile" })
         NotificationService.toast("Login Successful")
-
       } catch (e) {
         console.warn(e.message)
       }
@@ -141,7 +138,6 @@ export default new Vuex.Store({
     //#endregion
 
     //#region -- SCORES --
-
     async getOneEventScores({ commit, dispatch }, payload) {
       try {
         let query = `?eventName=${payload.eventName}`
@@ -235,14 +231,6 @@ export default new Vuex.Store({
       }
     },
 
-    async getProfile({ commit, dispatch }, userId) {
-      try {
-        // let res = await api.get('athletes')
-      } catch (error) {
-        console.error(error)
-      }
-    },
-
     async getMyProfile({ commit, dispatch }, userId) {
       try {
         let res = await api.get(`athletes/${userId}`)
@@ -264,7 +252,6 @@ export default new Vuex.Store({
     async getSearchedProfile({ commit, dispatch }, payload) {
       try {
         let res = await api.get('athletes/' + payload)
-        // let res = payload.profile.find(p => p.userId == payload.userId)
         if (res) commit('setActiveProfile', res.data)
       } catch (error) {
         console.error(error)
@@ -276,10 +263,8 @@ export default new Vuex.Store({
 
     async changePassword({ commit, dispatch }, payload) {
       try {
-        // let res = await apiUser.put(':id/forgot', payload)
         let res = await apiUser.put(`account/:id/forgot`, payload)
         commit('setUser', res.data)
-        // commit('setActiveProfile', res.data)
         NotificationService.toast("Password Changed")
       } catch (error) {
         console.error(error)
@@ -287,11 +272,10 @@ export default new Vuex.Store({
     },
     //#endregion
 
-
     //#region Search Results
     async findUserByName({ commit, dispatch }, query) {
       try {
-        let res = await api.get("athletes/find?name=" + query) //FIXME athletes?
+        let res = await api.get("athletes/find?name=" + query)
         commit('setSearchResults', res.data)
         router.push({ name: "search" })
       } catch (error) {
@@ -331,8 +315,7 @@ export default new Vuex.Store({
 
     async setRole({ commit, dispatch }, payload) {
       try {
-        let res = await apiUser.put(`account/${payload._id}`, payload)
-
+        await apiUser.put(`account/${payload._id}`, payload)
       } catch (error) {
         console.error(error)
       }
@@ -352,7 +335,7 @@ export default new Vuex.Store({
 
     async addScores({ commit, dispatch }, payload) {
       try {
-        let res = await api.post("scores", payload)
+        await api.post("scores", payload)
       } catch (error) {
         console.error(error)
       }
