@@ -81,3 +81,6 @@
 [1002/114334.610:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [1002/114748.925:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [1002/115834.612:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1007/182943.309:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[1007/182943.311:ERROR:exception_snapshot_win.cc(98)] thread ID 2412 not found in process
+[1007/182943.311:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)

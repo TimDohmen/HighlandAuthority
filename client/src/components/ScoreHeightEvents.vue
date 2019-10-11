@@ -11,7 +11,7 @@
         />
         <input class="form-control col-3 ml-2" type="number" :placeholder="topScore" disabled />
       </div>
-      <div class="form-row">
+      <div class="form-row mr-1">
         <div v-for="(attempt, index) in attempts" class="col-2">
           <input
             v-model="attempt.height"
