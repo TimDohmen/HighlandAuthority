@@ -61,12 +61,6 @@ export default {
         activeGame
       });
     }
-    // topScore: function(newTopScore) {
-    //   this.$store.commit("test", {
-    //     athleteId: this.athlete._id,
-    //     newTopScore
-    //   });
-    // }
   },
   computed: {
     topScore() {

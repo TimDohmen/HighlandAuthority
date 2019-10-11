@@ -8,9 +8,6 @@
               Edit Your Profile
               <button data-dismiss="modal" class="btn btn-outline-danger xButton">x</button>
             </h1>
-            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>-->
           </div>
         </div>
         <div class="modal-body">
@@ -70,18 +67,7 @@
                 v-model="newEdit.phone"
               />
             </div>
-            <!-- TODO Classes -->
-            <!--OLD <div class="form-group">
-                <label for="class">Class: </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="class"
-                  placeholder=" class"
-                  v-model="newEdit.class"
-                  required
-                />
-            </div>-->
+
             <div class="input-group mb-3">
               <!-- Form Group? or input-group -->
               <select class="custom-select" id="inputGroupSelect02" v-model="newEdit.class">
@@ -141,9 +127,6 @@
               Edit Your Profile
               <button data-dismiss="modal" class="btn btn-outline-danger xButton">x</button>
             </h1>
-            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>-->
           </div>
         </div>
         <div class="modal-body">
@@ -202,18 +185,6 @@
                 v-model="newEdit.phone"
               />
             </div>
-            <!-- TODO Classes -->
-            <!--OLD <div class="form-group">
-                <label for="class">Class: </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="class"
-                  placeholder=" class"
-                  v-model="newEdit.class"
-                  required
-                />
-            </div>-->
             <div class="input-group mb-3">
               <!-- Form Group? or input-group -->
               <select class="custom-select" id="inputGroupSelect02" v-model="newEdit.class">

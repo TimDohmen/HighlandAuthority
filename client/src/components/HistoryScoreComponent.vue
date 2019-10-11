@@ -6,7 +6,6 @@
       <dt>Date: {{this.dateTest}}</dt>
       <dt>Class: {{scoreProp.throwingClass}}</dt>
     </dl>
-    <!-- Date: {{scoreProp.gamesId.date }} -->
   </div>
 </template>
 
@@ -25,8 +24,6 @@ export default {
     dateTest() {
       let date = new Date(this.scoreProp.gamesId.date);
       return date.toLocaleDateString();
-      // return this.scoreProp.createdAt.split("T")[0];
-      // return this.scoreProp.gamesId.date.toDateString();
     }
   },
   methods: {},
