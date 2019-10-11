@@ -6,7 +6,6 @@ let _scoreService = new ScoreService().repository
 
 //PUBLIC
 export default class ScoreController {
-  // DONT GO FARTHER BACK
 
   constructor() {
     this.router = express.Router()
@@ -23,7 +22,6 @@ export default class ScoreController {
       .use(this.defaultRoute)
   }
 
-  // this is pretty neat
 
   defaultRoute(req, res, next) {
     next({ status: 404, message: 'No Such Route' })
@@ -43,13 +41,13 @@ export default class ScoreController {
       return res.send(data)
     } catch (error) { next(error) }
   }
+
   async getAllByQuery(req, res, next) {
     try {
       let data = await _scoreService.find({ userId: req.params.id, eventName: req.query.eventName }).populate('gamesId', 'name date')
       return res.send(data)
     } catch (error) { next(error) }
   }
-
 
   async create(req, res, next) {
     try {

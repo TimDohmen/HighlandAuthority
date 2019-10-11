@@ -6,7 +6,6 @@ let ObjectId = Schema.Types.ObjectId
 //bcrypt uses hashing and salt to obfiscate your password 
 const SALT = 10
 
-
 let _schema = new Schema({
   name: { type: String, required: true },
   //every email must be unique on the database
@@ -29,8 +28,6 @@ _schema.methods.validatePassword = function (password) {
 
 //statics are used to create Model methods
 
-
-
 export default class UserService {
   get repository() {
     return mongoose.model('User', _schema)
@@ -39,6 +36,3 @@ export default class UserService {
     return bcrypt.hashSync(password, SALT)
   }
 }
-
-
-

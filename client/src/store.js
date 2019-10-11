@@ -103,6 +103,7 @@ export default new Vuex.Store({
         console.warn(e.message)
       }
     },
+
     async login({ commit, dispatch }, creds) {
       try {
         let user = await AuthService.Login(creds)
@@ -114,6 +115,7 @@ export default new Vuex.Store({
         console.warn(e.message)
       }
     },
+
     async logout({ commit, dispatch }) {
       try {
         let success = await AuthService.Logout()
@@ -124,6 +126,7 @@ export default new Vuex.Store({
         console.warn(e.message)
       }
     },
+
     async checkRole({ commit, dispatch }) {
       try {
         let user = await AuthService.adminAuthenticate()
@@ -137,24 +140,8 @@ export default new Vuex.Store({
     },
     //#endregion
 
-
     //#region -- SCORES --
-    // async getScore({ commit, dispatch }, payload) {
-    //   try {
-    //     let res = await api.post("scores/", payload)
-    //   } catch (error) {
-    //     console.error(error)
-    //   }
-    // },
-    // async getHiScores({ commit, dispatch }, payload) {
-    //   try {
-    //     let query = `?eventName=${payload.eventName}`
-    //     let res = await api.get(`scores/${payload.userId}/find` + query)
-    //     commit('setHiScores', res.data)
-    //   } catch (error) {
-    //     console.error(error)
-    //   }
-    // },
+
     async getOneEventScores({ commit, dispatch }, payload) {
       try {
         let query = `?eventName=${payload.eventName}`
@@ -174,6 +161,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getHiBraemarScores({ commit, dispatch }, payload) {
       try {
         let query = `?eventName=${payload.eventName}`
@@ -183,6 +171,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getHiWFDScores({ commit, dispatch }, payload) {
       try {
         let query = `?eventName=${payload.eventName}`
@@ -192,6 +181,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getHiWFDLScores({ commit, dispatch }, payload) {
       try {
         let query = `?eventName=${payload.eventName}`
@@ -201,6 +191,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getHiHammerLScores({ commit, dispatch }, payload) {
       try {
         let query = `?eventName=${payload.eventName}`
@@ -210,6 +201,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getHiHammerHScores({ commit, dispatch }, payload) {
       try {
         let query = `?eventName=${payload.eventName}`
@@ -232,6 +224,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async createProfile({ commit, dispatch }, payload) {
       try {
         let res = await api.post('athletes/', payload)
@@ -241,6 +234,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getProfile({ commit, dispatch }, userId) {
       try {
         // let res = await api.get('athletes')
@@ -248,6 +242,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getMyProfile({ commit, dispatch }, userId) {
       try {
         let res = await api.get(`athletes/${userId}`)
@@ -256,14 +251,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
-    // async getAllProfiles({ commit, dispatch }) {
-    //   try {
-    //     let res = await api.get('athletes')
-    //     commit('setProfiles', res.data)
-    //   } catch (error) {
-    //     console.error(error)
-    //   }
-    // },
+
     async getActiveProfile({ commit, dispatch }, payload) {
       try {
         let res = payload.profiles.find(p => p.userId == payload.userId)
@@ -272,6 +260,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getSearchedProfile({ commit, dispatch }, payload) {
       try {
         let res = await api.get('athletes/' + payload)
@@ -321,6 +310,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async getGames({ commit, dispatch }) {
       try {
         let res = await api.get("games")
@@ -329,6 +319,7 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
+
     async editGame({ commit, dispatch }, payload) {
       try {
         let res = await api.put("games/" + payload._id, payload)

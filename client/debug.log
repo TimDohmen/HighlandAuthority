@@ -92,3 +92,4 @@
 [1007/182943.311:ERROR:exception_snapshot_win.cc(98)] thread ID 2412 not found in process
 [1007/182943.311:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
 >>>>>>> b455e2438718a079f2bd7d2dcd6ffa979bb82615
+[1011/114412.729:ERROR:crash_report_database_win.cc(469)] failed to stat report

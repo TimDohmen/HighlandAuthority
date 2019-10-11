@@ -20,12 +20,13 @@ export default class AthleteController {
       // .delete('/id', this.delete)
       .use(this.defaultRoute)
 
-
   }
+
   myDebug(req, res, next) {
     console.log('URL:', req.originalUrl, 'Type:', req.method, 'User:', req.session.uid)
     next()
   }
+
   defaultRoute(req, res, next) {
     next({ status: 404, message: 'No Such Route' })
   }
@@ -39,7 +40,6 @@ export default class AthleteController {
       next(error)
     }
   }
-
 
   async findAthleteByQuery(req, res, next) {
     try {
@@ -72,19 +72,11 @@ export default class AthleteController {
       //NOTE Filter out any non-athlete users becasue they don't have a photo
       payload = payload.filter(u => u.photo)
       res.send(payload) // Need to send both users and results
-
     } catch (error) {
       next(error)
     }
   }
 
-  // async findUserByQuery(req, res, next) {
-  //   try {
-  //     let user = await _userService.findOne(req.query).select('name email work phoneNumber location image netWorth')
-  //     if (!user) { throw new Error("No user found") }
-  //     res.send(user)
-  //   } catch (error) { next(error) }
-  // }
 
   // async getById(req, res, next) {
   //   try {
@@ -94,6 +86,7 @@ export default class AthleteController {
   //    next(error)
   //   }
   // }
+
   async getAthleteByUserId(req, res, next) {
     try {
       let data = await _as.findOne({ userId: req.params.userId }).populate('userId', 'name role')
@@ -102,6 +95,7 @@ export default class AthleteController {
       next(error)
     }
   }
+
   async create(req, res, next) {
     try {
       let data = await _as.create(req.body)
@@ -110,6 +104,7 @@ export default class AthleteController {
       next(error)
     }
   }
+
   async edit(req, res, next) {
     try {
       delete req.body.userId

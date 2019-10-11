@@ -12,7 +12,6 @@ let _schema = new Schema({
   phone: { type: Number },
 }, { timestamps: true })
 
-
 export default class AthleteService {
   get repository() {
     return mongoose.model('Athlete', _schema)
