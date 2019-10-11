@@ -33,6 +33,23 @@
               </div>
             </div>
           </Section>
+          <!-- Card Trigs -->
+          <Section class="card mt-3 collapsed" data-toggle="collapse" data-target="#collapseTrig" aria-expanded="false"
+            aria-controls="collapseTrig">
+            <div class="card-header" id="headingTrig">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button">Trig Setup</button>
+              </h2>
+            </div>
+            <div id="collapseTrig" class="collapse" aria-labelledby="headingTrig" data-parent="#accordionExample">
+              <div class="card-body">
+                <img src="http://scottishheavyathletics.com/img/therules_img_1.jpg">
+                <p class="mt-2">Winged Trig - blah blah blah</p>
+                <img src="http://scottishheavyathletics.com/img/therules_img_0.jpg">
+                <p class="mt-2">Standard Trig - blah blah blah</p>
+              </div>
+            </div>
+          </Section>
           <!-- Card Braemar -->
           <Section class="card mt-3 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
             aria-controls="collapseOne">
