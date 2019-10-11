@@ -1,7 +1,7 @@
 <template>
   <div class="profileSearched container-fluid">
     <!-- Profile Card -->
-    <div class="row">
+    <div class="row" v-if="profile.userId">
       <div class="card col-sm-12 col-md-3 text-left">
         <img :src="profile.picture" class="card-img-top border rounded m-auto img-fluid" />
         <div class="card-body">
@@ -18,8 +18,6 @@
             <input
               type="radio"
               aria-label="Checkbox for following text input"
-              name="role"
-              v-model="Athlete"
               id="athleteButton"
               @click="setRole('Athlete')"
             /> Athlete
@@ -28,8 +26,6 @@
             <input
               type="radio"
               aria-label="Checkbox for following text input"
-              v-model="Judge"
-              name="role"
               id="judgeButton"
               @click="setRole('Judge')"
             /> Judge
@@ -38,8 +34,6 @@
             <input
               type="radio"
               aria-label="Checkbox for following text input"
-              v-model="Admin"
-              name="role"
               id="adminButton"
               @click="setRole('Admin')"
             /> Admin
