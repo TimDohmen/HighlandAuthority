@@ -89,8 +89,8 @@ import history from "../components/HistoryComponent";
 export default {
   name: "profile",
   mounted() {
-    // this.$store.dispatch("getAllProfiles");
     this.getMyProfile();
+    this.setHistory("open-stone");
   },
   computed: {
     profile() {
@@ -104,6 +104,12 @@ export default {
   methods: {
     getMyProfile() {
       this.$store.dispatch("getMyProfile", this.user._id);
+    },
+    setHistory(eventName) {
+      this.$store.dispatch("getOneEventScores", {
+        userId: this.$route.params.userId,
+        eventName: eventName
+      });
     }
   },
   components: { PR, EditProfileModal, history }

@@ -49,12 +49,6 @@ export default {
 
 
 <style scoped>
-/* .card {
-  background-color: rgba(255, 255, 255, 0.8);
-} */
-/* .card {
-  background-color: rgba(255, 255, 255, 0.8);
-} */
 .throwingClass {
   position: absolute;
   top: 0px;

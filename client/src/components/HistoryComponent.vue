@@ -16,7 +16,7 @@ export default {
   mounted() {},
   data() {
     return {
-      showHistory: false
+      showHistory: true
     };
   },
   computed: {
