@@ -1,8 +1,5 @@
 <template>
   <div class="WFDHeavy cards">
-    <!-- Event: W4D Heavy
-    <p>PR: {{this.hiScore.topAttempt}}</p>-->
-
     <div class="cards 1">
       <div class="card_image">
         <img

@@ -1,8 +1,5 @@
 <template>
   <div class="WFDLight cards">
-    <!-- Event Name: W4D Light
-    <p>PR: {{this.hiScore.topAttempt}}</p>-->
-
     <div class="cards 1">
       <div class="card_image">
         <img

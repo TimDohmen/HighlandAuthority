@@ -1,7 +1,5 @@
 <template>
   <div class="hammerLight cards">
-    <!-- Event: Hammer Light
-    <p>PR: {{this.hiScore.topAttempt}}</p>-->
     <div class="cards 1">
       <div class="card_image">
         <img

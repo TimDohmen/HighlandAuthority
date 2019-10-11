@@ -1,8 +1,5 @@
 <template>
   <div class="openStone cards">
-    <!-- Event: Open Stone
-    <p>PR: {{this.hiStoneScore.topAttempt}}</p>-->
-
     <div class="cards 1">
       <div class="card_image">
         <img src="https://cdn.pixabay.com/photo/2016/11/18/17/46/grass-1836069_960_720.jpg" />
