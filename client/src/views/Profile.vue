@@ -23,7 +23,7 @@
           <h2 class="displayRole">{{user.name}}</h2>
           <i v-if="user.role == 'Admin'" class="ra ra-shield ra-2x ml-1"></i>
           <i v-if="user.role == 'Athlete'" class="ra ra-muscle-fat ra-2x ml-1"></i>
-          <i v-ifaaa="user.role == 'Judge'" class="ra ra-gavel ra-2x ml-1"></i>
+          <i v-if="user.role == 'Judge'" class="ra ra-gavel ra-2x ml-1"></i>
           <h3>
             <b>Nickname:</b>
             {{profile.nickname}}
