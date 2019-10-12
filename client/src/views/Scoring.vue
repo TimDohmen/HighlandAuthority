@@ -25,9 +25,9 @@
         <option value="w4d-light">W4D Light</option>
         <option value="hammer-heavy">Heavy Hammer</option>
         <option value="hammer-light">Light Hammer</option>
-        <option value="weight-over-bar" disabled>WOB</option>
-        <option value="sheaf" disabled>Sheaf</option>
-        <option value="caber" disabled>Caber</option>
+        <option value="weight-over-bar">WOB</option>
+        <option value="sheaf" >Sheaf</option>
+        <option value="caber" >Caber</option>
       </select>
     </div>
     <div>
