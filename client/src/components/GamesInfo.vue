@@ -21,7 +21,8 @@
                   traditions. In their original form many centuries ago, Highland games revolved around athletic and
                   sports competitions.</p>
                 <p>The first historical references to the Heavy Events were during the reign of King Malcolm III
-                  (1057-1093). The Ceres Games of Fife, Scotland, are considered the oldest, continuous Highland Games,
+                  (1057-1093). </p>
+                  <p>The Ceres Games of Fife, Scotland, are considered the oldest, continuous Highland Games,
                   beginning in 1314. The English Government, during the Act of Proscription years (1746-82), however,
                   outlawed all Highland Games, including the Ceres Games. The Act banned all Scottish culture, including
                   the wearing of kilts and the playing of bagpipes! The Ceres Games also were not held during World War
@@ -43,10 +44,10 @@
             </div>
             <div id="collapseTrig" class="collapse" aria-labelledby="headingTrig" data-parent="#accordionExample">
               <div class="card-body">
-                <img src="http://scottishheavyathletics.com/img/therules_img_1.jpg">
-                <p class="mt-2">Winged Trig - blah blah blah</p>
                 <img src="http://scottishheavyathletics.com/img/therules_img_0.jpg">
-                <p class="mt-2">Standard Trig - blah blah blah</p>
+                <p class="mt-2">Standard Trig - The traditional trig setup is 4ft 6in in width. There are two back lines. The first line at 7ft 6in is the throwing area an athlete can use for open stone throws. The second line at 9ft is the throwing area for weight for distance events. </p>
+                <img src="http://scottishheavyathletics.com/img/therules_img_1.jpg">
+                <p class="mt-2">Winged Trig - The Winged Trig setup is becoming more popular. The back lines are the same distances as the Standard Trig. The biggest difference is that the throwing area is pushed out to 6ft 9in and narrows to the traditional 4ft 6in in the front. This trig setup originally was used during foul weather to give the athletes a larger throwing area. Another benefit to the winged trig is that it is easier to judge. If the athlete touches the line or goes over it, the throw is no good or "a scratch".</p>
               </div>
             </div>
           </Section>
@@ -149,6 +150,7 @@
                   balance and resist the centrifugal forces of the implement as it is whirled about the head. This
                   substantially increases the distance attainable in the throw.
                 </p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkqB4os9O-HhfLzTctyuz6tf0SvNz_67IMKO1ltgSJnYoU5DS9" alt="Collage-Image">
               </div>
             </div>
           </Section>
@@ -207,6 +209,8 @@
                   in
                   degrees.
                 </p>
+                <img src="http://www.nasgaweb.com/images/toss_off_linew.gif" alt="Collage-Image" width
+                ="100%">
               </div>
             </div>
           </Section>
