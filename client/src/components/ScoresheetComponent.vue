@@ -20,6 +20,7 @@
 <script>
 import ScoreDistanceEvents from "./ScoreDistanceEvents";
 import ScoreHeightEvents from "./ScoreHeightEvents";
+import NotificationService from "../NotificationService";
 export default {
   name: "score-sheet",
   data() {
@@ -45,6 +46,10 @@ export default {
       this.selectedAthletes.push(athlete);
     },
     addScores() {
+      this.selectedAthletes.forEach(a => {
+        delete a._id;
+      });
+
       this.$store.dispatch("addScores", this.selectedAthletes);
     }
   },

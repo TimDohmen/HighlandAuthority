@@ -78,14 +78,7 @@ export default class AthleteController {
   }
 
 
-  // async getById(req, res, next) {
-  //   try {
-  //     let data = await _as.findOne({ _id: req.params.id }).populate('userId', 'name')
-  //     return res.send(data)
-  //   } catch (error) {
-  //    next(error)
-  //   }
-  // }
+
 
   async getAthleteByUserId(req, res, next) {
     try {
@@ -115,13 +108,5 @@ export default class AthleteController {
     }
   }
 
-  // async delete(req, res, next) {
-  //   try {
-  //     let data = await _as.findOneAndRemove({ _id: req.params.id, userId: req.session.uid })
-  //     if (!data) {
-  //       throw new Error("invalid id, you didn't say the magic word")
-  //     } res.send("deleted")
-  //   } catch (error) { next(error) }
 
-  // }
 }

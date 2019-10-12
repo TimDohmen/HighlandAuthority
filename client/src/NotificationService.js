@@ -79,11 +79,9 @@ export default class NotificationService {
     rgba(0,0,0,0.6)
     center
     `,
-            // url("https://media.giphy.com/media/111ebonMs90YLu/giphy.gif")
           })
           resolve(true)
         } else if (
-          /* Read more about handling dismissals below */
           result.dismiss === swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire({
@@ -95,7 +93,6 @@ export default class NotificationService {
             rgba(0,0,0,0.6)
             center 
             `,
-            // url("https://media.giphy.com/media/CiTLZWskt7Fu/giphy.gif")    
           })
           resolve(false)
         }
@@ -125,8 +122,6 @@ export default class NotificationService {
     rgba(0,0,0,0.6)
     center left
     `,
-        // url("https://media.giphy.com/media/xUPGcCh4nUHyCkyuti/giphy.gif")
-        // <div class="tenor-gif-embed" data-postid="12767568" data-share-method="host" data-width="100%" data-aspect-ratio="1.0"><a href="https://tenor.com/view/dance-shrek-dancing-gif-12767568">Dance Shrek GIF</a> from <a href="https://tenor.com/search/dance-gifs">Dance GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
         showCancelButton: true,
         confirmButtonText: 'Yes, Logout!',
         cancelButtonText: 'No, Stay here!',
@@ -139,11 +134,9 @@ export default class NotificationService {
     rgba(0,0,0,0.6)
     center
     `,
-            // url("https://media.giphy.com/media/33E7ZjlQEMgF6kbkhY/giphy.gif")
           })
           resolve(true)
         } else if (
-          /* Read more about handling dismissals below */
           result.dismiss === swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire({
@@ -154,10 +147,37 @@ export default class NotificationService {
     center
     
     `,
-            // url("https://media.giphy.com/media/ZEU9ryYGZzttn0Cva7/giphy.gif")
           })
           resolve(false)
         }
+        resolve(false)
+      })
+    })
+  }
+  static comingSoon() {
+    return new Promise((resolve, reject) => {
+      const swalWithBootstrapButtons = swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger mr-5'
+        },
+        buttonsStyling: false
+      })
+      swalWithBootstrapButtons.fire({
+        title: 'Coming Soon!',
+        text: "",
+        type: 'warning',
+        width: 600,
+        padding: '3em',
+        background: '',
+        backdrop: `
+    rgba(0,0,0,0.6)
+    center left
+    `,
+        confirmButtonText: 'Okay ',
+        reverseButtons: true,
+      }).then((result) => {
+
         resolve(false)
       })
     })

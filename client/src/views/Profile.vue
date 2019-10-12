@@ -131,6 +131,9 @@ img {
   display: inline;
 }
 
+.db-border {
+  background-color: rgba(102, 92, 92, 0.5);
+}
 .snip1515 {
   font-family: "Open Sans", Arial, sans-serif;
   position: relative;
