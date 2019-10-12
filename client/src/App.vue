@@ -37,7 +37,8 @@
                 v-model="query"
               />
               <div class="input-group-append">
-                <button class="btn btn-success" type="submit" @click="searchUsers()" id="search">
+                <button class="btn btn-success" type="button" @click="searchUsers()" id="search">
+                  <!-- type type changed from submit -->
                   <i class="fas fa-search fa-sm"></i>
                   Search
                 </button>

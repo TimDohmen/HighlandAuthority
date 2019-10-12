@@ -132,7 +132,7 @@ img {
 }
 
 .db-border {
-  background-color: rgba(68, 59, 59, 0.5);
+  background-color: rgba(102, 92, 92, 0.5);
 }
 .snip1515 {
   font-family: "Open Sans", Arial, sans-serif;
