@@ -162,4 +162,36 @@ export default class NotificationService {
       })
     })
   }
+  static comingSoon() {
+    return new Promise((resolve, reject) => {
+      const swalWithBootstrapButtons = swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger mr-5'
+        },
+        buttonsStyling: false
+      })
+      swalWithBootstrapButtons.fire({
+        title: 'Coming Soon!',
+        text: "",
+        type: 'warning',
+        width: 600,
+        padding: '3em',
+        background: '',
+        backdrop: `
+    rgba(0,0,0,0.6)
+    center left
+    `,
+        // url("https://media.giphy.com/media/xUPGcCh4nUHyCkyuti/giphy.gif")
+        // <div class="tenor-gif-embed" data-postid="12767568" data-share-method="host" data-width="100%" data-aspect-ratio="1.0"><a href="https://tenor.com/view/dance-shrek-dancing-gif-12767568">Dance Shrek GIF</a> from <a href="https://tenor.com/search/dance-gifs">Dance GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        // showCancelButton: true,
+        confirmButtonText: 'Okay ',
+        // cancelButtonText: 'No, Stay here!',
+        reverseButtons: true,
+      }).then((result) => {
+
+        resolve(false)
+      })
+    })
+  }
 }
