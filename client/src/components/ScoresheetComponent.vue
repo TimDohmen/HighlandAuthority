@@ -51,7 +51,6 @@ export default {
       });
 
       this.$store.dispatch("addScores", this.selectedAthletes);
-      // NotificationService.comingSoon("Coming Soon!");
     }
   },
   components: { ScoreDistanceEvents, ScoreHeightEvents }
