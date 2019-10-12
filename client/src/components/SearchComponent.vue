@@ -17,7 +17,7 @@
         <p>
           <button class="button-pos">
             <i class="fas fa-user-friends fa-sm float-bottom"></i>
-            Veiw Profile
+            Vue Profile
           </button>
         </p>
       </div>
