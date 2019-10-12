@@ -28,14 +28,13 @@ server.use(bp.urlencoded({
   extended: true
 }))
 
-//REGISTER YOUR SESSION, OTHERWISE YOU WILL NEVER GET LOGGED IN
+//REGISTERS SESSION, OTHERWISE YOU WILL NEVER GET LOGGED IN
 import AuthController from './controllers/AuthController'
 import Session from "./middleware/session"
 server.use(new Session().express)
 server.use('/account', new AuthController().router)
 
 
-//YOUR ROUTES HERE!!!!!!
 import AthleteController from './controllers/AthleteController'
 import GameController from './controllers/GameController'
 import ScoreController from './controllers/ScoreController'
