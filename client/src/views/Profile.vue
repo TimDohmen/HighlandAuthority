@@ -2,19 +2,6 @@
   <div class="profile container-fluid db-border">
     <!-- Profile Card -->
     <div class="row">
-      <!-- <div class="card col-sm-12 col-md-3 text-left db-border m-2"> -->
-      <!-- <img :src="profile.picture" class="card-img-top border rounded m-auto img-fluid db-border" />
-        <div class="card-body db-border">
-          <h3 class="displayRole">{{user.name}}</h3>
-          <i v-if="user.role == 'Admin'" class="ra ra-shield ra-2x ml-1"></i>
-          <i v-if="user.role == 'Athlete'" class="ra ra-muscle-fat ra-2x ml-1"></i>
-          <i v-if="user.role == 'Judge'" class="ra ra-gavel ra-2x ml-1"></i>
-          <h6>Nickname: {{profile.nickname}}</h6>
-          <h6>Class: {{profile.class}}</h6>
-      </div>-->
-
-      <!-- FIXME Construction -->
-
       <div class="col-2-sm">
         <figure class="snip1515">
           <div class="profile-image">
@@ -57,30 +44,13 @@
             </div>
           </figcaption>
         </figure>
-        <!-- //FIXME END OF CONSTRUCTION -->
       </div>
       <EditProfileModal />
-      <!-- </div> -->
       <!-- Event/PR area -->
       <PR class="col" />
       <history class="col-2" />
       <!-- End of Event/PR area -->
     </div>
-    <!-- End of Profile Card -->
-    <!-- Start of Bio/Location/Phone -->
-    <!-- <hr />
-    <div class="row">
-      <div class="col-sm-12 col-md-4 card justify-content-center">
-        <h4>Bio: {{profile.bio}}</h4>
-      </div>
-      <div class="col-sm-12 col-md-4 card justify-content-center">
-        <h4>Location: {{profile.location}}</h4>
-      </div>
-      <div class="col-sm-12 col-md-4 card justify-content-center">
-        <h4>Phone #: {{profile.phone}}</h4>
-      </div>
-    </div>-->
-    <!-- End of Bio/Location/Phone -->
   </div>
 </template>
 
