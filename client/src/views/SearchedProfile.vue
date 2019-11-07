@@ -9,9 +9,9 @@
           </div>
           <figcaption>
             <h2 class="displayRole">{{profile.userId.name}}</h2>
-            <i v-if="user.role == 'Admin'" class="ra ra-shield ra-2x ml-1"></i>
-            <i v-if="user.role == 'Athlete'" class="ra ra-muscle-fat ra-2x ml-1"></i>
-            <i v-if="user.role == 'Judge'" class="ra ra-gavel ra-2x ml-1"></i>
+            <i v-if="profile.userId.role == 'Admin'" class="ra ra-shield ra-2x ml-1"></i>
+            <i v-if="profile.userId.role == 'Athlete'" class="ra ra-muscle-fat ra-2x ml-1"></i>
+            <i v-if="profile.userId.role == 'Judge'" class="ra ra-gavel ra-2x ml-1"></i>
             <h3>
               <b>Nickname:</b>
               {{profile.nickname}}
@@ -63,7 +63,7 @@
             </div>
           </figcaption>
         </figure>
-        <!-- //FIXME END OF CONSTRUCTION -->
+        <!-- //END OF CONSTRUCTION -->
       </div>
       <EditProfileModal />
       <!-- </div> -->
